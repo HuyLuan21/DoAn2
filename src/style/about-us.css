@@ -649,6 +649,7 @@ a {
     transition: opacity 0.5s ease, visibility 0s linear 0.5s;
     opacity: 0;
     border: 1px solid#EEE;
+    background-color: #fff;
 }
 
 .dropdown ul li {
