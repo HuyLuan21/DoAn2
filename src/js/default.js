@@ -28,3 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 })
+//show all section
+// document.addEventListener('DOMContentLoaded', function () {
+//     const items = document.querySelectorAll('.content_item')
+//     items.forEach(item => {
+//         item.classList.add('active')
+//     })
+// })

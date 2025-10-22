@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <Script src="src/js/default.js"></Script>
-    <title>Forigen langues center - EEC</title>
+    <title>Forigen langues center - FLC</title>
 </head>
 
 <body>
@@ -49,7 +49,7 @@
             <button class="header__login">ĐĂNG NHẬP</button>
         </div>
     </header>
-    <section class="section" id="about">
+    <section id="about">
         <div class="section__container">
             <div class="grid">
                 <!-- left content -->
@@ -234,7 +234,7 @@
             </div>
         </div>
     </section>
-    <section class="section" id="trust">
+    <section id="trust">
         <div class="section__container">
             <div class="section__header">
                 <h2 class="section__heading">Hơn 9000 Trường và Sở Giáo Dục đã tin tưởng lựa chọn Azota</h2>
@@ -367,7 +367,8 @@
         </div>
         </div>
     </section>
-    <section class="section" id="testing">
+    <section id="testing">
+
         <div class="section__container">
             <div class="section__header">
                 <h2 class="section__heading">Kiểm tra Online và Offline</h2>
@@ -606,8 +607,378 @@
         </div>
         </div>
         </div>
+        </div>
+        </div>
+    </section>
+    <section id="question-bank">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__heading">Số hóa ngân hàng câu hỏi</h2>
+                <div class="container">
+                    <div class="bar-wrapper">
+                        <div class="bar small"></div>
+                        <div class="bar large"></div>
+                    </div>
+                </div>
+                <p>
+                    <span>Số hoá hàng nghìn câu hỏi các định dạng chỉ trong 1 phút với AI thông minh.
+                    </span><br>
+                    <span>Phân loại tự động theo khung năng lực, đơn vị kiến thức và mức độ theo chương trình GDPT
+                        2018.</span>
+                </p>
+            </div>
+            <div class="grid">
+                <!--right content -->
+                <div class="Tab_Navigation">
+                    <div data-index="1" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">AI Phân loại thông minh</h4>
+                            <p class="text-gray-500 text-sm">
+                                Thuật toán AI phân loại chính xác 95%, xử lý 1000+ câu hỏi/phút</p>
+                        </div>
+                    </div>
+                    <div data-index="2" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Lọc câu trùng lặp</h4>
+                            <p class="text-gray-500 text-sm">
+                                Nhận diện và loại bỏ câu hỏi trùng lặp với độ chính xác 99.2%</p>
+                        </div>
+                    </div>
+                    <div data-index="3" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018 </h4>
+                            <p class="text-gray-500 text-sm">
+                                Tuân thủ 100% chương trình GDPT 2018, đầy đủ tất cả môn học</p>
+                        </div>
+                    </div>
+                    <div data-index="4" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Phân tích thống kê trực quan</h4>
+                            <p class="text-gray-500 text-sm">
+                                Báo cáo thời gian thực, dashboard trực quan theo khung năng lực</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- left dynamic content -->
+                <div id="dynamic_content_1" class="dynamic_content">
+                    <div class="content__wrapper">
+                        <div class="content_item hidden" data-index="1">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="cloud_upload" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit"
+                                            class="lucide lucide-brain-circuit w-10 h-10 text-white">
+                                            <path
+                                                d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z">
+                                            </path>
+                                            <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
+                                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                                            <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                                            <path d="M12 13h4"></path>
+                                            <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
+                                            <path d="M12 8h8"></path>
+                                            <path d="M16 8V5a2 2 0 0 1 2-2"></path>
+                                            <circle cx="16" cy="13" r=".5"></circle>
+                                            <circle cx="18" cy="3" r=".5"></circle>
+                                            <circle cx="20" cy="21" r=".5"></circle>
+                                            <circle cx="20" cy="8" r=".5"></circle>
+                                        </svg>
+                                    </div>
+                                    <h3>AI Phân loại thông minh</h3>
+                                    <p>Thuật toán AI được train trên dữ liệu lớn với 3 bộ sách phổ dụng nhất, phân loại
+                                        chính xác mức độ khó, dễ và đơn vị kiến
+                                        thức.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="0">95%</div>
+                                            <div class="text-gray-600">Độ chính xác</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="0">1000+</div>
+                                            <div class="text-gray-600">Câu hỏi/phút</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="content_item hidden" data-index="2">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="shield_check" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2"
+                                            class="lucide lucide-check-circle-2 w-10 h-10 text-white">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="m9 12 2 2 4-4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Lọc câu trùng lặp</h3>
+                                    <p>Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng câu
+                                        hỏi chính xác, ít trùng lặp.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="1">99.2%</div>
+                                            <div class="text-gray-600">Tyr lệ phát hiện</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="1">Thông minh</div>
+                                            <div class="text-gray-600">Thuật toán</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item hidden" data-index="3">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="scan" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text">
+                                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                            <path d="M7 8h8"></path>
+                                            <path d="M7 12h10"></path>
+                                            <path d="M7 16h6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Chuẩn cấu trúc CT2018 </h3>
+                                    <p>Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng câu
+                                        hỏi chính xác, ít trùng lặp.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="2">100%</div>
+                                            <div class="text-gray-600">Tuân thủ</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="2">Tất cả</div>
+                                            <div class="text-gray-640">Môn học</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content_item hidden" data-index="4">
+                        <div class="flex_container">
+                            <div id="scan" class="text_center">
+                                <div id="analysis" class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" data-lucide="bar-chart-3">
+                                        <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                        <path d="M18 17V9"></path>
+                                        <path d="M13 17V5"></path>
+                                        <path d="M8 17v-3"></path>
+                                    </svg>
+                                </div>
+                                <h3>Phân tích thống kê trực quan</h3>
+                                <p>Thống kê số lượng câu hỏi theo đơn vị kiến thức, khung năng lực và các dạng thức:
+                                    Trắc nghiệm 4 đáp án, đúng sai, trả
+                                    lời ngắn.</p>
+                                <div class="grid">
+                                    <div class="grid__item">
+                                        <div class="font-bold" data-index="3">Thời gian thực</div>
+                                        <div class="text-gray-600">Thống kê</div>
+                                    </div>
+                                    <div class="grid__item">
+                                        <div class="font-bold" data-index="3">Trực quan</div>
+                                        <div class="text-gray-600">Bảng điều khiển</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         </div>
+    </section>
+    <section id="lms">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__heading">Hệ thống Quản lý học tập thông minh</h2>
+                <div class="container">
+                    <div class="bar-wrapper">
+                        <div class="bar small"></div>
+                        <div class="bar large"></div>
+                    </div>
+                </div>
+                <p>
+                    <span>Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.
+                    </span><br>
+                    <span>Đào tạo nội bộ, kiểm tra kỹ năng, gắn nội dung theo phòng ban, xuất báo cáo hiệu quả đào tạo
+                        nhân sự.</span>
+                </p>
+            </div>
+            <div class="grid">
+                <!-- left dynamic content -->
+                <div id="dynamic_content_1" class="dynamic_content">
+                    <div class="content__wrapper">
+                        <div class="content_item hidden" data-index="1">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="cloud_upload" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="cloud">
+                                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Chuẩn cấu trúc PT2018</h3>
+                                    <p>Khung nội dung được xây dựng bám sát chương trình SGK và yêu cầu cần đạt của
+                                        CT2018, đảm bảo tính chuẩn mực.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="0">100%</div>
+                                            <div class="text-gray-600">Chuẩn SGK</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="0">CT2018</div>
+                                            <div class="text-gray-600">Tiêu chuẩn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="content_item hidden" data-index="2">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="shield_check" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check">
+                                            <path
+                                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                            </path>
+                                            <path d="m9 12 2 2 4-4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Kho nội dung chất lượng</h3>
+                                    <p>Hàng trăm nghìn câu hỏi chất lượng đủ mọi mức độ, đầy đủ lời giải chi tiết, đáp
+                                        án cho giáo viên tham khảo.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="1">500K+</div>
+                                            <div class="text-gray-600">Câu hỏi</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="1">Tất cả</div>
+                                            <div class="text-gray-600">Trình độ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item hidden" data-index="3">
+                            <div class="flex_container">
+                                <div class="text_center">
+                                    <div id="scan" class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text">
+                                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                            <path d="M7 8h8"></path>
+                                            <path d="M7 12h10"></path>
+                                            <path d="M7 16h6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Công nghệ AI theo dõi tiến trình</h3>
+                                    <p>Giáo viên có thể theo dõi tiến trình học của từng học sinh hoặc cả lớp chi tiết,
+                                        đánh giá sự chủ động, năng lực, hiệu
+                                        quả của từng học sinh.</p>
+                                    <div class="grid">
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="2">Theo thời gian thực</div>
+                                            <div class="text-gray-600">Theo dõi</div>
+                                        </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="2">AI</div>
+                                            <div class="text-gray-640">Phân tích</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content_item hidden" data-index="4">
+                        <div class="flex_container">
+                            <div id="scan" class="text_center">
+                                <div id="analysis" class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" data-lucide="bar-chart-3">
+                                        <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                        <path d="M18 17V9"></path>
+                                        <path d="M13 17V5"></path>
+                                        <path d="M8 17v-3"></path>
+                                    </svg>
+                                </div>
+                                <h3>Thống kê đánh giá chi tiết</h3>
+                                <p>Đánh giá năng lực tổng quan và chi tiết từng học sinh trong quá trình học tập, từ đó
+                                    có biện pháp ôn tập phù hợp, nâng
+                                    cao trải nghiệm cá nhân hóa.</p>
+                                <div class="grid">
+                                    <div class="grid__item">
+                                        <div class="font-bold" data-index="3">Tổng quan</div>
+                                        <div class="text-gray-600">Đánh giá</div>
+                                    </div>
+                                    <div class="grid__item">
+                                        <div class="font-bold" data-index="3">Cá nhân</div>
+                                        <div class="text-gray-600">Học tập</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--right content -->
+                <div class="Tab_Navigation">
+                    <div data-index="0" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018</h4>
+                            <p class="text-gray-500 text-sm">
+                                Tuân thủ 100% chuẩn SGK và yêu cầu CT2018, đảm bảo tính chuẩn mực.</p>
+                        </div>
+                    </div>
+                    <div data-index="1" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Kho nội dung chất lượng</h4>
+                            <p class="text-gray-500 text-sm">
+                                Hơn 500K câu hỏi đủ mọi mức độ, đầy đủ lời giải chi tiết</p>
+                        </div>
+                    </div>
+                    <div data-index="2" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Công nghệ AI theo dõi tiến trình</h4>
+                            <p class="text-gray-500 text-sm">
+                                Theo dõi thời gian thực, phân tích AI từng học sinh và cả lớp</p>
+                        </div>
+                    </div>
+                    <div data-index="3" class="Tab_Navigation_Item">
+                        <div class="flex_container">
+                            <h4 class="font-semibold text-gray-900">Thống kê đánh giá chi tiết</h4>
+                            <p class="text-gray-500 text-sm">
+                                Đánh giá tổng quan, cá nhân hóa học tập cho từng học sinh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </div>
     </section>
 </body>
