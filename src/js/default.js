@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tabItems.forEach(item => {
         item.addEventListener('click', () => {
             items.forEach(i => i.classList.add('hidden'))
-            items[item.dataset.index].classList.remove('hidden')
+            items[item.dataset.index - 1].classList.remove('hidden')
         })
     })
     tabItems.forEach(item => {
@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 })
+
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('#lms .content_item')
     const tabItems = document.querySelectorAll('#lms .Tab_Navigation_Item')
