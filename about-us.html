@@ -1,493 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/style/about-us.css" />
+        <link rel="icon" type="image/svg+xml" href="\static\ico\graduation-cap-solid-full.svg" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+        <!-- GGFont/Quicksand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style/about-us.css" />
-    <link rel="icon" type="image/svg+xml" href="\static\ico\graduation-cap-solid-full.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <!-- GGFont/Quicksand -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+        <title>Về chúng tôi</title>
+    </head>
 
-    <title>Về chúng tôi</title>
-</head>
+    <body>
+        <header class="header">
+            <div class="header__container">
+                <a href="#" class="header__logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="header__logo-text">FLC</span>
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="about-us.html" class="header__nav-link"
+                                ><span class="header__nav-link-text">Về chúng tôi</span></a
+                            >
+                        </li>
+                        <li class="header__nav-item dropdown__item">
+                            <a href="#" class="header__nav-link">
+                                <span class="header__nav-link-text"
+                                    >Sản phẩm
+                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li>Thi - Kiểm tra online</li>
+                                            <li>Trộn đề - Chấm phiếu offline</li>
+                                            <li>Ngân hàng câu hỏi</li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"><span class="header__nav-link-text">Báo giá</span></a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"
+                                ><span class="header__nav-link-text">Hướng dẫn</span></a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__login">ĐĂNG NHẬP</button>
 
-<body>
-    <header class="header">
-        <div class="header__container">
-            <a href="index.html" class="header__logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="header__logo-text">FLC</span>
-            </a>
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="about-us.html" class="header__nav-link"><span
-                                class="header__nav-link-text">Về chúng tôi</span></a></li>
-                    <li class="header__nav-item dropdown__item"><a href="#" class="header__nav-link">
-                            <span class="header__nav-link-text">Sản phẩm
-                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li>Thi - Kiểm tra online</li>
-                                        <li>Trộn đề - Chấm phiếu offline</li>
-                                        <li>Ngân hàng câu hỏi</li>
-                                    </ul>
-                                </div>
-                            </span>
-                        </a>
-                    </li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link"><span
-                                class="header__nav-link-text">Báo giá</span></a></li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link"><span
-                                class="header__nav-link-text"></span>Hướng dẫn</span></a></li>
-                </ul>
-            </nav>
-            <button class="header__toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <button class="header__login">ĐĂNG NHẬP</button>
-        </div>
-    </header>
-    <section class="section" id="about">
-        <div class="container">
-            <h1>Về chúng tôi</h1>
-            <p>
-                Đổi mới toàn diện cách giáo viên và nhà trường quản lý hoạt
-                động kiểm tra, đánh giá học tập
-            </p>
-        </div>
-    </section>
-    <section id="origin-story">
-        <div class="container">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <h2>Sự Ra Đời</h2>
-                    <p>
-                        FLC ra đời vào tháng 06/2025 với khát vọng đổi mới
-                        toàn diện cách giáo viên và nhà trường quản lý hoạt
-                        động kiểm tra, đánh giá học tập.
-                    </p>
-                    <p>
-                        Chúng tôi ứng dụng công nghệ tiên tiến để tự động
-                        hóa toàn bộ quy trình từ tạo đề - chấm thi - tổng
-                        hợp báo cáo, giúp giáo viên tiết kiệm thời gian,
-                        nâng cao chất lượng giảng dạy và mang đến cho học
-                        sinh trải nghiệm học tập hiệu quả, đúng trọng tâm.
-                    </p>
-                    <p>
-                        Đồng thời, FLC hỗ trợ nhà trường tối ưu công tác
-                        quản trị dựa trên dữ liệu chính xác và cập nhật theo
-                        thời gian thực.
-                    </p>
+                <button id="mobile-menu-btn">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        data-lucide="menu"
+                        class="lucide lucide-menu w-6 h-6 text-gray-700"
+                    >
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!------------- mobile nav bar ----------------------------->
+            <div class="header__container-mobile">
+                <div class="header__container-mobile-backdrop"></div>
+                <div class="header__container-mobile-panel">
+                    <div class="header__container-mobile-header">
+                        <button id="mobile-menu-close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="order-1 lg:order-2">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                            alt="Azota Origin" class="rounded-2xl shadow-2xl w-full" />
-                        <div class="absolute -bottom-6 -left-6 bg-flc-primary text-white p-6 rounded-xl shadow-lg">
-                            <div class="text-2xl font-bold">09/2023</div>
-                            <div class="text-sm" data-lang="about.origin.founded">
-                                Thành lập
+            </div>
+        </header>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h1>Về chúng tôi</h1>
+                <p>Đổi mới toàn diện cách giáo viên và nhà trường quản lý hoạt động kiểm tra, đánh giá học tập</p>
+            </div>
+        </section>
+        <section id="origin-story">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h2>Sự Ra Đời</h2>
+                        <p>
+                            FLC ra đời vào tháng 06/2025 với khát vọng đổi mới toàn diện cách giáo viên và nhà trường
+                            quản lý hoạt động kiểm tra, đánh giá học tập.
+                        </p>
+                        <p>
+                            Chúng tôi ứng dụng công nghệ tiên tiến để tự động hóa toàn bộ quy trình từ tạo đề - chấm thi
+                            - tổng hợp báo cáo, giúp giáo viên tiết kiệm thời gian, nâng cao chất lượng giảng dạy và
+                            mang đến cho học sinh trải nghiệm học tập hiệu quả, đúng trọng tâm.
+                        </p>
+                        <p>
+                            Đồng thời, FLC hỗ trợ nhà trường tối ưu công tác quản trị dựa trên dữ liệu chính xác và cập
+                            nhật theo thời gian thực.
+                        </p>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                                alt="Azota Origin"
+                                class="rounded-2xl shadow-2xl w-full"
+                            />
+                            <div class="absolute -bottom-6 -left-6 bg-flc-primary text-white p-6 rounded-xl shadow-lg">
+                                <div class="text-2xl font-bold">09/2023</div>
+                                <div class="text-sm" data-lang="about.origin.founded">Thành lập</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="mission-vision" class="py-16 bg-gray-50">
-        <div class="container">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                    Tầm Nhìn &amp; Sứ Mệnh
-                </h2>
-                <div class="flex justify-center mt-4 mb-6">
-                    <div class="w-24 flex">
-                        <div class="w-2/12 h-1 bg-gray-900 mr-2 rounded"></div>
-                        <div class="w-10/12 h-1 bg-gray-900 rounded"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Vision -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
-                            <svg viewBox="-5.76 -5.76 35.52 35.52" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                stroke="#000000">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                    <rect x="-5.76" y="-5.76" width="35.52" height="35.52" rx="8.88" fill="#3275f2"
-                                        strokewidth="0"></rect>
-                                </g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <path
-                                        d="M20.5764 8.00122C21.4326 7.51527 21.8608 7.2723 21.9732 6.85985C22.0856 6.44741 21.8384 6.02657 21.3441 5.18488L20.2954 3.39939C19.8011 2.55771 19.5539 2.13687 19.1343 2.02635C18.7147 1.91584 18.2866 2.15881 17.4304 2.64476L13.7467 4.73538C12.9155 5.20709 12.4999 5.44294 12.3916 5.84725C12.2833 6.25157 12.5253 6.6636 13.0093 7.48766L14.1293 9.39465C14.6004 10.1966 14.8359 10.5976 15.2318 10.7037C15.6277 10.8098 16.0322 10.5802 16.841 10.1212M12.2429 6.18353L8.55917 8.27415C7.72801 8.74586 7.31243 8.98172 7.20411 9.38603C7.09579 9.79034 7.33779 10.2024 7.82179 11.0264L8.41749 12.0407C8.88853 12.8427 9.12405 13.2437 9.51996 13.3497C9.91586 13.4558 10.3203 13.2263 11.1292 12.7672L14.8646 10.6472M7.05634 9.72257L3.4236 11.7843C2.56736 12.2702 2.13923 12.5132 2.02681 12.9256C1.91438 13.3381 2.16156 13.7589 2.65591 14.6006C3.15026 15.4423 3.39744 15.8631 3.81702 15.9736C4.2366 16.0842 4.66472 15.8412 5.52096 15.3552L9.1537 13.2935"
-                                        stroke="#f6f8fe" stroke-width="1.584" stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                    <path d="M12 12.5L16 22" stroke="#f6f8fe" stroke-width="1.584"
-                                        stroke-linecap="round"></path>
-                                    <path d="M12 12.5L8 22" stroke="#f6f8fe" stroke-width="1.584"
-                                        stroke-linecap="round"></path>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900" data-lang="about.vision.title">
-                            Tầm Nhìn
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-lg leading-relaxed" data-lang="about.vision.content">
-                        Trở thành nền tảng công nghệ giáo dục hàng đầu Đông
-                        Nam Á, kết nối toàn diện giáo viên, học sinh và
-                        nguồn lực học tập để kiến tạo một hệ sinh thái giáo
-                        dục thông minh, bền vững và cá nhân hóa cho từng
-                        người học.
-                    </p>
-                </div>
-
-                <!-- Mission -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-                            <svg fill="#ffffff" height="64px" width="64px" version="1.1" id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="-128 -128 768.00 768.00" xml:space="preserve" stroke="#ffffff">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                    <rect x="-128" y="-128" width="768.00" height="768.00" rx="192" fill="#1db655"
-                                        strokewidth="0"></rect>
-                                </g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <g>
-                                        <g>
-                                            <path
-                                                d="M511.277,70.623c-2.554-9.528-12.351-15.181-21.874-12.63l-48.504,12.996l12.998-48.503 c2.553-9.528-3.101-19.321-12.628-21.874c-9.524-2.552-19.323,3.101-21.875,12.628l-13.538,50.525 c-42.674-33.556-96.457-53.593-154.83-53.593C112.669,10.173,0.11,122.732,0.11,261.085 c0,138.355,112.559,250.914,250.914,250.914S501.938,399.44,501.938,261.085c0-58.48-20.113-112.349-53.781-155.061l50.489-13.529 C508.174,89.944,513.829,80.151,511.277,70.623z M466.219,261.087c-0.001,118.658-96.536,215.193-215.195,215.193 S35.831,379.745,35.831,261.087c0-118.657,96.535-215.192,215.193-215.192c52.857,0,101.313,19.167,138.813,50.9l-49.122,49.122 c-24.77-19.333-55.908-30.869-89.691-30.869c-80.526,0-146.04,65.513-146.04,146.039c0,80.527,65.513,146.04,146.04,146.04 c80.526,0,146.039-65.513,146.039-146.04c0-33.897-11.61-65.132-31.06-89.942l49.111-49.111 C446.97,159.566,466.219,208.116,466.219,261.087z M238.284,273.605c6.973,6.974,18.282,6.976,25.258,0l76.964-76.964 c13.104,18.143,20.837,40.406,20.837,64.445c0,60.83-49.489,110.32-110.319,110.32s-110.32-49.489-110.32-110.32 c0-60.83,49.489-110.319,110.32-110.319c23.926,0,46.094,7.66,64.189,20.65l-76.929,76.929 C231.309,255.321,231.309,266.63,238.284,273.605z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900" data-lang="about.mission.title">
-                            Sứ Mệnh
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-lg leading-relaxed" data-lang="about.mission.content">
-                        Hỗ trợ giáo viên số hóa hoạt động giảng dạy, mang
-                        đến cho học sinh trải nghiệm học tập cá nhân hóa,
-                        truyền cảm hứng và phát triển năng lực toàn diện,
-                        đồng thời kết nối nhà trường - gia đình - cộng đồng
-                        giáo dục thành một mạng lưới tri thức mở.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="revolution" class="py-16 bg-white">
-        <div class="container">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                        alt="Education Revolution" class="rounded-2xl shadow-2xl w-full" />
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                        Một Cuộc Cách Mạng Trong Giáo Dục
-                    </h2>
-                    <div class="flex mt-4 mb-6">
+        </section>
+        <section id="mission-vision" class="py-16 bg-gray-50">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Tầm Nhìn &amp; Sứ Mệnh</h2>
+                    <div class="flex justify-center mt-4 mb-6">
                         <div class="w-24 flex">
                             <div class="w-2/12 h-1 bg-gray-900 mr-2 rounded"></div>
                             <div class="w-10/12 h-1 bg-gray-900 rounded"></div>
                         </div>
                     </div>
-                    <div class="space-y-4 text-gray-600 text-lg">
-                        <p>
-                            Với hệ thống thông minh, dữ liệu được phân tích
-                            theo thời gian thực, ma trận và nội dung ôn tập
-                            được tự động đồng bộ với tiến độ giảng dạy,
-                            Azota giúp giáo viên chuẩn bị bài nhanh chóng và
-                            học sinh luôn được học đúng trọng tâm.
-                        </p>
-                        <p>
-                            Chúng tôi tin rằng, khi giáo viên có thêm thời
-                            gian cho sáng tạo và tương tác. Chất lượng giáo
-                            dục sẽ bứt phá, tạo nên một thế hệ học sinh tự
-                            tin, chủ động và sẵn sàng cho tương lai.
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Vision -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4"
+                            >
+                                <svg
+                                    viewBox="-5.76 -5.76 35.52 35.52"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    stroke="#000000"
+                                >
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                        <rect
+                                            x="-5.76"
+                                            y="-5.76"
+                                            width="35.52"
+                                            height="35.52"
+                                            rx="8.88"
+                                            fill="#3275f2"
+                                            strokewidth="0"
+                                        ></rect>
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M20.5764 8.00122C21.4326 7.51527 21.8608 7.2723 21.9732 6.85985C22.0856 6.44741 21.8384 6.02657 21.3441 5.18488L20.2954 3.39939C19.8011 2.55771 19.5539 2.13687 19.1343 2.02635C18.7147 1.91584 18.2866 2.15881 17.4304 2.64476L13.7467 4.73538C12.9155 5.20709 12.4999 5.44294 12.3916 5.84725C12.2833 6.25157 12.5253 6.6636 13.0093 7.48766L14.1293 9.39465C14.6004 10.1966 14.8359 10.5976 15.2318 10.7037C15.6277 10.8098 16.0322 10.5802 16.841 10.1212M12.2429 6.18353L8.55917 8.27415C7.72801 8.74586 7.31243 8.98172 7.20411 9.38603C7.09579 9.79034 7.33779 10.2024 7.82179 11.0264L8.41749 12.0407C8.88853 12.8427 9.12405 13.2437 9.51996 13.3497C9.91586 13.4558 10.3203 13.2263 11.1292 12.7672L14.8646 10.6472M7.05634 9.72257L3.4236 11.7843C2.56736 12.2702 2.13923 12.5132 2.02681 12.9256C1.91438 13.3381 2.16156 13.7589 2.65591 14.6006C3.15026 15.4423 3.39744 15.8631 3.81702 15.9736C4.2366 16.0842 4.66472 15.8412 5.52096 15.3552L9.1537 13.2935"
+                                            stroke="#f6f8fe"
+                                            stroke-width="1.584"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12 12.5L16 22"
+                                            stroke="#f6f8fe"
+                                            stroke-width="1.584"
+                                            stroke-linecap="round"
+                                        ></path>
+                                        <path
+                                            d="M12 12.5L8 22"
+                                            stroke="#f6f8fe"
+                                            stroke-width="1.584"
+                                            stroke-linecap="round"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900" data-lang="about.vision.title">Tầm Nhìn</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-lang="about.vision.content">
+                            Trở thành nền tảng công nghệ giáo dục hàng đầu Đông Nam Á, kết nối toàn diện giáo viên, học
+                            sinh và nguồn lực học tập để kiến tạo một hệ sinh thái giáo dục thông minh, bền vững và cá
+                            nhân hóa cho từng người học.
                         </p>
                     </div>
 
-                    <!-- Key Features -->
-                    <div class="mt-8 grid grid-cols-2 gap-4 text-base">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" data-lucide="brain"
-                                    class="lucide lucide-brain w-4 h-4 text-green-600">
-                                    <path d="M12 18V5"></path>
-                                    <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path>
-                                    <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path>
-                                    <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path>
-                                    <path d="M18 18a4 4 0 0 0 2-7.464"></path>
-                                    <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path>
-                                    <path d="M6 18a4 4 0 0 1-2-7.464"></path>
-                                    <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path>
+                    <!-- Mission -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4"
+                            >
+                                <svg
+                                    fill="#ffffff"
+                                    height="64px"
+                                    width="64px"
+                                    version="1.1"
+                                    id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="-128 -128 768.00 768.00"
+                                    xml:space="preserve"
+                                    stroke="#ffffff"
+                                >
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                        <rect
+                                            x="-128"
+                                            y="-128"
+                                            width="768.00"
+                                            height="768.00"
+                                            rx="192"
+                                            fill="#1db655"
+                                            strokewidth="0"
+                                        ></rect>
+                                    </g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M511.277,70.623c-2.554-9.528-12.351-15.181-21.874-12.63l-48.504,12.996l12.998-48.503 c2.553-9.528-3.101-19.321-12.628-21.874c-9.524-2.552-19.323,3.101-21.875,12.628l-13.538,50.525 c-42.674-33.556-96.457-53.593-154.83-53.593C112.669,10.173,0.11,122.732,0.11,261.085 c0,138.355,112.559,250.914,250.914,250.914S501.938,399.44,501.938,261.085c0-58.48-20.113-112.349-53.781-155.061l50.489-13.529 C508.174,89.944,513.829,80.151,511.277,70.623z M466.219,261.087c-0.001,118.658-96.536,215.193-215.195,215.193 S35.831,379.745,35.831,261.087c0-118.657,96.535-215.192,215.193-215.192c52.857,0,101.313,19.167,138.813,50.9l-49.122,49.122 c-24.77-19.333-55.908-30.869-89.691-30.869c-80.526,0-146.04,65.513-146.04,146.039c0,80.527,65.513,146.04,146.04,146.04 c80.526,0,146.039-65.513,146.039-146.04c0-33.897-11.61-65.132-31.06-89.942l49.111-49.111 C446.97,159.566,466.219,208.116,466.219,261.087z M238.284,273.605c6.973,6.974,18.282,6.976,25.258,0l76.964-76.964 c13.104,18.143,20.837,40.406,20.837,64.445c0,60.83-49.489,110.32-110.319,110.32s-110.32-49.489-110.32-110.32 c0-60.83,49.489-110.319,110.32-110.319c23.926,0,46.094,7.66,64.189,20.65l-76.929,76.929 C231.309,255.321,231.309,266.63,238.284,273.605z"
+                                                ></path>
+                                            </g>
+                                        </g>
+                                    </g>
                                 </svg>
                             </div>
-                            <span class="text-gray-700 font-medium ml-1">Hệ thống thông minh</span>
+                            <h3 class="text-2xl font-bold text-gray-900" data-lang="about.mission.title">Sứ Mệnh</h3>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" data-lucide="activity"
-                                    class="lucide lucide-activity w-4 h-4 text-blue-600">
-                                    <path
-                                        d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
-                                    </path>
-                                </svg>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-lang="about.mission.content">
+                            Hỗ trợ giáo viên số hóa hoạt động giảng dạy, mang đến cho học sinh trải nghiệm học tập cá
+                            nhân hóa, truyền cảm hứng và phát triển năng lực toàn diện, đồng thời kết nối nhà trường -
+                            gia đình - cộng đồng giáo dục thành một mạng lưới tri thức mở.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="revolution" class="py-16 bg-white">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                            alt="Education Revolution"
+                            class="rounded-2xl shadow-2xl w-full"
+                        />
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Một Cuộc Cách Mạng Trong Giáo Dục</h2>
+                        <div class="flex mt-4 mb-6">
+                            <div class="w-24 flex">
+                                <div class="w-2/12 h-1 bg-gray-900 mr-2 rounded"></div>
+                                <div class="w-10/12 h-1 bg-gray-900 rounded"></div>
                             </div>
-                            <span class="text-gray-700 font-medium" data-lang="about.revolution.feature2">Phân tích thời
-                                gian thực</span>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" data-lucide="refresh-ccw"
-                                    class="lucide lucide-refresh-ccw w-4 h-4 text-purple-600">
-                                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-                                    <path d="M3 3v5h5"></path>
-                                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
-                                    <path d="M16 16h5v5"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-700 font-medium" data-lang="about.revolution.feature3">Đồng bộ tự
-                                động</span>
+                        <div class="space-y-4 text-gray-600 text-lg">
+                            <p>
+                                Với hệ thống thông minh, dữ liệu được phân tích theo thời gian thực, ma trận và nội dung
+                                ôn tập được tự động đồng bộ với tiến độ giảng dạy, Azota giúp giáo viên chuẩn bị bài
+                                nhanh chóng và học sinh luôn được học đúng trọng tâm.
+                            </p>
+                            <p>
+                                Chúng tôi tin rằng, khi giáo viên có thêm thời gian cho sáng tạo và tương tác. Chất
+                                lượng giáo dục sẽ bứt phá, tạo nên một thế hệ học sinh tự tin, chủ động và sẵn sàng cho
+                                tương lai.
+                            </p>
                         </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" data-lucide="users"
-                                    class="lucide lucide-users w-4 h-4 text-orange-600">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                    <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                </svg>
+
+                        <!-- Key Features -->
+                        <div class="mt-8 grid grid-cols-2 gap-4 text-base">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        data-lucide="brain"
+                                        class="lucide lucide-brain w-4 h-4 text-green-600"
+                                    >
+                                        <path d="M12 18V5"></path>
+                                        <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"></path>
+                                        <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"></path>
+                                        <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path>
+                                        <path d="M18 18a4 4 0 0 0 2-7.464"></path>
+                                        <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"></path>
+                                        <path d="M6 18a4 4 0 0 1-2-7.464"></path>
+                                        <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 font-medium ml-1">Hệ thống thông minh</span>
                             </div>
-                            <span class="text-gray-700 font-medium" data-lang="about.revolution.feature4">Cá nhân hóa
-                                học tập</span>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        data-lucide="activity"
+                                        class="lucide lucide-activity w-4 h-4 text-blue-600"
+                                    >
+                                        <path
+                                            d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 font-medium" data-lang="about.revolution.feature2"
+                                    >Phân tích thời gian thực</span
+                                >
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        data-lucide="refresh-ccw"
+                                        class="lucide lucide-refresh-ccw w-4 h-4 text-purple-600"
+                                    >
+                                        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                        <path d="M3 3v5h5"></path>
+                                        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                        <path d="M16 16h5v5"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 font-medium" data-lang="about.revolution.feature3"
+                                    >Đồng bộ tự động</span
+                                >
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        data-lucide="users"
+                                        class="lucide lucide-users w-4 h-4 text-orange-600"
+                                    >
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                        <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700 font-medium" data-lang="about.revolution.feature4"
+                                    >Cá nhân hóa học tập</span
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="core-values" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="container">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4" data-lang="about.values.title">
-                    Giá Trị Cốt Lõi
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-lang="about.values.subtitle">
-                    Những giá trị định hướng mọi hoạt động của chúng tôi
-                </p>
-                <div class="flex justify-center mt-4 mb-6">
-                    <div class="w-24 flex">
-                        <div class="w-2/12 h-1 bg-gray-900 mr-2 rounded"></div>
-                        <div class="w-10/12 h-1 bg-gray-900 rounded"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-base">
-                <!-- Value 1: Efficiency -->
-                <div
-                    class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg width="150px" height="150px" viewBox="-4.8 -4.8 33.60 33.60" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                <rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="8.4" fill="#19ac4f"
-                                    strokewidth="0"></rect>
-                            </g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M12.9996 3L5.06859 12.6934C4.72703 13.1109 4.55625 13.3196 4.55471 13.4956C4.55336 13.6486 4.62218 13.7939 4.74148 13.8897C4.87867 14 5.14837 14 5.68776 14H11.9996L10.9996 21L18.9305 11.3066C19.2721 10.8891 19.4429 10.6804 19.4444 10.5044C19.4458 10.3514 19.377 10.2061 19.2577 10.1103C19.1205 10 18.8508 10 18.3114 10H11.9996L12.9996 3Z"
-                                    stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.efficiency.title">
-                        Hiệu Quả
-                    </h3>
-                    <p class="text-gray-600" data-lang="about.values.efficiency.description">
-                        Tiết kiệm thời gian, tối ưu công việc
+        </section>
+        <section id="core-values" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-lang="about.values.title">
+                        Giá Trị Cốt Lõi
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-lang="about.values.subtitle">
+                        Những giá trị định hướng mọi hoạt động của chúng tôi
                     </p>
-                </div>
-
-                <!-- Value 2: Accuracy -->
-                <div
-                    class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg width="150px" height="150px" viewBox="-6 -6 36.00 36.00" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                <rect x="-6" y="-6" width="36.00" height="36.00" rx="9" fill="#2f70f0" strokewidth="0">
-                                </rect>
-                            </g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                                    stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                                <path d="M7.75 12L10.58 14.83L16.25 9.17004" stroke="#ffffff" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round"></path>
-                            </g>
-                        </svg>
+                    <div class="flex justify-center mt-4 mb-6">
+                        <div class="w-24 flex">
+                            <div class="w-2/12 h-1 bg-gray-900 mr-2 rounded"></div>
+                            <div class="w-10/12 h-1 bg-gray-900 rounded"></div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.accuracy.title">
-                        Chính Xác
-                    </h3>
-                    <p class="text-gray-600" data-lang="about.values.accuracy.description">
-                        Dữ liệu minh bạch, kết quả tin cậy
-                    </p>
                 </div>
-
-                <!-- Value 3: Flexibility -->
-                <div
-                    class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg width="150px" height="150px" viewBox="-256 -256 1536.00 1536.00"
-                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                <rect x="-256" y="-256" width="1536.00" height="1536.00" rx="384" fill="#993dee"
-                                    strokewidth="0"></rect>
-                            </g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill="#ffffff"
-                                    d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z">
-                                </path>
-                            </g>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.flexibility.title">
-                        Linh Hoạt
-                    </h3>
-                    <p class="text-gray-600" data-lang="about.values.flexibility.description">
-                        Cá nhân hóa trải nghiệm học tập
-                    </p>
-                </div>
-
-                <!-- Value 4: Partnership -->
-                <div
-                    class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg height="150px" width="150px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-128 -128 768.00 768.00"
-                            xml:space="preserve" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0">
-                                <rect x="-128" y="-128" width="768.00" height="768.00" rx="192" fill="#f26712"
-                                    strokewidth="0"></rect>
-                            </g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <style type="text/css">
-                                    .st0 {
-                                        fill: #ffffff;
-                                    }
-                                </style>
-                                <g>
-                                    <path class="st0"
-                                        d="M403.166,74.249c-13.439,7.624-29.668,13.939-44.089,11.532c-22.738-3.783-81.345-3.533-120.246,10.609 c-38.901,14.141-109.628,58.346-130.844,65.432c-21.226,7.066-22.989,35.368,24.75,40.663c47.748,5.313,90.182-24.76,100.79-30.055 c10.609-5.313,113.17,10.609,113.17,10.609l32.268,7.951l74.394,100.56c13.053-11.34,38.872-35.406,45.409-53.696 c2.378-6.662,5.919-12.784,9.819-18.224l0.818,1.126C526.916,181.615,451.828,57.075,403.166,74.249z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M359.077,205.585l-15.634-1.578c-20.514-3.177-78.524-11.437-100.309-11.437c-0.952,0-1.713,0.01-2.281,0.038 c-0.876,0.501-1.887,1.078-2.878,1.656c-15.461,9.001-51.656,30.074-93.821,30.074c-4.63,0-9.252-0.26-13.756-0.761 c-6.834-0.76-12.842-1.935-18.156-3.418c5.035,2.205,9.665,5.362,13.641,9.415c6.228,6.373,10.098,14.19,11.629,22.363 c3.63-0.973,7.393-1.512,11.244-1.512c11.802,0,22.834,4.64,31.084,13.073c8.116,8.298,12.525,19.272,12.4,30.882 c0,0.115-0.02,0.232-0.02,0.347c11.744,0.038,22.738,4.678,30.959,13.073c8.125,8.298,12.534,19.272,12.409,30.882 c-0.048,4.004-0.664,7.913-1.742,11.668c8.336,1.742,15.97,5.891,22.073,12.129c16.77,17.145,16.471,44.725-0.664,61.495 l-8.587,8.394c0.038,0,0.087,0,0.125,0c14.411-1.04,26.56-9.934,29.958-23.335c5.872,4.63,13.265,7.412,21.323,7.412 c19.041,0,34.482-15.431,34.482-34.482c0-2.002-0.212-3.947-0.539-5.854c6.066,5.286,13.968,8.51,22.642,8.51 c19.042,0,34.483-15.441,34.483-34.482c4.081,1.703,8.557,2.656,13.255,2.656c19.041,0,34.482-15.441,34.482-34.482 c0-14.459-7.075-23.874-23.873-43.32L359.077,205.585z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M110.72,244.419c-8.606-8.789-22.699-8.944-31.488-0.347l-31.816,31.142 c-8.789,8.597-8.943,22.69-0.346,31.479c8.597,8.789,22.69,8.943,31.48,0.336l31.825-31.132 C119.163,267.301,119.317,253.208,110.72,244.419z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M164.668,278.343c-8.597-8.799-22.69-8.953-31.48-0.347l-42.434,41.51c-8.789,8.606-8.933,22.699-0.336,31.478 c8.596,8.799,22.689,8.952,31.488,0.347l42.424-41.51C173.12,301.225,173.274,287.132,164.668,278.343z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M208.016,322.644c-8.596-8.789-22.689-8.953-31.478-0.346l-42.434,41.519 c-8.789,8.596-8.943,22.689-0.337,31.488c8.597,8.779,22.69,8.934,31.48,0.327l42.434-41.51 C216.469,345.517,216.612,331.423,208.016,322.644z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M240.756,377.323c-8.606-8.789-22.699-8.953-31.478-0.347l-24.751,24.221 c-8.789,8.596-8.943,22.689-0.346,31.478c8.596,8.789,22.699,8.934,31.488,0.347l24.75-24.22 C249.199,400.205,249.353,386.112,240.756,377.323z">
-                                    </path>
-                                    <path class="st0"
-                                        d="M94.798,216.501c3.35,0,6.623,0.424,9.8,1.145c-26.733-10.252-31.161-29.004-31.864-35.618 c-1.887-17.81,9.588-34.03,28.533-40.345c7.625-2.541,27.619-13.439,46.94-23.97c20.736-11.312,43.493-23.72,63.295-32.847 c-25.088-2.03-48.595-1.174-61.158,0.915c-13.507,2.252-28.601-3.148-41.51-10.098C60.171,58.5-14.916,183.039,2.595,222.191 c3.186,4.784,6.046,10.021,8.058,15.663c2.974,8.317,9.943,17.828,17.886,26.8c1.242-1.598,2.561-3.158,4.034-4.612l31.816-31.141 C72.57,220.91,83.361,216.501,94.798,216.501z">
-                                    </path>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-base">
+                    <!-- Value 1: Efficiency -->
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg
+                                width="150px"
+                                height="150px"
+                                viewBox="-4.8 -4.8 33.60 33.60"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    <rect
+                                        x="-4.8"
+                                        y="-4.8"
+                                        width="33.60"
+                                        height="33.60"
+                                        rx="8.4"
+                                        fill="#19ac4f"
+                                        strokewidth="0"
+                                    ></rect>
                                 </g>
-                            </g>
-                        </svg>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M12.9996 3L5.06859 12.6934C4.72703 13.1109 4.55625 13.3196 4.55471 13.4956C4.55336 13.6486 4.62218 13.7939 4.74148 13.8897C4.87867 14 5.14837 14 5.68776 14H11.9996L10.9996 21L18.9305 11.3066C19.2721 10.8891 19.4429 10.6804 19.4444 10.5044C19.4458 10.3514 19.377 10.2061 19.2577 10.1103C19.1205 10 18.8508 10 18.3114 10H11.9996L12.9996 3Z"
+                                        stroke="#ffffff"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.efficiency.title">
+                            Hiệu Quả
+                        </h3>
+                        <p class="text-gray-600" data-lang="about.values.efficiency.description">
+                            Tiết kiệm thời gian, tối ưu công việc
+                        </p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">
-                        Đồng Hành
-                    </h3>
-                    <p class="text-gray-600">
-                        Luôn lắng nghe và hỗ trợ 24/7
-                    </p>
+
+                    <!-- Value 2: Accuracy -->
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg
+                                width="150px"
+                                height="150px"
+                                viewBox="-6 -6 36.00 36.00"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    <rect
+                                        x="-6"
+                                        y="-6"
+                                        width="36.00"
+                                        height="36.00"
+                                        rx="9"
+                                        fill="#2f70f0"
+                                        strokewidth="0"
+                                    ></rect>
+                                </g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                                        stroke="#ffffff"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                    <path
+                                        d="M7.75 12L10.58 14.83L16.25 9.17004"
+                                        stroke="#ffffff"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.accuracy.title">
+                            Chính Xác
+                        </h3>
+                        <p class="text-gray-600" data-lang="about.values.accuracy.description">
+                            Dữ liệu minh bạch, kết quả tin cậy
+                        </p>
+                    </div>
+
+                    <!-- Value 3: Flexibility -->
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg
+                                width="150px"
+                                height="150px"
+                                viewBox="-256 -256 1536.00 1536.00"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="#000000"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    <rect
+                                        x="-256"
+                                        y="-256"
+                                        width="1536.00"
+                                        height="1536.00"
+                                        rx="384"
+                                        fill="#993dee"
+                                        strokewidth="0"
+                                    ></rect>
+                                </g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        fill="#ffffff"
+                                        d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4" data-lang="about.values.flexibility.title">
+                            Linh Hoạt
+                        </h3>
+                        <p class="text-gray-600" data-lang="about.values.flexibility.description">
+                            Cá nhân hóa trải nghiệm học tập
+                        </p>
+                    </div>
+
+                    <!-- Value 4: Partnership -->
+                    <div
+                        class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                    >
+                        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg
+                                height="150px"
+                                width="150px"
+                                version="1.1"
+                                id="_x32_"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="-128 -128 768.00 768.00"
+                                xml:space="preserve"
+                                fill="#000000"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0">
+                                    <rect
+                                        x="-128"
+                                        y="-128"
+                                        width="768.00"
+                                        height="768.00"
+                                        rx="192"
+                                        fill="#f26712"
+                                        strokewidth="0"
+                                    ></rect>
+                                </g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <style type="text/css">
+                                        .st0 {
+                                            fill: #ffffff;
+                                        }
+                                    </style>
+                                    <g>
+                                        <path
+                                            class="st0"
+                                            d="M403.166,74.249c-13.439,7.624-29.668,13.939-44.089,11.532c-22.738-3.783-81.345-3.533-120.246,10.609 c-38.901,14.141-109.628,58.346-130.844,65.432c-21.226,7.066-22.989,35.368,24.75,40.663c47.748,5.313,90.182-24.76,100.79-30.055 c10.609-5.313,113.17,10.609,113.17,10.609l32.268,7.951l74.394,100.56c13.053-11.34,38.872-35.406,45.409-53.696 c2.378-6.662,5.919-12.784,9.819-18.224l0.818,1.126C526.916,181.615,451.828,57.075,403.166,74.249z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M359.077,205.585l-15.634-1.578c-20.514-3.177-78.524-11.437-100.309-11.437c-0.952,0-1.713,0.01-2.281,0.038 c-0.876,0.501-1.887,1.078-2.878,1.656c-15.461,9.001-51.656,30.074-93.821,30.074c-4.63,0-9.252-0.26-13.756-0.761 c-6.834-0.76-12.842-1.935-18.156-3.418c5.035,2.205,9.665,5.362,13.641,9.415c6.228,6.373,10.098,14.19,11.629,22.363 c3.63-0.973,7.393-1.512,11.244-1.512c11.802,0,22.834,4.64,31.084,13.073c8.116,8.298,12.525,19.272,12.4,30.882 c0,0.115-0.02,0.232-0.02,0.347c11.744,0.038,22.738,4.678,30.959,13.073c8.125,8.298,12.534,19.272,12.409,30.882 c-0.048,4.004-0.664,7.913-1.742,11.668c8.336,1.742,15.97,5.891,22.073,12.129c16.77,17.145,16.471,44.725-0.664,61.495 l-8.587,8.394c0.038,0,0.087,0,0.125,0c14.411-1.04,26.56-9.934,29.958-23.335c5.872,4.63,13.265,7.412,21.323,7.412 c19.041,0,34.482-15.431,34.482-34.482c0-2.002-0.212-3.947-0.539-5.854c6.066,5.286,13.968,8.51,22.642,8.51 c19.042,0,34.483-15.441,34.483-34.482c4.081,1.703,8.557,2.656,13.255,2.656c19.041,0,34.482-15.441,34.482-34.482 c0-14.459-7.075-23.874-23.873-43.32L359.077,205.585z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M110.72,244.419c-8.606-8.789-22.699-8.944-31.488-0.347l-31.816,31.142 c-8.789,8.597-8.943,22.69-0.346,31.479c8.597,8.789,22.69,8.943,31.48,0.336l31.825-31.132 C119.163,267.301,119.317,253.208,110.72,244.419z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M164.668,278.343c-8.597-8.799-22.69-8.953-31.48-0.347l-42.434,41.51c-8.789,8.606-8.933,22.699-0.336,31.478 c8.596,8.799,22.689,8.952,31.488,0.347l42.424-41.51C173.12,301.225,173.274,287.132,164.668,278.343z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M208.016,322.644c-8.596-8.789-22.689-8.953-31.478-0.346l-42.434,41.519 c-8.789,8.596-8.943,22.689-0.337,31.488c8.597,8.779,22.69,8.934,31.48,0.327l42.434-41.51 C216.469,345.517,216.612,331.423,208.016,322.644z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M240.756,377.323c-8.606-8.789-22.699-8.953-31.478-0.347l-24.751,24.221 c-8.789,8.596-8.943,22.689-0.346,31.478c8.596,8.789,22.699,8.934,31.488,0.347l24.75-24.22 C249.199,400.205,249.353,386.112,240.756,377.323z"
+                                        ></path>
+                                        <path
+                                            class="st0"
+                                            d="M94.798,216.501c3.35,0,6.623,0.424,9.8,1.145c-26.733-10.252-31.161-29.004-31.864-35.618 c-1.887-17.81,9.588-34.03,28.533-40.345c7.625-2.541,27.619-13.439,46.94-23.97c20.736-11.312,43.493-23.72,63.295-32.847 c-25.088-2.03-48.595-1.174-61.158,0.915c-13.507,2.252-28.601-3.148-41.51-10.098C60.171,58.5-14.916,183.039,2.595,222.191 c3.186,4.784,6.046,10.021,8.058,15.663c2.974,8.317,9.943,17.828,17.886,26.8c1.242-1.598,2.561-3.158,4.034-4.612l31.816-31.141 C72.57,220.91,83.361,216.501,94.798,216.501z"
+                                        ></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Đồng Hành</h3>
+                        <p class="text-gray-600">Luôn lắng nghe và hỗ trợ 24/7</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="stats" class="py-16 bg-flc-primary">
-        <div class="container">
-            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
-                <div>
-                    <div class="text-3xl font-bold mb-2">300,000+</div>
-                    <div class="text-xl">Giáo viên tin dùng</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">2021</div>
-                    <div class="text-xl">Năm thành lập</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">24/7</div>
-                    <div class="text-xl">Hỗ trợ khách hàng</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold mb-2">100%</div>
-                    <div class="text-xl">Cam kết chất lượng</div>
+        </section>
+        <section id="stats" class="py-16 bg-flc-primary">
+            <div class="container">
+                <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                    <div>
+                        <div class="text-3xl font-bold mb-2">300,000+</div>
+                        <div class="text-xl">Giáo viên tin dùng</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">2021</div>
+                        <div class="text-xl">Năm thành lập</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">24/7</div>
+                        <div class="text-xl">Hỗ trợ khách hàng</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">100%</div>
+                        <div class="text-xl">Cam kết chất lượng</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="CTA" class="py-16 bg-white">
-        <div class="container text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">
-                Sẵn sàng cùng FLC tạo nên cuộc cách mạng giáo dục?
-            </h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Hãy tham gia cùng hơn 300,000 giáo viên đang tin dùng FLC để
-                số hóa hoạt động giảng dạy
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center text-base">
-                <a href="#" id="register_div_1"
-                    class="bg-flc-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-flc-secondary transition-colors duration-300">Đăng
-                    ký ngay</a>
-                <a href="#"
-                    class="bg-flc-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-flc-secondary transition-colors duration-300">Liên
-                    hệ tư vấn</a>
+        <section id="CTA" class="py-16 bg-white">
+            <div class="container text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                    Sẵn sàng cùng FLC tạo nên cuộc cách mạng giáo dục?
+                </h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Hãy tham gia cùng hơn 300,000 giáo viên đang tin dùng FLC để số hóa hoạt động giảng dạy
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center text-base">
+                    <a
+                        href="#"
+                        id="register_div_1"
+                        class="bg-flc-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-flc-secondary transition-colors duration-300"
+                        >Đăng ký ngay</a
+                    >
+                    <a
+                        href="#"
+                        class="bg-flc-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-flc-secondary transition-colors duration-300"
+                        >Liên hệ tư vấn</a
+                    >
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-</body>
-
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="src/js/about-us.js"></script>
+    </body>
 </html>

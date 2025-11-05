@@ -1,19 +1,19 @@
 {
-  "singleQuote": true,
+    "singleQuote": true,
 
-  "semi": false,
+    "semi": false,
 
-  "tabWidth": 4,
+    "tabWidth": 4,
 
-  "useTabs": false,
+    "useTabs": false,
 
-  "printWidth": 80,
+    "printWidth": 120,
 
-  "trailingComma": "es5",
+    "trailingComma": "es5",
 
-  "arrowParens": "avoid",
+    "arrowParens": "avoid",
 
-  "bracketSameLine": false,
+    "bracketSameLine": false,
 
-  "endOfLine": "lf"
+    "endOfLine": "lf"
 }
