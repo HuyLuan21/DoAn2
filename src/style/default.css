@@ -639,7 +639,6 @@ h6 {
 }
 .text_center {
     text-align: center;
-    width: 44.8rem;
     h3 {
         font-size: 1.6rem;
         font-weight: 700;
@@ -1107,6 +1106,9 @@ h6 {
     .header__login {
         display: none;
     }
+    .why-choose-us__grid {
+        grid-template-columns: inherit;
+    }
 }
 @keyframes slideDown {
     from {
@@ -1121,9 +1123,9 @@ h6 {
 }
 
 @media (max-width: 480px) {
-    .section__container {
+    /* .section__container {
         width: 480px;
-    }
+    } */
     .header__container {
         flex-direction: column;
         align-items: flex-start;
