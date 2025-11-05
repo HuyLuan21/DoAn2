@@ -65,16 +65,64 @@ input[type=password] {
 
 .btn-primary {
     width: 100%;
-    background-color: blue;
+    background-color: rgb(6, 160, 232);
     color: white;
     padding: 14px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 16px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin: 20px 0 20px 0;
+    font-size: 16px;
 }
 
 .btn-primary:hover {
-    background-color: darkblue;
+       background-color: rgb(21, 138, 193);
+    color: black
 }
 
+.btn-sign-in {
+    display: flex;
+    justify-content: center;
+}
+.btn-social{
+    width: 50px;
+    height:50px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 16px;
+    color: white;
+}
+.btn-facebook {
+    background-color: #3b5998;
+}
+.btn-google {
+    background-color: #db4437;
+}
+.btn-twitter {
+    background-color: #1da1f2;
+}
+.btn-sign-in .btn-social:hover {
+    opacity: 0.8;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.or-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #555;
+}
+
+.or-text::before,
+.or-text::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
