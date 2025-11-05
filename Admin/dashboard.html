@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../src/style/dashbroad.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">
+                <i class="fas fa-home"></i>
+                <span class="header__logo-text">Dashboard</span>
+            </a>
+            <div class="header__search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search..." class="header__search-input">
+            </div>
+            <div class="header__actions">
+                <button class="header__icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="header__user">
+                    <div class="header__user-avatar">
+
+                    </div>
+                    <span class="header__user-name">Jane Doe</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="sidebar__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="sidebar__nav">
+                <a href="#" class="sidebar__nav-item active" data-view="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="students">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="classes">
+                    <i class="fas fa-book"></i>
+                    <span>Classes</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="teachers">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Teachers</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="courses">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="attendance">
+                    <i class="fas fa-check-square"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="payments">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Payments</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="reports">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="sidebar__nav-item" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Dashboard View -->
+            <div class="view-content" id="view-dashboard">
+                <h1 class="main__title">Dashboard</h1>
+
+                <!-- Summary Cards -->
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__icon card__icon--blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Total Students</h3>
+                            <p class="card__value">2,500</p>
+                            <p class="card__trend card__trend--up">
+                                <i class="fas fa-arrow-up"></i> 5% increase
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon card__icon--blue">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Total Classes</h3>
+                            <p class="card__value">120</p>
+                            <p class="card__trend card__trend--up">
+                                <i class="fas fa-arrow-up"></i> 10% increase
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon card__icon--blue">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Revenue This Month</h3>
+                            <p class="card__value">$15,000</p>
+                            <p class="card__trend card__trend--up">
+                                <i class="fas fa-arrow-up"></i> 8% increase
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Charts and Activities Row -->
+                <div class="grid">
+                    <!-- Attendance Overview -->
+                    <div class="widget">
+                        <h2 class="widget__title">Attendance Overview</h2>
+                        <div class="chart">
+                            <div class="chart__bars">
+                                <div class="chart__bar" style="height: 20%"></div>
+                                <div class="chart__bar" style="height: 40%"></div>
+                                <div class="chart__bar" style="height: 30%"></div>
+                                <div class="chart__bar" style="height: 50%"></div>
+                                <div class="chart__bar" style="height: 70%"></div>
+                                <div class="chart__bar" style="height: 90%"></div>
+                                <div class="chart__bar" style="height: 60%"></div>
+                            </div>
+                            <div class="chart__labels">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recent Activities -->
+                    <div class="widget">
+                        <h2 class="widget__title">Recent Activities</h2>
+                        <ul class="activities">
+                            <li class="activities__item">
+                                John Doe enrolled in English B1
+                            </li>
+                            <li class="activities__item">
+                                Payment received from Sarah Lee ($120)
+                            </li>
+                            <li class="activities__item">
+                                New class "Physic 1011" created
+                            </li>
+                            <li class="activities__item">
+                                Teacher Mark Johnson added
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Upcoming Classes -->
+                <div class="widget widget--full">
+                    <h2 class="widget__title">Upcoming Classes</h2>
+                    <div class="classes">
+                        <div class="classes__item">
+                            <div class="classes__time">10:00 AM</div>
+                            <div class="classes__info">
+                                <h3 class="classes__name">Grade 5</h3>
+                                <p class="classes__subject">Math Grade 5</p>
+                                <p class="classes__teacher">Teacher Mr. Smith</p>
+                            </div>
+                        </div>
+                        <div class="classes__item">
+                            <div class="classes__time">11:30 AM</div>
+                            <div class="classes__info">
+                                <h3 class="classes__name">Grade 6</h3>
+                                <p class="classes__subject">Science Grade 6</p>
+                                <p class="classes__teacher">Teacher Mrs. Johnson</p>
+                            </div>
+                        </div>
+                        <div class="classes__item">
+                            <div class="classes__time">2:00 PM</div>
+                            <div class="classes__info">
+                                <h3 class="classes__name">Grade 7</h3>
+                                <p class="classes__subject">English Grade 7</p>
+                                <p class="classes__teacher">Teacher Ms. Williams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class Management View -->
+            <div class="view-content" id="view-classes" style="display: none;">
+                <div class="class-management">
+                    <div class="class-management__header">
+                        <div>
+                            <h1 class="main__title">Class Management</h1>
+                            <p class="class-management__description">Manage class information, schedules, student
+                                groups, and assigned teachers.</p>
+                        </div>
+                        <button class="btn btn--primary">
+                            <i class="fas fa-plus"></i>
+                            Create New Class
+                        </button>
+                    </div>
+
+                    <!-- Filter + Search Bar -->
+                    <div class="class-management__filters">
+                        <div class="filter-search">
+                            <i class="fas fa-search filter-search__icon"></i>
+                            <input type="text" class="filter-search__input" placeholder="Search by name, teacher...">
+                        </div>
+                        <select class="filter-select">
+                            <option>Time Slot</option>
+                            <option>Morning</option>
+                            <option>Afternoon</option>
+                            <option>Evening</option>
+                        </select>
+                        <button class="btn btn--secondary">Clear Filters</button>
+                    </div>
+
+                    <!-- Class List Table -->
+                    <div class="class-table-container">
+                        <table class="class-table">
+                            <thead>
+                                <tr>
+                                    <th>Class Name</th>
+                                    <th>Schedule Information</th>
+                                    <th>Status</th>
+                                    <th>Students</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="class-table__row" data-class-id="1">
+                                    <td>Math B1</td>
+                                    <td>Mon/Wed/Fri - 18:00-20:00</td>
+                                    <td>
+                                        <span class="badge badge--upcoming">Upcoming</span>
+                                    </td>
+                                    <td>25</td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="class-table__row" data-class-id="2">
+                                    <td>English B2</td>
+                                    <td>Tue/Thu - 14:00-16:00</td>
+                                    <td>
+                                        <span class="badge badge--active">Active</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="class-table__row" data-class-id="3">
+                                    <td>Science A1</td>
+                                    <td>Mon/Wed/Fri - 10:00-12:00</td>
+                                    <td>
+                                        <span class="badge badge--active">Active</span>
+                                    </td>
+                                    <td>28</td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="class-table__row" data-class-id="4">
+                                    <td>Math B2</td>
+                                    <td>Sat/Sun - 09:00-11:00</td>
+                                    <td>
+                                        <span class="badge badge--completed">Completed</span>
+                                    </td>
+                                    <td>22</td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <div class="pagination__info">
+                                <span>Rows per page: 10</span>
+                            </div>
+                            <div class="pagination__controls">
+                                <button class="pagination__btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="pagination__pages">
+                                    <button class="pagination__page">1</button>
+                                    <button class="pagination__page">2</button>
+                                    <button class="pagination__page pagination__page--active">3</button>
+                                    <span class="pagination__ellipsis">...</span>
+                                    <button class="pagination__page">10</button>
+                                </span>
+                                <button class="pagination__btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="pagination__total">
+                                <span>Total 85 classes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Detail Panel -->
+                <div class="class-detail-panel" id="classDetailPanel" style="display: none;">
+                    <button class="class-detail-panel__close" id="closeDetailPanel">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="class-detail-panel__header">
+                        <div class="class-detail-panel__avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h2 class="class-detail-panel__title">Class: Math B1</h2>
+                            <p class="class-detail-panel__code">Class Code: M8101</p>
+                        </div>
+                    </div>
+                    <div class="class-detail-panel__badge">
+                        <span class="badge badge--upcoming">Upcoming</span>
+                    </div>
+
+                    <div class="class-detail-panel__section">
+                        <h3 class="class-detail-panel__section-title">Student Summary</h3>
+                        <p class="class-detail-panel__section-label">Total Students</p>
+                        <div class="class-detail-panel__avatars">
+                            <div class="avatar-small"></div>
+                            <div class="avatar-small"></div>
+                            <div class="avatar-small"></div>
+                            <div class="avatar-small"></div>
+                            <div class="avatar-small"></div>
+                            <span class="avatar-count">+20</span>
+                        </div>
+                    </div>
+
+                    <div class="class-detail-panel__section">
+                        <h3 class="class-detail-panel__section-title">
+                            <i class="fas fa-calendar"></i>
+                            Schedule Information
+                        </h3>
+                        <p class="class-detail-panel__section-text">Total Students 25</p>
+                    </div>
+
+                    <div class="class-detail-panel__section">
+                        <h3 class="class-detail-panel__section-title">
+                            <i class="fas fa-calendar-check"></i>
+                            Attendance & Progress
+                        </h3>
+                        <p class="class-detail-panel__section-text">75% Completion</p>
+                    </div>
+
+                    <div class="class-detail-panel__actions">
+                        <button class="btn btn--secondary">Action Buttons</button>
+                        <button class="btn btn--danger">Delete Class</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Views (Placeholders) -->
+            <div class="view-content" id="view-students" style="display: none;">
+                <h1 class="main__title">Students</h1>
+                <p>Student management content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-teachers" style="display: none;">
+                <h1 class="main__title">Teachers</h1>
+                <p>Teacher management content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-courses" style="display: none;">
+                <h1 class="main__title">Courses</h1>
+                <p>Course management content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-attendance" style="display: none;">
+                <h1 class="main__title">Attendance</h1>
+                <p>Attendance management content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-payments" style="display: none;">
+                <h1 class="main__title">Payments</h1>
+                <p>Payment management content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-reports" style="display: none;">
+                <h1 class="main__title">Reports</h1>
+                <p>Reports content will be here...</p>
+            </div>
+
+            <div class="view-content" id="view-settings" style="display: none;">
+                <h1 class="main__title">Settings</h1>
+                <p>Settings content will be here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/dashbroad.js"></script>
+</body>
+
+</html>
