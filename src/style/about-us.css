@@ -85,6 +85,9 @@ html {
     margin-bottom: 6.4rem;
 }
 
+.mt-0 {
+    margin-top: 0;
+}
 .mt-1 {
     margin-top: 0.4rem;
 } /* 4px */
@@ -583,6 +586,16 @@ p {
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }
 
 :root {
@@ -738,6 +751,8 @@ a {
     width: 32rem;
     max-width: 85vw;
     background: #fff;
+    font-size: 1.5rem;
+    color: #374151;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -752,17 +767,85 @@ a {
     padding: 2.4rem;
     background-color: #ffffff;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .header__container-mobile-header button {
     background: none;
     border: none;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: #404040;
     cursor: pointer;
 }
 
+.header__container-mobile-link {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+}
+
+.header__container-mobile-link a {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.8rem 0;
+    margin-top: 2.4rem;
+}
+
+.header__container-mobile-link > a:first-child {
+    margin-top: 0;
+}
+
+.header__container-mobile-link-product {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header__container-mobile-link-product a {
+    border: none;
+}
+
+#mobile-product-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.8rem 0;
+}
+
+#mobile-product-toggle i {
+    transition: transform 0.3s ease;
+}
+
+#mobile-product-submenu {
+    display: none;
+    margin-top: 0.8rem;
+    padding-left: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+#mobile-product-submenu.active {
+    display: block;
+}
+
+#mobile-product-toggle.active i {
+    transform: rotate(180deg);
+}
+
+#mobile-product-submenu li {
+    margin-top: 1.2rem;
+    padding: 0.4rem 0;
+    color: #4b5563;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.header__container-mobile-link .mobile-navbar-login {
+    border-radius: 9999px;
+    background-color: #004aad;
+    color: #ffffff;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 12px 24px;
+}
 /* ------- section about ---------- */
 section#about {
     background: linear-gradient(to bottom right, #004aad, #1e40af);
