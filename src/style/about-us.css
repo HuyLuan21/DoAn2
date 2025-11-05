@@ -603,6 +603,11 @@ li {
     --primary-color: #004aad;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .header {
     background: #fff;
     position: sticky;
