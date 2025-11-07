@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dangNhap.css">
+    <link rel="stylesheet" href="./src/style/sign-in.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Sign In & Create Account</title>
 </head>
 
@@ -26,22 +27,30 @@
                         <button type="button" class="password-toggle" onclick="togglePassword()">
                         </button>
                     </div>
-                    <div class="forgot-password">
-                        <a href="#">Forgot password</a>
+                    <div class="options">
+                        <div class="forgot-password">
+                            <a href="#">Forgot password</a>
+                        </div>
+                        <div class="Register">
+                            <a href="#">Register</a>
+                        </div>
                     </div>
                 </div>
 
                 <button type="submit" class="btn-primary">Sign in</button>
             </form>
-
-            <button class="btn-facebook btn-primary">
-                <span class="facebook-icon">f</span>
-                Continue with Facebook
-            </button>
-            <button class="btn-google btn-primary">
-                <span class="google-icon">G</span>
-                Continue with Google
-            </button>
+            <p class="or-text">Or sign in with</p>
+            <div class="btn-sign-in">
+                <button class="btn-facebook btn-social">
+                    <span class="facebook-icon"><i class="fab fa-facebook-f"></i></span>
+                </button>
+                <button class="btn-google btn-social">
+                    <span class="google-icon"><i class="fab fa-google"></i></span>
+                </button>
+                <button class="btn-twitter btn-social">
+                    <span class="twitter-icon"><i class="fab fa-twitter"></i></span>
+                </button>
+            </div>
         </div>
 
     </div>
