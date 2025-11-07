@@ -1,796 +1,1079 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+        <link rel="stylesheet" href="src/style/default.css" />
+        <link rel="icon" type="image/svg+xml" href="\static\ico\graduation-cap-solid-full.svg" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Forigen langues center - FLC</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="src/style/default.css">
-    <link rel="icon" type="image/svg+xml" href="\static\ico\graduation-cap-solid-full.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <Script src="src/js/default.js"></Script>
-    <title>Forigen langues center - FLC</title>
-</head>
+    <body>
+        <header class="header">
+            <div class="header__container">
+                <a href="/index.html" class="header__logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="header__logo-text">FLC</span>
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="about-us.html" class="header__nav-link"
+                                ><span class="header__nav-link-text">Về chúng tôi</span></a
+                            >
+                        </li>
+                        <li class="header__nav-item dropdown__item">
+                            <a href="" class="header__nav-link">
+                                <span class="header__nav-link-text"
+                                    >Sản phẩm
+                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li>Thi - Kiểm tra online</li>
+                                            <li>Trộn đề - Chấm phiếu offline</li>
+                                            <li>Ngân hàng câu hỏi</li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="" class="header__nav-link"><span class="header__nav-link-text">Báo giá</span></a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="" class="header__nav-link"><span class="header__nav-link-text">Hướng dẫn</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__login">
+                    <a href="sign-in.html">ĐĂNG NHẬP</a>
+                </button>
 
-<body>
-    <header class="header">
-        <div class="header__container">
-            <a href="#" class="header__logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="header__logo-text">FLC</span>
-            </a>
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="about-us.html" class="header__nav-link"><span
-                                class="header__nav-link-text">Về chúng tôi</span></a></li>
-                    <li class="header__nav-item dropdown__item"><a href="#" class="header__nav-link">
-                            <span class="header__nav-link-text">Sản phẩm
-                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li>Thi - Kiểm tra online</li>
-                                        <li>Trộn đề - Chấm phiếu offline</li>
-                                        <li>Ngân hàng câu hỏi</li>
-                                    </ul>
-                                </div>
-                            </span>
+                <button id="mobile-menu-btn">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        data-lucide="menu"
+                        class="lucide lucide-menu w-6 h-6 text-gray-700"
+                    >
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!------------- mobile nav bar ----------------------------->
+            <div class="header__container-mobile">
+                <div class="header__container-mobile-backdrop"></div>
+                <div class="header__container-mobile-panel">
+                    <div class="header__container-mobile-header">
+                        <a href="#" class="header__logo">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="header__logo-text">FLC</span>
                         </a>
-                    </li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link"><span
-                                class="header__nav-link-text">Báo giá</span></a></li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link"><span
-                                class="header__nav-link-text"></span>Hướng dẫn</span></a></li>
-                </ul>
-            </nav>
-            <button class="header__toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <button class="header__login">ĐĂNG NHẬP</button>
-        </div>
-    </header>
-    <section id="about">
-        <div class="section__container">
-            <div class="grid">
-                <!-- left content -->
-                <div class="grid__content">
-                    <!-- item -->
-                    <div class="content__item">
-                        <div class="content__item-image">
-                            <div class="original_image">
-                                <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/makeinvietnam.png"
-                                    alt="make in vietnam">
-                                <span class="original_image-text">Make in vietnam</span>
-                            </div>
-                            <div class="trusted_image">
-                                <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/top50edtech.png"
-                                    alt="top 50 edtech">
-                                <div class="trusted_image-text">
-                                    <div>Top 50 edtech asia</div>
-                                    <div class="trusted_image-text-uppercase">
-                                        <span>DO HOLON BÌNH CHỌN NĂM 2022</span>
-                                    </div>
-                                </div>
+                        <button id="mobile-menu-close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="header__container-mobile-link">
+                        <a href="about-us.html" class="header__nav-link-mobile mt-0">Về chúng tôi</a>
+                        <div class="header__container-mobile-link-product">
+                            <a href="#" id="mobile-product-toggle" class="header__nav-link-mobile"
+                                >Sản phẩm
+                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div id="mobile-product-submenu">
+                                <ul>
+                                    <li>Thi - Kiểm tra online</li>
+                                    <li>Trộn đề - Chấm phiếu offline</li>
+                                    <li>Ngân hàng câu hỏi</li>
+                                </ul>
                             </div>
                         </div>
-                        <!-- heading -->
-                        <div class="content__heading">
-                            <h1 class="content__heading-title">
-                                Nền Tảng Kiểm Tra Đánh Giá Toàn Diện
-                                Được Tin Dùng Bởi Phần Lớn Giáo Viên
-                            </h1>
-                            <!-- subtitle -->
-                            <p class="content__subtitle">Nâng cao chất lượng kiểm tra, đánh giá, trải nghiệm
-                                Giảng dạy và Học tập cùng AI</p>
-                        </div>
-                        <!-- feature list -->
-                        <div class="content__feature">
-                            <div class="content__feature-item">
-                                <div class="content__feature-item-icon">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="check-circle">
-                                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                                        <path d="m9 11 3 3L22 4"></path>
-                                    </svg>
-                                </div>
-                                <div class="content__feature-item-text">
-                                    <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
-                                    <p>Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác, đa
-                                        dạng mẫu phiếu tô trắc nghiệm</p>
-                                </div>
-                            </div>
-                            <div class="content__feature-item">
-                                <div class="content__feature-item-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="file-bar-chart">
-                                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                        <path d="M8 18v-2"></path>
-                                        <path d="M12 18v-4"></path>
-                                        <path d="M16 18v-6"></path>
-                                    </svg>
-
-                                </div>
-                                <div class="content__feature-item-text">
-                                    <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
-                                    <p>Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác, đa
-                                        dạng mẫu phiếu tô trắc nghiệm</p>
-                                </div>
-                            </div>
-                            <div class="content__feature-item">
-                                <div class="content__feature-item-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="graduation-cap">
-                                        <path
-                                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
-                                        </path>
-                                        <path d="M22 10v6"></path>
-                                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                                    </svg>
-                                </div>
-                                <div class="content__feature-item-text">
-                                    <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
-                                    <p>Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác, đa
-                                        dạng mẫu phiếu tô trắc nghiệm</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- button -->
-                    <div class="content__button">
-                        <button id="login" class="content__button-item"><a href="sign-in.html">ĐĂNG NHẬP</a></button>
-                        <button id="register" class="content__button-item"><a href="sign-in.html">ĐĂNG KÝ</a></button>
-                    </div>
-                    <!-- right image-->
-                </div>
-                <div class="grid__img">
-                    <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/about.png"
-                        alt="about">
-                </div>
-            </div>
-    </section>
-    <section class="section" id="actor">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Phù Hợp Cho Mọi Đối Tượng</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
+                        <a href="#" class="header__nav-link-mobile">Báo giá</a>
+                        <a href="#" class="header__nav-link-mobile">Hướng dẫn</a>
+                        <a href="sign-in.html" class="mobile-navbar-login">ĐĂNG NHẬP</a>
                     </div>
                 </div>
             </div>
-            <div class="actor_grid">
-                <div class="actor_grid__item">
-                    <div class="actor_grid__item-image">
-                        <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_1.png"
-                            alt="Giáo viên cá nhân">
-                    </div>
-                    <h3>Giáo viên cá nhân</h3>
-                    <div class="actor_grid__item-text">
-                        <p>- Giao bài, chấm điểm tự động, theo dõi tiến độ học sinh chuyên nghiệp.</p>
-                        <p>- Tiết kiệm thời gian giao bài và chấm bài.</p>
-                        <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
-                    </div>
+        </header>
 
-                </div>
-                <div class="actor_grid__item">
-                    <div class="actor_grid__item-image">
-                        <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_2.png"
-                            alt="Giáo viên cá nhân">
-                    </div>
-                    <h3>Giáo Viên</h3>
-                    <div class="actor_grid__item-text">
-                        <p>- Giao bài tập online, kiểm tra định kỳ, chấm điểm nhanh – phù hợp luyện 4 kỹ năng.</p>
-                        <p>- Theo dõi tiến độ học viên, thống kê kết quả theo lớp/khóa.</p>
-                        <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
-                    </div>
-
-                </div>
-                <div class="actor_grid__item">
-                    <div class="actor_grid__item-image">
-                        <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_3.png"
-                            alt="Giáo viên cá nhân">
-                    </div>
-                    <h3>Giáo Viên</h3>
-                    <div class="actor_grid__item-text">
-                        <p>- Tổ chức kiểm tra, thi thử đồng loạt, chấm điểm tự động, thống kê kết quả toàn trường.</p>
-                        <p>- Quản lý học sinh, giáo viên, dữ liệu điểm số tập trung – hỗ trợ báo cáo nhanh và chính xác.
-                        </p>
-                        <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
-                    </div>
-
-                </div>
-                <div class="actor_grid__item">
-                    <div class="actor_grid__item-image">
-                        <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_4.png"
-                            alt="Giáo viên cá nhân">
-                    </div>
-                    <h3>Giáo Viên</h3>
-                    <div class="actor_grid__item-text">
-                        <p>- Giao bài tập online, kiểm tra định kỳ, chấm điểm nhanh – phù hợp luyện 4 kỹ năng.</p>
-                        <p>- Theo dõi tiến độ học viên, thống kê kết quả theo lớp/khóa.</p>
-                        <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
-                    </div>
-                </div>
-                <div class="actor_grid__item">
-                    <div class="actor_grid__item-image">
-                        <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_5.png"
-                            alt="Giáo viên cá nhân">
-                    </div>
-                    <h3>Giáo Viên</h3>
-                    <div class="actor_grid__item-text">
-                        <p>- Tạo bài kiểm tra, đánh giá kỹ năng, nhận thức nhân viên sau đào tạo.</p>
-                        <p>- Quản lý học viên theo phòng ban, theo dõi tiến độ học – tiết kiệm thời gian, chuyên nghiệp
-                            hóa quy trình. </p>
-                        <p>- Xây dựng khoá học, gắn nội dung theo phòng ban, xuất báo cáo hiệu quả đào tạo nhân sự.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="trust">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Hơn 9000 Trường và Sở Giáo Dục đã tin tưởng lựa chọn Azota</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- carousel container -->
-            <div class="carousel">
-                <div class="carousel__wrapper">
-                    <div class="carousel__item_list">
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_quang_dieu.png"
-                                alt="Trường 14">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang.png"
-                                alt="Trường 1">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_trai.png"
-                                alt="Trường 2">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang.png"
-                                alt="Trường 1">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_trai.png"
-                                alt="Trường 2">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/tran_thi_dung.png"
-                                alt="Trường 3">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/minh_tan.png"
-                                alt="Trường 4">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/ninh_thuan.png"
-                                alt="Trường 5">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_binh_khiem.png"
-                                alt="Trường 6">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang_2.png"
-                                alt="Trường 7">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/quang_trung.png"
-                                alt="Trường 8">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_cong_tru.png"
-                                alt="Trường 9">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/mai_son.png"
-                                alt="Trường 10">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/thach_khoi.jpg"
-                                alt="Trường 13">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_quang_dieu.png"
-                                alt="Trường 14">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/luong_van_chanh.png"
-                                alt="Trường 15">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hoa_lac.png"
-                                alt="Trường 16">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/greenfield_school.png"
-                                alt="Trường 17">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/long_hung.png"
-                                alt="Trường 18">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/giap_hai.png"
-                                alt="Trường 19">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hoa_sen.png"
-                                alt="Trường 20">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bau_bang.png"
-                                alt="Trường 21">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/thuy_nguyen.png"
-                                alt="Trường 22">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/viet_anh.png"
-                                alt="Trường 23">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/van_ban.png"
-                                alt="Trường 24">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/dong_hieu.png"
-                                alt="Trường 25">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/yen_thanh.png"
-                                alt="Trường 26">
-                        </div>
-                        <div class="carousel__item">
-                            <img src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hong_bang.png"
-                                alt="Trường 27">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <section id="testing">
-
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Kiểm tra Online và Offline</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
-                    </div>
-                </div>
-                <p>
-                    <span>Tạo đề kiểm tra trắc nghiệm hoặc tự luận nhanh chóng, có thể tạo từ Ngân hàng câu
-                        hỏi.</span><br>
-                    <span>Giao bài trực tiếp đến từng học sinh hoặc nhóm học sinh tự động thống kê kết quả.</span>
-                </p>
-            </div>
-            <div class="grid">
-                <!-- left dynamic content -->
-                <div id="dynamic_content_1" class="dynamic_content">
-                    <div class="content__wrapper">
-                        <div class="content_item hidden" data-index="0"
-                            style=" transform: translateY(0px); position: relative; z-index: -1;">
-                            <div class="flex_container">
-                                <div class="left_content">
-                                    <div class="drag_zone">
-                                        <div id="upload" class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                data-lucide="cloud-upload"
-                                                class="lucide lucide-cloud-upload w-16 h-16 text-gray-400 mx-auto">
-                                                <path d="M12 13v8"></path>
-                                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242">
-                                                </path>
-                                                <path d="m8 17 4-4 4 4"></path>
-                                            </svg>
-                                        </div>
-                                        <p class="text-gray-500 text-sm">Nhận diện các định dạng đề thi trắc nghiệm, tự
-                                            luận, các công thức toán học, hoá, vật lý, ngoại ngữ chính xác. Hỗ trợ đầy
-                                            đủ các file docx, pdf, ảnh, excel, latex,...</p>
-                                    </div>
+        <section id="about">
+            <div class="section__container">
+                <div class="grid">
+                    <!-- left content -->
+                    <div class="grid__content">
+                        <!-- item -->
+                        <div class="content__item">
+                            <div class="content__item-image">
+                                <div class="original_image">
+                                    <img
+                                        src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/makeinvietnam.png"
+                                        alt="make in vietnam"
+                                    />
+                                    <span class="original_image-text">Make in vietnam</span>
                                 </div>
-                                <div class="right_content">
-                                    <div class="right_content_item">
-                                        <div class="item" id="docx">
-                                            <span>DOCX</span>
-                                        </div>
-                                    </div>
-                                    <div class="right_content_item">
-                                        <div class="item" id="pdf">
-                                            <span>PDF</span>
-                                        </div>
-                                    </div>
-                                    <div class="right_content_item">
-                                        <div class="item" id="excel">
-                                            <span>EXCEL</span>
-                                        </div>
-                                    </div>
-                                    <div class="right_content_item">
-                                        <div class="item" id="image">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" data-lucide="image">
-                                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                                                <circle cx="9" cy="9" r="2"></circle>
-                                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
-                                            </svg>
+                                <div class="trusted_image">
+                                    <img
+                                        src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/top50edtech.png"
+                                        alt="top 50 edtech"
+                                    />
+                                    <div class="trusted_image-text">
+                                        <div>Top 50 edtech asia</div>
+                                        <div class="trusted_image-text-uppercase">
+                                            <span>DO HOLON BÌNH CHỌN NĂM 2022</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="content_item hidden" data-index="1">
-                            <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="cloud_upload" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="cloud">
-                                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                            <!-- heading -->
+                            <div class="content__heading">
+                                <h1 class="content__heading-title">
+                                    Nền Tảng Kiểm Tra Đánh Giá Toàn Diện Được Tin Dùng Bởi Phần Lớn Giáo Viên
+                                </h1>
+                                <!-- subtitle -->
+                                <p class="content__subtitle">
+                                    Nâng cao chất lượng kiểm tra, đánh giá, trải nghiệm Giảng dạy và Học tập cùng AI
+                                </p>
+                            </div>
+                            <!-- feature list -->
+                            <div class="content__feature">
+                                <div class="content__feature-item">
+                                    <div class="content__feature-item-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="check-circle"
+                                        >
+                                            <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                            <path d="m9 11 3 3L22 4"></path>
                                         </svg>
                                     </div>
-                                    <h3>Hạ tầng cao, thi online đồng thời số lượng lớn</h3>
-                                    <p>FLC được xây dựng trên nền tảng công nghệ cao, hạ tầng lớn thi đồng thời hơn
-                                        300.000 học sinh cùng lúc, đảm bảo an
-                                        toàn, bảo mật.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="0">99.9%</div>
-                                            <div class="text-gray-600">Thời gian hoạt động</div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="0">300K+</div>
-                                            <div class="text-gray-600">Người dùng đồng thời</div>
-                                        </div>
+                                    <div class="content__feature-item-text">
+                                        <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
+                                        <p>
+                                            Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác,
+                                            đa dạng mẫu phiếu tô trắc nghiệm
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-
-                        </div>
-                        <div class="content_item hidden" data-index="2">
-                            <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="shield_check" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check">
+                                <div class="content__feature-item">
+                                    <div class="content__feature-item-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="file-bar-chart"
+                                        >
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                            <path d="M8 18v-2"></path>
+                                            <path d="M12 18v-4"></path>
+                                            <path d="M16 18v-6"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="content__feature-item-text">
+                                        <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
+                                        <p>
+                                            Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác,
+                                            đa dạng mẫu phiếu tô trắc nghiệm
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="content__feature-item">
+                                    <div class="content__feature-item-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="graduation-cap"
+                                        >
                                             <path
-                                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                                            </path>
-                                            <path d="m9 12 2 2 4-4"></path>
+                                                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+                                            ></path>
+                                            <path d="M22 10v6"></path>
+                                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                                         </svg>
                                     </div>
-                                    <h3>Giám sát nâng cao, phân quyền chi tiết</h3>
-                                    <p>FLC hỗ trợ đa dạng các tính năng giám sát khi kiểm tra, thi online, theo dõi lịch
-                                        sử làm bài, phát hiện gian lận bằng công
-                                        nghệ AI.</p>
+                                    <div class="content__feature-item-text">
+                                        <h3>Kiểm tra Online và Offline dễ dàng, chính xác</h3>
+                                        <p>
+                                            Mô phỏng các dạng đề thi mới nhất hiện hành, số hoá nhanh chóng chính xác,
+                                            đa dạng mẫu phiếu tô trắc nghiệm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- button -->
+                        <div class="content__button">
+                            <button id="login" class="content__button-item">
+                                <a href="sign-in.html">ĐĂNG NHẬP</a>
+                            </button>
+                            <button id="register" class="content__button-item">
+                                <a href="sign-in.html">ĐĂNG KÝ</a>
+                            </button>
+                        </div>
+                        <!-- right image-->
+                    </div>
+                    <div class="grid__img">
+                        <img
+                            src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/about.png"
+                            alt="about"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="actor">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Phù Hợp Cho Mọi Đối Tượng</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actor_grid">
+                    <div class="actor_grid__item">
+                        <div class="actor_grid__item-image">
+                            <img
+                                src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_1.png"
+                                alt="Giáo viên cá nhân"
+                            />
+                        </div>
+                        <h3>Giáo viên cá nhân</h3>
+                        <div class="actor_grid__item-text">
+                            <p>- Giao bài, chấm điểm tự động, theo dõi tiến độ học sinh chuyên nghiệp.</p>
+                            <p>- Tiết kiệm thời gian giao bài và chấm bài.</p>
+                            <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
+                        </div>
+                    </div>
+                    <div class="actor_grid__item">
+                        <div class="actor_grid__item-image">
+                            <img
+                                src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_2.png"
+                                alt="Giáo viên cá nhân"
+                            />
+                        </div>
+                        <h3>Giáo Viên</h3>
+                        <div class="actor_grid__item-text">
+                            <p>- Giao bài tập online, kiểm tra định kỳ, chấm điểm nhanh – phù hợp luyện 4 kỹ năng.</p>
+                            <p>- Theo dõi tiến độ học viên, thống kê kết quả theo lớp/khóa.</p>
+                            <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
+                        </div>
+                    </div>
+                    <div class="actor_grid__item">
+                        <div class="actor_grid__item-image">
+                            <img
+                                src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_3.png"
+                                alt="Giáo viên cá nhân"
+                            />
+                        </div>
+                        <h3>Giáo Viên</h3>
+                        <div class="actor_grid__item-text">
+                            <p>
+                                - Tổ chức kiểm tra, thi thử đồng loạt, chấm điểm tự động, thống kê kết quả toàn trường.
+                            </p>
+                            <p>
+                                - Quản lý học sinh, giáo viên, dữ liệu điểm số tập trung – hỗ trợ báo cáo nhanh và chính
+                                xác.
+                            </p>
+                            <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
+                        </div>
+                    </div>
+                    <div class="actor_grid__item">
+                        <div class="actor_grid__item-image">
+                            <img
+                                src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_4.png"
+                                alt="Giáo viên cá nhân"
+                            />
+                        </div>
+                        <h3>Giáo Viên</h3>
+                        <div class="actor_grid__item-text">
+                            <p>- Giao bài tập online, kiểm tra định kỳ, chấm điểm nhanh – phù hợp luyện 4 kỹ năng.</p>
+                            <p>- Theo dõi tiến độ học viên, thống kê kết quả theo lớp/khóa.</p>
+                            <p>- Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.</p>
+                        </div>
+                    </div>
+                    <div class="actor_grid__item">
+                        <div class="actor_grid__item-image">
+                            <img
+                                src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/actor_5.png"
+                                alt="Giáo viên cá nhân"
+                            />
+                        </div>
+                        <h3>Giáo Viên</h3>
+                        <div class="actor_grid__item-text">
+                            <p>- Tạo bài kiểm tra, đánh giá kỹ năng, nhận thức nhân viên sau đào tạo.</p>
+                            <p>
+                                - Quản lý học viên theo phòng ban, theo dõi tiến độ học – tiết kiệm thời gian, chuyên
+                                nghiệp hóa quy trình.
+                            </p>
+                            <p>
+                                - Xây dựng khoá học, gắn nội dung theo phòng ban, xuất báo cáo hiệu quả đào tạo nhân sự.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="trust">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Hơn 9000 Trường và Sở Giáo Dục đã tin tưởng lựa chọn Azota</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- carousel container -->
+                <div class="carousel">
+                    <div class="carousel__wrapper">
+                        <div class="carousel__item_list">
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_quang_dieu.png"
+                                    alt="Trường 14"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang.png"
+                                    alt="Trường 1"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_trai.png"
+                                    alt="Trường 2"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang.png"
+                                    alt="Trường 1"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_trai.png"
+                                    alt="Trường 2"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/tran_thi_dung.png"
+                                    alt="Trường 3"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/minh_tan.png"
+                                    alt="Trường 4"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/ninh_thuan.png"
+                                    alt="Trường 5"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_binh_khiem.png"
+                                    alt="Trường 6"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bao_thang_2.png"
+                                    alt="Trường 7"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/quang_trung.png"
+                                    alt="Trường 8"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_cong_tru.png"
+                                    alt="Trường 9"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/mai_son.png"
+                                    alt="Trường 10"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/thach_khoi.jpg"
+                                    alt="Trường 13"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/nguyen_quang_dieu.png"
+                                    alt="Trường 14"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/luong_van_chanh.png"
+                                    alt="Trường 15"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hoa_lac.png"
+                                    alt="Trường 16"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/greenfield_school.png"
+                                    alt="Trường 17"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/long_hung.png"
+                                    alt="Trường 18"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/giap_hai.png"
+                                    alt="Trường 19"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hoa_sen.png"
+                                    alt="Trường 20"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/bau_bang.png"
+                                    alt="Trường 21"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/thuy_nguyen.png"
+                                    alt="Trường 22"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/viet_anh.png"
+                                    alt="Trường 23"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/van_ban.png"
+                                    alt="Trường 24"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/dong_hieu.png"
+                                    alt="Trường 25"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/yen_thanh.png"
+                                    alt="Trường 26"
+                                />
+                            </div>
+                            <div class="carousel__item">
+                                <img
+                                    src="https://239114911.e.cdneverest.net/cdnazota/azt-assets/core-mod-assets/assets-landing-page/images/schools/hong_bang.png"
+                                    alt="Trường 27"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testing">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Kiểm tra Online và Offline</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
+                        </div>
+                    </div>
+                    <p>
+                        <span
+                            >Tạo đề kiểm tra trắc nghiệm hoặc tự luận nhanh chóng, có thể tạo từ Ngân hàng câu
+                            hỏi.</span
+                        ><br />
+                        <span>Giao bài trực tiếp đến từng học sinh hoặc nhóm học sinh tự động thống kê kết quả.</span>
+                    </p>
+                </div>
+                <div class="grid">
+                    <!-- left dynamic content -->
+                    <div id="dynamic_content_1" class="dynamic_content">
+                        <div class="content__wrapper">
+                            <div
+                                class="content_item hidden"
+                                data-index="0"
+                                style="transform: translateY(0px); position: relative; z-index: -1"
+                            >
+                                <div class="flex_container">
+                                    <div class="left_content">
+                                        <div class="drag_zone">
+                                            <div id="upload" class="icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    data-lucide="cloud-upload"
+                                                    class="lucide lucide-cloud-upload w-16 h-16 text-gray-400 mx-auto"
+                                                >
+                                                    <path d="M12 13v8"></path>
+                                                    <path
+                                                        d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                                                    ></path>
+                                                    <path d="m8 17 4-4 4 4"></path>
+                                                </svg>
+                                            </div>
+                                            <p class="text-gray-500 text-sm">
+                                                Nhận diện các định dạng đề thi trắc nghiệm, tự luận, các công thức toán
+                                                học, hoá, vật lý, ngoại ngữ chính xác. Hỗ trợ đầy đủ các file docx, pdf,
+                                                ảnh, excel, latex,...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="right_content">
+                                        <div class="right_content_item">
+                                            <div class="item" id="docx">
+                                                <span>DOCX</span>
+                                            </div>
+                                        </div>
+                                        <div class="right_content_item">
+                                            <div class="item" id="pdf">
+                                                <span>PDF</span>
+                                            </div>
+                                        </div>
+                                        <div class="right_content_item">
+                                            <div class="item" id="excel">
+                                                <span>EXCEL</span>
+                                            </div>
+                                        </div>
+                                        <div class="right_content_item">
+                                            <div class="item" id="image">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    data-lucide="image"
+                                                >
+                                                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                                                    <circle cx="9" cy="9" r="2"></circle>
+                                                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="1">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="cloud_upload" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="cloud"
+                                            >
+                                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Hạ tầng cao, thi online đồng thời số lượng lớn</h3>
+                                        <p>
+                                            FLC được xây dựng trên nền tảng công nghệ cao, hạ tầng lớn thi đồng thời hơn
+                                            300.000 học sinh cùng lúc, đảm bảo an toàn, bảo mật.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">99.9%</div>
+                                                <div class="text-gray-600">Thời gian hoạt động</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">300K+</div>
+                                                <div class="text-gray-600">Người dùng đồng thời</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="2">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="shield_check" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="shield-check"
+                                            >
+                                                <path
+                                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                                                ></path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Giám sát nâng cao, phân quyền chi tiết</h3>
+                                        <p>
+                                            FLC hỗ trợ đa dạng các tính năng giám sát khi kiểm tra, thi online, theo dõi
+                                            lịch sử làm bài, phát hiện gian lận bằng công nghệ AI.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">AI</div>
+                                                <div class="text-gray-600">Chống gian lận</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">Thời gian thực</div>
+                                                <div class="text-gray-600">Giám sát</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="3">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="scan" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="scan-text"
+                                            >
+                                                <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                                <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                                <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                                <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                                <path d="M7 8h8"></path>
+                                                <path d="M7 12h10"></path>
+                                                <path d="M7 16h6"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Chấm phiếu trắc nghiệm số lượng lớn, chính xác</h3>
+                                        <p>
+                                            FLC hỗ trợ đa dạng các mẫu phiếu trắc nghiệm, tự luận, mẫu hỗn hợp theo
+                                            chương trình mới, hỗ trợ chấm phiếu của BGD bằng điện thoại, máy scan.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">99.9%</div>
+                                                <div class="text-gray-600">Độ chính xác</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">Đa dạng</div>
+                                                <div class="text-gray-640">Định dạng</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item hidden" data-index="4">
+                            <div class="flex_container">
+                                <div id="scan" class="text_center">
+                                    <div id="analysis" class="icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="bar-chart-3"
+                                        >
+                                            <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                            <path d="M18 17V9"></path>
+                                            <path d="M13 17V5"></path>
+                                            <path d="M8 17v-3"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Thống kê kết quả chi tiết</h3>
+                                    <p>
+                                        Kết quả làm bài được thống kê theo chuẩn khung năng lực, biểu đồ điểm, phổ điểm,
+                                        trung vị, bảng xếp hạng, thống kê câu sai nhiều,...
+                                    </p>
                                     <div class="grid">
                                         <div class="grid__item">
-                                            <div class="font-bold" data-index="1">AI</div>
-                                            <div class="text-gray-600">Chống gian lận</div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="1">Thời gian thực</div>
+                                            <div class="font-bold" data-index="3">Thời gian thực</div>
                                             <div class="text-gray-600">Giám sát</div>
                                         </div>
+                                        <div class="grid__item">
+                                            <div class="font-bold" data-index="3">Đa chiều</div>
+                                            <div class="text-gray-600">phân tích</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="content_item hidden" data-index="3">
+                    </div>
+                    <!--right content -->
+                    <div class="Tab_Navigation">
+                        <div data-index="0" class="Tab_Navigation_Item">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="scan" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text">
-                                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                                            <path d="M7 8h8"></path>
-                                            <path d="M7 12h10"></path>
-                                            <path d="M7 16h6"></path>
-                                        </svg>
-                                    </div>
-                                    <h3>Chấm phiếu trắc nghiệm số lượng lớn, chính xác</h3>
-                                    <p>FLC hỗ trợ đa dạng các mẫu phiếu trắc nghiệm, tự luận, mẫu hỗn hợp theo
-                                        chương trình mới, hỗ trợ chấm phiếu của BGD
-                                        bằng điện thoại, máy scan.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="2">99.9%</div>
-                                            <div class="text-gray-600">Độ chính xác</div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="2">Đa dạng</div>
-                                            <div class="text-gray-640">Định dạng</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h4 class="font-semibold text-gray-900">Hỗ trợ đa định dạng file câu hỏi</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Nhận diện chính xác các định dạng đề thi docx, pdf, ảnh, excel
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="content_item hidden" data-index="4">
-                        <div class="flex_container">
-                            <div id="scan" class="text_center">
-                                <div id="analysis" class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="bar-chart-3">
-                                        <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
-                                        <path d="M18 17V9"></path>
-                                        <path d="M13 17V5"></path>
-                                        <path d="M8 17v-3"></path>
-                                    </svg>
-                                </div>
-                                <h3>Thống kê kết quả chi tiết</h3>
-                                <p>Kết quả làm bài được thống kê theo chuẩn khung năng lực, biểu đồ điểm, phổ điểm,
-                                    trung vị, bảng xếp hạng, thống kê câu
-                                    sai nhiều,...</p>
-                                <div class="grid">
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Thời gian thực</div>
-                                        <div class="text-gray-600">Giám sát</div>
-                                    </div>
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Đa chiều</div>
-                                        <div class="text-gray-600">phân tích</div>
-                                    </div>
-                                </div>
+                        <div data-index="1" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">
+                                    Hạ tầng cao, thi online đồng thời số lượng lớn
+                                </h4>
+                                <p class="text-gray-500 text-sm">
+                                    Hỗ trợ hơn 300.000 người dùng thi cùng lúc, ổn định 99.9%
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--right content -->
-                <div class="Tab_Navigation">
-                    <div data-index="0" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Hỗ trợ đa định dạng file câu hỏi</h4>
-                            <p class="text-gray-500 text-sm">
-                                Nhận diện chính xác các định
-                                dạng đề thi docx, pdf, ảnh, excel</p>
+                        <div data-index="2" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Giám sát nâng cao, phân quyền chi tiết</h4>
+                                <p class="text-gray-500 text-sm">Chống gian lận bằng AI, theo dõi thời gian thực</p>
+                            </div>
                         </div>
-                    </div>
-                    <div data-index="1" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Hạ tầng cao, thi online đồng thời số lượng lớn</h4>
-                            <p class="text-gray-500 text-sm">
-                                Hỗ trợ hơn 300.000 người dùng thi cùng lúc, ổn định 99.9%</p>
+                        <div data-index="3" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">
+                                    Chấm phiếu trắc nghiệm số lượng lớn, chính xác
+                                </h4>
+                                <p class="text-gray-500 text-sm">Công nghệ OCR thông minh, độ chính xác 99.9%</p>
+                            </div>
                         </div>
-                    </div>
-                    <div data-index="2" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Giám sát nâng cao, phân quyền chi tiết</h4>
-                            <p class="text-gray-500 text-sm">
-                                Chống gian lận bằng AI, theo dõi thời gian thực</p>
-                        </div>
-                    </div>
-                    <div data-index="3" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Chấm phiếu trắc nghiệm số lượng lớn, chính xác</h4>
-                            <p class="text-gray-500 text-sm">
-                                Công nghệ OCR thông minh, độ chính xác 99.9%</p>
-                        </div>
-                    </div>
-                    <div data-index="4" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Thống kê kết quả chi tiết</h4>
-                            <p class="text-gray-500 text-sm">
-                                Phân tích đa chiều, báo cáo theo chuẩn khung năng lực</p>
+                        <div data-index="4" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Thống kê kết quả chi tiết</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Phân tích đa chiều, báo cáo theo chuẩn khung năng lực
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <section id="question-bank">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Số hóa ngân hàng câu hỏi</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
+        </section>
+        <section id="question-bank">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Số hóa ngân hàng câu hỏi</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
+                        </div>
                     </div>
+                    <p>
+                        <span>Số hoá hàng nghìn câu hỏi các định dạng chỉ trong 1 phút với AI thông minh. </span><br />
+                        <span
+                            >Phân loại tự động theo khung năng lực, đơn vị kiến thức và mức độ theo chương trình GDPT
+                            2018.</span
+                        >
+                    </p>
                 </div>
-                <p>
-                    <span>Số hoá hàng nghìn câu hỏi các định dạng chỉ trong 1 phút với AI thông minh.
-                    </span><br>
-                    <span>Phân loại tự động theo khung năng lực, đơn vị kiến thức và mức độ theo chương trình GDPT
-                        2018.</span>
-                </p>
-            </div>
-            <div class="grid">
-                <!--right content -->
-                <div class="Tab_Navigation">
-                    <div data-index="1" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">AI Phân loại thông minh</h4>
-                            <p class="text-gray-500 text-sm">
-                                Thuật toán AI phân loại chính xác 95%, xử lý 1000+ câu hỏi/phút</p>
-                        </div>
-                    </div>
-                    <div data-index="2" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Lọc câu trùng lặp</h4>
-                            <p class="text-gray-500 text-sm">
-                                Nhận diện và loại bỏ câu hỏi trùng lặp với độ chính xác 99.2%</p>
-                        </div>
-                    </div>
-                    <div data-index="3" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018 </h4>
-                            <p class="text-gray-500 text-sm">
-                                Tuân thủ 100% chương trình GDPT 2018, đầy đủ tất cả môn học</p>
-                        </div>
-                    </div>
-                    <div data-index="4" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Phân tích thống kê trực quan</h4>
-                            <p class="text-gray-500 text-sm">
-                                Báo cáo thời gian thực, dashboard trực quan theo khung năng lực</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- left dynamic content -->
-                <div id="dynamic_content_1" class="dynamic_content">
-                    <div class="content__wrapper">
-                        <div class="content_item hidden" data-index="1">
+                <div class="grid">
+                    <!--right content -->
+                    <div class="Tab_Navigation">
+                        <div data-index="1" class="Tab_Navigation_Item">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="cloud_upload" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit"
-                                            class="lucide lucide-brain-circuit w-10 h-10 text-white">
-                                            <path
-                                                d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z">
-                                            </path>
-                                            <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
-                                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
-                                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
-                                            <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
-                                            <path d="M12 13h4"></path>
-                                            <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
-                                            <path d="M12 8h8"></path>
-                                            <path d="M16 8V5a2 2 0 0 1 2-2"></path>
-                                            <circle cx="16" cy="13" r=".5"></circle>
-                                            <circle cx="18" cy="3" r=".5"></circle>
-                                            <circle cx="20" cy="21" r=".5"></circle>
-                                            <circle cx="20" cy="8" r=".5"></circle>
-                                        </svg>
-                                    </div>
-                                    <h3>AI Phân loại thông minh</h3>
-                                    <p>Thuật toán AI được train trên dữ liệu lớn với 3 bộ sách phổ dụng nhất, phân loại
-                                        chính xác mức độ khó, dễ và đơn vị kiến
-                                        thức.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="0">95%</div>
-                                            <div class="text-gray-600">Độ chính xác</div>
+                                <h4 class="font-semibold text-gray-900">AI Phân loại thông minh</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Thuật toán AI phân loại chính xác 95%, xử lý 1000+ câu hỏi/phút
+                                </p>
+                            </div>
+                        </div>
+                        <div data-index="2" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Lọc câu trùng lặp</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Nhận diện và loại bỏ câu hỏi trùng lặp với độ chính xác 99.2%
+                                </p>
+                            </div>
+                        </div>
+                        <div data-index="3" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Tuân thủ 100% chương trình GDPT 2018, đầy đủ tất cả môn học
+                                </p>
+                            </div>
+                        </div>
+                        <div data-index="4" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Phân tích thống kê trực quan</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Báo cáo thời gian thực, dashboard trực quan theo khung năng lực
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- left dynamic content -->
+                    <div id="dynamic_content_1" class="dynamic_content">
+                        <div class="content__wrapper">
+                            <div class="content_item hidden" data-index="1">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="cloud_upload" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="brain-circuit"
+                                                class="lucide lucide-brain-circuit w-10 h-10 text-white"
+                                            >
+                                                <path
+                                                    d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+                                                ></path>
+                                                <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
+                                                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                                                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                                                <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                                                <path d="M12 13h4"></path>
+                                                <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
+                                                <path d="M12 8h8"></path>
+                                                <path d="M16 8V5a2 2 0 0 1 2-2"></path>
+                                                <circle cx="16" cy="13" r=".5"></circle>
+                                                <circle cx="18" cy="3" r=".5"></circle>
+                                                <circle cx="20" cy="21" r=".5"></circle>
+                                                <circle cx="20" cy="8" r=".5"></circle>
+                                            </svg>
                                         </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="0">1000+</div>
-                                            <div class="text-gray-600">Câu hỏi/phút</div>
+                                        <h3>AI Phân loại thông minh</h3>
+                                        <p>
+                                            Thuật toán AI được train trên dữ liệu lớn với 3 bộ sách phổ dụng nhất, phân
+                                            loại chính xác mức độ khó, dễ và đơn vị kiến thức.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">95%</div>
+                                                <div class="text-gray-600">Độ chính xác</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">1000+</div>
+                                                <div class="text-gray-600">Câu hỏi/phút</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="content_item hidden" data-index="2">
-                            <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="shield_check" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2"
-                                            class="lucide lucide-check-circle-2 w-10 h-10 text-white">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <path d="m9 12 2 2 4-4"></path>
-                                        </svg>
-                                    </div>
-                                    <h3>Lọc câu trùng lặp</h3>
-                                    <p>Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng câu
-                                        hỏi chính xác, ít trùng lặp.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="1">99.2%</div>
-                                            <div class="text-gray-600">Tyr lệ phát hiện</div>
+                            <div class="content_item hidden" data-index="2">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="shield_check" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="check-circle-2"
+                                                class="lucide lucide-check-circle-2 w-10 h-10 text-white"
+                                            >
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
                                         </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="1">Thông minh</div>
-                                            <div class="text-gray-600">Thuật toán</div>
+                                        <h3>Lọc câu trùng lặp</h3>
+                                        <p>
+                                            Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng
+                                            câu hỏi chính xác, ít trùng lặp.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">99.2%</div>
+                                                <div class="text-gray-600">Tyr lệ phát hiện</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">Thông minh</div>
+                                                <div class="text-gray-600">Thuật toán</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="3">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="scan" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="scan-text"
+                                            >
+                                                <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                                <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                                <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                                <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                                <path d="M7 8h8"></path>
+                                                <path d="M7 12h10"></path>
+                                                <path d="M7 16h6"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Chuẩn cấu trúc CT2018</h3>
+                                        <p>
+                                            Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng
+                                            câu hỏi chính xác, ít trùng lặp.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">100%</div>
+                                                <div class="text-gray-600">Tuân thủ</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">Tất cả</div>
+                                                <div class="text-gray-640">Môn học</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="content_item hidden" data-index="3">
+                        <div class="content_item hidden" data-index="4">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="scan" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text">
-                                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                                            <path d="M7 8h8"></path>
-                                            <path d="M7 12h10"></path>
-                                            <path d="M7 16h6"></path>
+                                <div id="scan" class="text_center">
+                                    <div id="analysis" class="icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="bar-chart-3"
+                                        >
+                                            <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                            <path d="M18 17V9"></path>
+                                            <path d="M13 17V5"></path>
+                                            <path d="M8 17v-3"></path>
                                         </svg>
                                     </div>
-                                    <h3>Chuẩn cấu trúc CT2018 </h3>
-                                    <p>Nhận diện chính xác các câu đã có trong ngân hàng, giúp xây dựng ngân hàng câu
-                                        hỏi chính xác, ít trùng lặp.</p>
+                                    <h3>Phân tích thống kê trực quan</h3>
+                                    <p>
+                                        Thống kê số lượng câu hỏi theo đơn vị kiến thức, khung năng lực và các dạng
+                                        thức: Trắc nghiệm 4 đáp án, đúng sai, trả lời ngắn.
+                                    </p>
                                     <div class="grid">
                                         <div class="grid__item">
-                                            <div class="font-bold" data-index="2">100%</div>
-                                            <div class="text-gray-600">Tuân thủ</div>
+                                            <div class="font-bold" data-index="3">Thời gian thực</div>
+                                            <div class="text-gray-600">Thống kê</div>
                                         </div>
                                         <div class="grid__item">
-                                            <div class="font-bold" data-index="2">Tất cả</div>
-                                            <div class="text-gray-640">Môn học</div>
+                                            <div class="font-bold" data-index="3">Trực quan</div>
+                                            <div class="text-gray-600">Bảng điều khiển</div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content_item hidden" data-index="4">
-                        <div class="flex_container">
-                            <div id="scan" class="text_center">
-                                <div id="analysis" class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="bar-chart-3">
-                                        <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
-                                        <path d="M18 17V9"></path>
-                                        <path d="M13 17V5"></path>
-                                        <path d="M8 17v-3"></path>
-                                    </svg>
-                                </div>
-                                <h3>Phân tích thống kê trực quan</h3>
-                                <p>Thống kê số lượng câu hỏi theo đơn vị kiến thức, khung năng lực và các dạng thức:
-                                    Trắc nghiệm 4 đáp án, đúng sai, trả
-                                    lời ngắn.</p>
-                                <div class="grid">
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Thời gian thực</div>
-                                        <div class="text-gray-600">Thống kê</div>
-                                    </div>
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Trực quan</div>
-                                        <div class="text-gray-600">Bảng điều khiển</div>
                                     </div>
                                 </div>
                             </div>
@@ -798,318 +1081,412 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        </div>
-    </section>
-    <section id="lms">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Hệ thống Quản lý học tập thông minh</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
+        </section>
+        <section id="lms">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Hệ thống Quản lý học tập thông minh</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
+                        </div>
                     </div>
+                    <p>
+                        <span>Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa. </span
+                        ><br />
+                        <span
+                            >Đào tạo nội bộ, kiểm tra kỹ năng, gắn nội dung theo phòng ban, xuất báo cáo hiệu quả đào
+                            tạo nhân sự.</span
+                        >
+                    </p>
                 </div>
-                <p>
-                    <span>Quản lý khóa học, giao bài theo nhóm, theo dõi tiến độ và kết quả theo lớp/khóa.
-                    </span><br>
-                    <span>Đào tạo nội bộ, kiểm tra kỹ năng, gắn nội dung theo phòng ban, xuất báo cáo hiệu quả đào tạo
-                        nhân sự.</span>
-                </p>
-            </div>
-            <div class="grid">
-                <!-- left dynamic content -->
-                <div id="dynamic_content_1" class="dynamic_content">
-                    <div class="content__wrapper">
-                        <div class="content_item hidden" data-index="1">
+                <div class="grid">
+                    <!-- left dynamic content -->
+                    <div id="dynamic_content_1" class="dynamic_content">
+                        <div class="content__wrapper">
+                            <div class="content_item hidden" data-index="1">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="cloud_upload" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="cloud"
+                                            >
+                                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Chuẩn cấu trúc PT2018</h3>
+                                        <p>
+                                            Khung nội dung được xây dựng bám sát chương trình SGK và yêu cầu cần đạt của
+                                            CT2018, đảm bảo tính chuẩn mực.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">100%</div>
+                                                <div class="text-gray-600">Chuẩn SGK</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="0">CT2018</div>
+                                                <div class="text-gray-600">Tiêu chuẩn</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="2">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="shield_check" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="shield-check"
+                                            >
+                                                <path
+                                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                                                ></path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Kho nội dung chất lượng</h3>
+                                        <p>
+                                            Hàng trăm nghìn câu hỏi chất lượng đủ mọi mức độ, đầy đủ lời giải chi tiết,
+                                            đáp án cho giáo viên tham khảo.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">500K+</div>
+                                                <div class="text-gray-600">Câu hỏi</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="1">Tất cả</div>
+                                                <div class="text-gray-600">Trình độ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content_item hidden" data-index="3">
+                                <div class="flex_container">
+                                    <div class="text_center">
+                                        <div id="scan" class="icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                data-lucide="scan-text"
+                                            >
+                                                <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                                <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                                <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                                <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                                <path d="M7 8h8"></path>
+                                                <path d="M7 12h10"></path>
+                                                <path d="M7 16h6"></path>
+                                            </svg>
+                                        </div>
+                                        <h3>Công nghệ AI theo dõi tiến trình</h3>
+                                        <p>
+                                            Giáo viên có thể theo dõi tiến trình học của từng học sinh hoặc cả lớp chi
+                                            tiết, đánh giá sự chủ động, năng lực, hiệu quả của từng học sinh.
+                                        </p>
+                                        <div class="grid">
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">Theo thời gian thực</div>
+                                                <div class="text-gray-600">Theo dõi</div>
+                                            </div>
+                                            <div class="grid__item">
+                                                <div class="font-bold" data-index="2">AI</div>
+                                                <div class="text-gray-640">Phân tích</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item hidden" data-index="4">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="cloud_upload" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="cloud">
-                                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                <div id="scan" class="text_center">
+                                    <div id="analysis" class="icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            data-lucide="bar-chart-3"
+                                        >
+                                            <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
+                                            <path d="M18 17V9"></path>
+                                            <path d="M13 17V5"></path>
+                                            <path d="M8 17v-3"></path>
                                         </svg>
                                     </div>
-                                    <h3>Chuẩn cấu trúc PT2018</h3>
-                                    <p>Khung nội dung được xây dựng bám sát chương trình SGK và yêu cầu cần đạt của
-                                        CT2018, đảm bảo tính chuẩn mực.</p>
+                                    <h3>Thống kê đánh giá chi tiết</h3>
+                                    <p>
+                                        Đánh giá năng lực tổng quan và chi tiết từng học sinh trong quá trình học tập,
+                                        từ đó có biện pháp ôn tập phù hợp, nâng cao trải nghiệm cá nhân hóa.
+                                    </p>
                                     <div class="grid">
                                         <div class="grid__item">
-                                            <div class="font-bold" data-index="0">100%</div>
-                                            <div class="text-gray-600">Chuẩn SGK</div>
+                                            <div class="font-bold" data-index="3">Tổng quan</div>
+                                            <div class="text-gray-600">Đánh giá</div>
                                         </div>
                                         <div class="grid__item">
-                                            <div class="font-bold" data-index="0">CT2018</div>
-                                            <div class="text-gray-600">Tiêu chuẩn</div>
+                                            <div class="font-bold" data-index="3">Cá nhân</div>
+                                            <div class="text-gray-600">Học tập</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="content_item hidden" data-index="2">
+                    </div>
+                    <!--right content -->
+                    <div class="Tab_Navigation">
+                        <div data-index="0" class="Tab_Navigation_Item">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="shield_check" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check">
-                                            <path
-                                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                                            </path>
-                                            <path d="m9 12 2 2 4-4"></path>
-                                        </svg>
-                                    </div>
-                                    <h3>Kho nội dung chất lượng</h3>
-                                    <p>Hàng trăm nghìn câu hỏi chất lượng đủ mọi mức độ, đầy đủ lời giải chi tiết, đáp
-                                        án cho giáo viên tham khảo.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="1">500K+</div>
-                                            <div class="text-gray-600">Câu hỏi</div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="1">Tất cả</div>
-                                            <div class="text-gray-600">Trình độ</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Tuân thủ 100% chuẩn SGK và yêu cầu CT2018, đảm bảo tính chuẩn mực.
+                                </p>
                             </div>
                         </div>
-                        <div class="content_item hidden" data-index="3">
+                        <div data-index="1" class="Tab_Navigation_Item">
                             <div class="flex_container">
-                                <div class="text_center">
-                                    <div id="scan" class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text">
-                                            <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                                            <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                                            <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                                            <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                                            <path d="M7 8h8"></path>
-                                            <path d="M7 12h10"></path>
-                                            <path d="M7 16h6"></path>
-                                        </svg>
-                                    </div>
-                                    <h3>Công nghệ AI theo dõi tiến trình</h3>
-                                    <p>Giáo viên có thể theo dõi tiến trình học của từng học sinh hoặc cả lớp chi tiết,
-                                        đánh giá sự chủ động, năng lực, hiệu
-                                        quả của từng học sinh.</p>
-                                    <div class="grid">
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="2">Theo thời gian thực</div>
-                                            <div class="text-gray-600">Theo dõi</div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <div class="font-bold" data-index="2">AI</div>
-                                            <div class="text-gray-640">Phân tích</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h4 class="font-semibold text-gray-900">Kho nội dung chất lượng</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Hơn 500K câu hỏi đủ mọi mức độ, đầy đủ lời giải chi tiết
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="content_item hidden" data-index="4">
-                        <div class="flex_container">
-                            <div id="scan" class="text_center">
-                                <div id="analysis" class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" data-lucide="bar-chart-3">
-                                        <path d=" M3 3v16a2 2 0 0 0 2 2h16"></path>
-                                        <path d="M18 17V9"></path>
-                                        <path d="M13 17V5"></path>
-                                        <path d="M8 17v-3"></path>
-                                    </svg>
-                                </div>
-                                <h3>Thống kê đánh giá chi tiết</h3>
-                                <p>Đánh giá năng lực tổng quan và chi tiết từng học sinh trong quá trình học tập, từ đó
-                                    có biện pháp ôn tập phù hợp, nâng
-                                    cao trải nghiệm cá nhân hóa.</p>
-                                <div class="grid">
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Tổng quan</div>
-                                        <div class="text-gray-600">Đánh giá</div>
-                                    </div>
-                                    <div class="grid__item">
-                                        <div class="font-bold" data-index="3">Cá nhân</div>
-                                        <div class="text-gray-600">Học tập</div>
-                                    </div>
-                                </div>
+                        <div data-index="2" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Công nghệ AI theo dõi tiến trình</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Theo dõi thời gian thực, phân tích AI từng học sinh và cả lớp
+                                </p>
+                            </div>
+                        </div>
+                        <div data-index="3" class="Tab_Navigation_Item">
+                            <div class="flex_container">
+                                <h4 class="font-semibold text-gray-900">Thống kê đánh giá chi tiết</h4>
+                                <p class="text-gray-500 text-sm">
+                                    Đánh giá tổng quan, cá nhân hóa học tập cho từng học sinh
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--right content -->
-                <div class="Tab_Navigation">
-                    <div data-index="0" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Chuẩn cấu trúc CT2018</h4>
-                            <p class="text-gray-500 text-sm">
-                                Tuân thủ 100% chuẩn SGK và yêu cầu CT2018, đảm bảo tính chuẩn mực.</p>
+            </div>
+        </section>
+        <section class="section" id="why-choose-us">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 class="section__heading">Tại sao chọn chúng tôi</h2>
+                    <div class="container">
+                        <div class="bar-wrapper">
+                            <div class="bar small"></div>
+                            <div class="bar large"></div>
                         </div>
                     </div>
-                    <div data-index="1" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Kho nội dung chất lượng</h4>
-                            <p class="text-gray-500 text-sm">
-                                Hơn 500K câu hỏi đủ mọi mức độ, đầy đủ lời giải chi tiết</p>
+                </div>
+                <div class="why-choose-us__grid">
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="0" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="settings"
+                                class="lucide lucide-settings"
+                            >
+                                <path
+                                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+                                ></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Tại sao chọn chúng tôi</h3>
+                        <div class="detail_content">
+                            <p class="font-semibold">14/7</p>
+                            <p>(8:00 - 22:00)</p>
                         </div>
                     </div>
-                    <div data-index="2" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Công nghệ AI theo dõi tiến trình</h4>
-                            <p class="text-gray-500 text-sm">
-                                Theo dõi thời gian thực, phân tích AI từng học sinh và cả lớp</p>
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="1" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="book"
+                                class="lucide lucide-book"
+                            >
+                                <path
+                                    d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3>Hỗ trợ đào tạo</h3>
+                        <div class="detail_content">
+                            <p>Tổ chức đào tạo chuyên</p>
+                            <p>sâu từ đội ngũ sáng lập</p>
                         </div>
                     </div>
-                    <div data-index="3" class="Tab_Navigation_Item">
-                        <div class="flex_container">
-                            <h4 class="font-semibold text-gray-900">Thống kê đánh giá chi tiết</h4>
-                            <p class="text-gray-500 text-sm">
-                                Đánh giá tổng quan, cá nhân hóa học tập cho từng học sinh</p>
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="2" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="wifi"
+                                class="lucide lucide-wifi"
+                            >
+                                <path d="M12 20h.01"></path>
+                                <path d="M2 8.82a15 15 0 0 1 20 0"></path>
+                                <path d="M5 12.859a10 10 0 0 1 14 0"></path>
+                                <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+                            </svg>
+                        </div>
+                        <h3>Kết nối ổn định</h3>
+                        <div class="detail_content">
+                            <p>Hạ tầng lớn, thi online đồng</p>
+                            <p>thời trên 200.000 cùng lúc</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="3" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="users"
+                                class="lucide lucide-users"
+                            >
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Cộng đồng sử dụng lớn</h3>
+                        <div class="detail_content">
+                            <p>Hơn 400.000 giáo viên</p>
+                            <p>Hơn 9000 trường học và tổ chức</p>
+                            <p>giáo dục</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="4" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="shield-check"
+                                class="lucide lucide-shield-check"
+                            >
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                                ></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3>Bảo mật cao</h3>
+                        <div class="detail_content">
+                            <p>Mã hoá dữ liệu đầu cuối,</p>
+                            <p>chống gian lận bằng AI</p>
+                        </div>
+                    </div>
+                    <div class="why-choose-us__grid-item">
+                        <div data-index="5" class="why-choose-us__grid-item-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                data-lucide="mouse-pointer-click"
+                                class="lucide lucide-mouse-pointer-click"
+                            >
+                                <path d="M14 4.1 12 6"></path>
+                                <path d="m5.1 8-2.9-.8"></path>
+                                <path d="m6 12-1.9 2"></path>
+                                <path d="M7.2 2.2 8 5.1"></path>
+                                <path
+                                    d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3>Dễ sử dụng</h3>
+                        <div class="detail_content">
+                            <p>Giao diện thân thiện, tương</p>
+                            <p>thích tốt với các nghiệp vụ</p>
+                            <p>đào tạo</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </body>
 
-        </div>
-    </section>
-    <section class="section" id="why-choose-us">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__heading">Tại sao chọn chúng tôi</h2>
-                <div class="container">
-                    <div class="bar-wrapper">
-                        <div class="bar small"></div>
-                        <div class="bar large"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="why-choose-us__grid">
-
-                <div class="why-choose-us__grid-item">
-                    <div data-index="0" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="settings" class="lucide lucide-settings ">
-                            <path
-                                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
-                            </path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h3>Tại sao chọn chúng tôi</h3>
-                    <div class="detail_content">
-                        <p class="font-semibold">14/7
-                        </p>
-                        <p>(8:00 - 22:00)
-                        </p>
-                    </div>
-                </div>
-                <div class="why-choose-us__grid-item">
-                    <div data-index="1" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="book" class="lucide lucide-book ">
-                            <path
-                                d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3>Hỗ trợ đào tạo</h3>
-                    <div class="detail_content">
-                        <p>Tổ chức đào tạo chuyên
-                        </p>
-                        <p>sâu từ đội ngũ sáng lập</p>
-                    </div>
-                </div>
-                <div class="why-choose-us__grid-item">
-                    <div data-index="2" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="wifi" class="lucide lucide-wifi">
-                            <path d="M12 20h.01"></path>
-                            <path d="M2 8.82a15 15 0 0 1 20 0"></path>
-                            <path d="M5 12.859a10 10 0 0 1 14 0"></path>
-                            <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
-                        </svg>
-                    </div>
-                    <h3>Kết nối ổn định</h3>
-                    <div class="detail_content">
-                        <p>Hạ tầng lớn, thi online đồng
-                        </p>
-                        <p>thời trên 200.000 cùng lúc</p>
-                    </div>
-                </div>
-                <div class="why-choose-us__grid-item">
-                    <div data-index="3" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="users" class="lucide lucide-users ">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                            <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3>Cộng đồng sử dụng lớn</h3>
-                    <div class="detail_content">
-                        <p>Hơn 400.000 giáo viên
-                        </p>
-                        <p>Hơn 9000 trường học và tổ chức</p>
-                        <p>giáo dục</p>
-                    </div>
-                </div>
-                <div class="why-choose-us__grid-item">
-                    <div data-index="4" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="shield-check" class="lucide lucide-shield-check ">
-                            <path
-                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                            </path>
-                            <path d="m9 12 2 2 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3>Bảo mật cao</h3>
-                    <div class="detail_content">
-                        <p>Mã hoá dữ liệu đầu cuối,
-                        </p>
-                        <p>chống gian lận bằng AI</p>
-                    </div>
-                </div>
-                <div class="why-choose-us__grid-item">
-                    <div data-index="5" class="why-choose-us__grid-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            data-lucide="mouse-pointer-click" class="lucide lucide-mouse-pointer-click ">
-                            <path d="M14 4.1 12 6"></path>
-                            <path d="m5.1 8-2.9-.8"></path>
-                            <path d="m6 12-1.9 2"></path>
-                            <path d="M7.2 2.2 8 5.1"></path>
-                            <path
-                                d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3>Dễ sử dụng</h3>
-                    <div class="detail_content">
-                        <p>Giao diện thân thiện, tương
-
-                        </p>
-                        <p>thích tốt với các nghiệp vụ</p>
-                        <p>đào tạo</p>
-                    </div>
-                </div>
-
-            </div>
-    </section>
-</body>
-
+    <script src="src/js/default.js"></script>
 </html>
