@@ -5,3 +5,6 @@ dist
 .env.development.local
 .env.test.local
 .env.production.local
+Admin/dashboard.html
+src/style/dashbroad.css
+src/js/dashbroad.js

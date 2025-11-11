@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../src/style/dashbroad.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <title>Payment Management</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <a href="dashboard.html" class="header__logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="header__logo-text">TeachFlow</span>
+            </a>
+            <div class="header__search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search payments quickly..." class="header__search-input">
+            </div>
+            <div class="header__actions">
+                <button class="header__icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="header__user">
+                    <div class="header__user-avatar">
+
+                    </div>
+                    <span class="header__user-name">Jane Doe</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="sidebar__close">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="sidebar__nav">
+                <a href="dashboard.html" class="sidebar__nav-item" data-view="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="students.html" class="sidebar__nav-item" data-view="students">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+                <a href="Classes.html" class="sidebar__nav-item" data-view="classes">
+                    <i class="fas fa-book"></i>
+                    <span>Classes</span>
+                </a>
+                <a href="" class="sidebar__nav-item" data-view="teachers">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Teachers</span>
+                </a>
+                <a href="" class="sidebar__nav-item" data-view="courses">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="" class="sidebar__nav-item" data-view="attendance">
+                    <i class="fas fa-check-square"></i>
+                    <span>Attendance</span>
+                </a>
+                <a href="payment.html" class="sidebar__nav-item active" data-view="payments">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Payments</span>
+                </a>
+                <a href="" class="sidebar__nav-item" data-view="reports">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="" class="sidebar__nav-item" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Payment Management View -->
+            <div class="view-content" id="view-payments" style="display: block;">
+                <div class="payment-management">
+                    <div class="payment-management__header">
+                        <div>
+                            <h1 class="main__title">Payment Management</h1>
+                            <p class="payment-management__description">Track and manage student payments, invoices, and
+                                financial records.</p>
+                        </div>
+                        <button class="btn btn--primary" id="createPaymentBtn">
+                            <i class="fas fa-plus"></i>
+                            Create New Payment
+                        </button>
+                    </div>
+
+                    <!-- Summary Cards -->
+                    <div class="cards" style="margin-bottom: 3rem;">
+                        <div class="card">
+                            <div class="card__icon card__icon--blue">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">Total Revenue</h3>
+                                <p class="card__value">$45,230</p>
+                                <p class="card__trend card__trend--up">
+                                    <i class="fas fa-arrow-up"></i> 12% increase
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__icon card__icon--blue">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">Paid Invoices</h3>
+                                <p class="card__value">342</p>
+                                <p class="card__trend card__trend--up">
+                                    <i class="fas fa-arrow-up"></i> 8% increase
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__icon card__icon--blue">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title">Pending Payments</h3>
+                                <p class="card__value">28</p>
+                                <p class="card__trend card__trend--up">
+                                    <i class="fas fa-arrow-down"></i> 5% decrease
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter + Search Section -->
+                    <div class="payment-management__filters">
+                        <div class="filter-search">
+                            <i class="fas fa-search filter-search__icon"></i>
+                            <input type="text" class="filter-search__input" id="paymentSearchInput"
+                                placeholder="Search by invoice ID, student name, or amount...">
+                        </div>
+                        <select class="filter-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Overdue">Overdue</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                        <select class="filter-select" id="methodFilter">
+                            <option value="">All Payment Methods</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Online Payment">Online Payment</option>
+                        </select>
+                        <input type="date" class="filter-date" id="dateFilter" placeholder="Filter by date">
+                        <button class="btn btn--secondary" id="clearPaymentFiltersBtn">
+                            <i class="fas fa-times"></i>
+                            Clear Filters
+                        </button>
+                    </div>
+
+                    <!-- Payment Table -->
+                    <div class="payment-table-container">
+                        <table class="payment-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Student Name</th>
+                                    <th>Amount</th>
+                                    <th>Payment Date</th>
+                                    <th>Payment Method</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentTableBody">
+                                <tr class="payment-table__row" data-payment-id="1">
+                                    <td>
+                                        <span class="invoice-id">INV-001</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">JD</div>
+                                            <span>John Doe</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$120.00</span>
+                                    </td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-credit-card"></i>
+                                            Credit Card
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--paid">Paid</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="payment-table__row" data-payment-id="2">
+                                    <td>
+                                        <span class="invoice-id">INV-002</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">SD</div>
+                                            <span>Sarah Doe</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$150.00</span>
+                                    </td>
+                                    <td>2024-01-18</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-university"></i>
+                                            Bank Transfer
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--paid">Paid</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="payment-table__row" data-payment-id="3">
+                                    <td>
+                                        <span class="invoice-id">INV-003</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">SL</div>
+                                            <span>Sarah Lee</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$100.00</span>
+                                    </td>
+                                    <td>2024-01-20</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            Cash
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--paid">Paid</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="payment-table__row" data-payment-id="4">
+                                    <td>
+                                        <span class="invoice-id">INV-004</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">MK</div>
+                                            <span>Michael Kim</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$200.00</span>
+                                    </td>
+                                    <td>2024-01-22</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-globe"></i>
+                                            Online Payment
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--pending">Pending</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="payment-table__row" data-payment-id="5">
+                                    <td>
+                                        <span class="invoice-id">INV-005</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">SL2</div>
+                                            <span>Sarah Lee</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$120.00</span>
+                                    </td>
+                                    <td>2024-01-10</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-credit-card"></i>
+                                            Credit Card
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--overdue">Overdue</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="payment-table__row" data-payment-id="6">
+                                    <td>
+                                        <span class="invoice-id">INV-006</span>
+                                    </td>
+                                    <td>
+                                        <div class="payment-student">
+                                            <div class="student-avatar student-avatar--small">M5</div>
+                                            <span>Michate 5</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="payment-amount">$80.00</span>
+                                    </td>
+                                    <td>2024-01-25</td>
+                                    <td>
+                                        <span class="payment-method">
+                                            <i class="fas fa-university"></i>
+                                            Bank Transfer
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge--paid">Paid</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn-icon view-payment-btn" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon print-payment-btn" title="Print Invoice">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="btn-icon edit-payment-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon delete-payment-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <div class="pagination__info">
+                                <span>Rows per page: </span>
+                                <select class="pagination__select" id="paymentRowsPerPage">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="pagination__controls">
+                                <button class="pagination__btn" id="paymentPrevPage">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="pagination__pages" id="paymentPaginationPages">
+                                    <button class="pagination__page pagination__page--active">1</button>
+                                    <button class="pagination__page">2</button>
+                                    <button class="pagination__page">3</button>
+                                    <span class="pagination__ellipsis">...</span>
+                                    <button class="pagination__page">10</button>
+                                </span>
+                                <button class="pagination__btn" id="paymentNextPage">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="pagination__total">
+                                <span>Total 342 payments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Detail Sidebar -->
+                <div class="payment-detail-panel" id="paymentDetailPanel" style="display: none;">
+                    <button class="payment-detail-panel__close" id="closePaymentPanel">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="payment-detail-panel__header">
+                        <div>
+                            <h2 class="payment-detail-panel__title" id="paymentInvoiceId">INV-001</h2>
+                            <p class="payment-detail-panel__subtitle" id="paymentStudentName">John Doe</p>
+                        </div>
+                        <div class="payment-detail-panel__status" id="paymentStatusBadge">
+                            <span class="badge badge--paid">Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-panel__section">
+                        <h3 class="payment-detail-panel__section-title">
+                            <i class="fas fa-info-circle"></i>
+                            Payment Information
+                        </h3>
+                        <div class="payment-detail-info">
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Amount:</span>
+                                <span class="payment-detail-info__value payment-amount-large" id="paymentAmount">
+                                    $120.00</span>
+                            </div>
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Payment Date:</span>
+                                <span class="payment-detail-info__value" id="paymentDate">2024-01-15</span>
+                            </div>
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Payment Method:</span>
+                                <span class="payment-detail-info__value" id="paymentMethod">Credit Card</span>
+                            </div>
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Transaction ID:</span>
+                                <span class="payment-detail-info__value" id="paymentTransactionId">TXN-123456789</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-panel__section">
+                        <h3 class="payment-detail-panel__section-title">
+                            <i class="fas fa-user"></i>
+                            Student Information
+                        </h3>
+                        <div class="payment-detail-info">
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Student ID:</span>
+                                <span class="payment-detail-info__value" id="paymentStudentId">ID-001</span>
+                            </div>
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Email:</span>
+                                <span class="payment-detail-info__value" id="paymentStudentEmail">
+                                    john.doe@example.com</span>
+                            </div>
+                            <div class="payment-detail-info__item">
+                                <span class="payment-detail-info__label">Phone:</span>
+                                <span class="payment-detail-info__value" id="paymentStudentPhone">555-123-4567</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-panel__section">
+                        <h3 class="payment-detail-panel__section-title">
+                            <i class="fas fa-book"></i>
+                            Course Details
+                        </h3>
+                        <div class="payment-course-details" id="paymentCourseDetails">
+                            <div class="payment-course-item">
+                                <span class="payment-course-name">Math B1</span>
+                                <span class="payment-course-amount">$60.00</span>
+                            </div>
+                            <div class="payment-course-item">
+                                <span class="payment-course-name">Physics 101</span>
+                                <span class="payment-course-amount">$60.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-panel__section">
+                        <h3 class="payment-detail-panel__section-title">
+                            <i class="fas fa-file-invoice"></i>
+                            Invoice Notes
+                        </h3>
+                        <div class="payment-notes">
+                            <p class="payment-detail-panel__section-text" id="paymentNotes">
+                                Payment received successfully. Thank you for your payment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-panel__actions">
+                        <button class="btn btn--primary" id="printInvoiceBtn">
+                            <i class="fas fa-print"></i>
+                            Print Invoice
+                        </button>
+                        <button class="btn btn--secondary" id="editPaymentBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/dashbroad.js"></script>
+    <script src="../src/js/payment.js"></script>
+</body>
+
+</html>
