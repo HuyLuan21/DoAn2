@@ -1,0 +1,42 @@
+export default [
+    {
+        scheduleId: 1,
+        classId: 1,
+        studyDate: '2025-07-01',
+        startTime: '10:00',
+        endTime: '12:00',
+        room: 'A101',
+    },
+    {
+        scheduleId: 2,
+        classId: 2,
+        studyDate: '2025-07-02',
+        startTime: '14:00',
+        endTime: '16:00',
+        room: 'B202',
+    },
+    {
+        scheduleId: 3,
+        classId: 3,
+        studyDate: '2025-07-03',
+        startTime: '09:00',
+        endTime: '11:00',
+        room: 'C303',
+    },
+    {
+        scheduleId: 4,
+        classId: 4,
+        studyDate: '2025-07-04',
+        startTime: '13:00',
+        endTime: '15:00',
+        room: 'D404',
+    },
+    {
+        scheduleId: 5,
+        classId: 5,
+        studyDate: '2025-07-05',
+        startTime: '11:00',
+        endTime: '13:00',
+        room: 'E505',
+    },
+]
