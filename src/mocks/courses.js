@@ -1,0 +1,48 @@
+export default [
+    {
+        courseId: 1,
+        courseName: 'English for Beginners',
+        description: 'A foundational course designed to help beginners learn basic English skills.',
+        duration: '8 weeks',
+        language: 'English',
+        level: 'Beginner',
+        tuitionFee: 1500000,
+    },
+    {
+        courseId: 2,
+        courseName: 'Intermediate Spanish',
+        description: 'An intermediate course focusing on conversational Spanish and grammar.',
+        duration: '10 weeks',
+        language: 'Spanish',
+        level: 'Intermediate',
+        tuitionFee: 2000000,
+    },
+    {
+        courseId: 3,
+        courseName: 'Advanced French Literature',
+        description: 'An advanced course exploring classic and contemporary French literature.',
+        duration: '12 weeks',
+        language: 'French',
+        level: 'Advanced',
+        tuitionFee: 2500000,
+    },
+    {
+        courseId: 4,
+        courseName: 'Business English',
+        description:
+            'A course tailored for professionals looking to improve their business communication skills in English.',
+        duration: '6 weeks',
+        language: 'English',
+        level: 'Intermediate',
+        tuitionFee: 1800000,
+    },
+    {
+        courseId: 5,
+        courseName: 'Conversational German',
+        description: 'A practical course aimed at improving spoken German for everyday situations.',
+        duration: '8 weeks',
+        language: 'German',
+        level: 'Beginner',
+        tuitionFee: 1600000,
+    },
+]
