@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../src/style/courses.css" />
+        <link rel="stylesheet" href="../src/style/dashbroad.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -24,8 +24,8 @@
                     </a>
                     <div class="sidebar__devider"></div>
                     <ul class="sidebar__list">
-                        <li>
-                            <a class="sidebar_item" href="dashbroad.html">
+                        <li class="active">
+                            <a class="sidebar_item" href="">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -178,8 +178,8 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="active">
-                            <a class="sidebar_item" href="">
+                        <li>
+                            <a class="sidebar_item" href="courses.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -207,23 +207,9 @@
                     <div class="top_bar relative flex align-center">
                         <div class="infomation">
                             <div class="flex align-center space-between">
-                                <button id="back__button" class="flex">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-chevron-left"
-                                    >
-                                        <path d="m15 18-6-6 6-6" key="1wnfg3"></path>
-                                    </svg>
-                                    <span>Quay lại</span>
-                                </button>
+                                <div class="flex title ">
+                                    <span>Màn hình chính</span>
+                                </div>
                                 <div class="flex align-center info">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -249,32 +235,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div id="list__courses" class="type flex align-center active">
-                            <span>Danh sách khóa học</span>
-                        </div>
-                        <div id="my__courses" class="type flex align-center"><span>Khóa học của tôi</span></div>
-                    </div>
-                    <div id="action" class="flex">
-                        <div class="search__box relative">
-                            <input type="text" placeholder="Tìm kiếm" />
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-search"
-                            >
-                                <circle cx="11" cy="11" r="8" key="4ej97u"></circle>
-                                <path d="m21 21-4.3-4.3" key="1qie3q"></path>
-                            </svg>
                         </div>
                     </div>
                 </div>

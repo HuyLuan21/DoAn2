@@ -197,34 +197,3 @@ button {
     color: #1e2c3b;
     justify-content: center;
 }
-.type {
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 500;
-}
-.type.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-#action {
-    padding-top: 20px;
-}
-.search__box {
-    input {
-        padding: 8px 32px 8px 12px;
-        border-radius: 5px;
-        border: none;
-        border-color: #edf1f5;
-        box-shadow: 0 0 1px 2px #edf1f5;
-    }
-    input:focus {
-        outline: none;
-    }
-    svg {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        width: 16px;
-        height: 16px;
-    }
-}
