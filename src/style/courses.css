@@ -1,5 +1,5 @@
 html {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
 }
 * {
@@ -53,6 +53,9 @@ button {
 }
 .space-between {
     justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
 }
 .font-medium {
     font-weight: 500;
@@ -173,6 +176,9 @@ button {
     height: 32px;
     border-radius: 50%;
     background-color: #004aad;
+    h1 {
+        color: #fff;
+    }
 }
 .user-info {
     padding-left: 12px;
@@ -201,13 +207,31 @@ button {
     padding: 12px;
     font-size: 14px;
     font-weight: 500;
+    font-family: Roboto;
+}
+.type:hover {
+    cursor: pointer;
+    background-color: #ebeef6;
 }
 .type.active {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 }
 #action {
-    padding-top: 20px;
+    margin-top: 20px;
+    button {
+        font-family: Roboto;
+    }
+}
+#search_zone {
+    gap: 12px;
+}
+#filter__button {
+    background-color: #fff;
+    svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
 }
 .search__box {
     input {
@@ -226,5 +250,86 @@ button {
         right: 8px;
         width: 16px;
         height: 16px;
+    }
+    svg:hover {
+        cursor: pointer;
+    }
+}
+#action__button {
+    gap: 12px;
+}
+#add__course {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+#remove__course {
+    background-color: #df3b3b;
+    color: #fff;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.course__list {
+    .grid {
+        margin-top: 20px;
+    }
+}
+.course__item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #fff;
+    .course__image {
+        img {
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+        }
+    }
+    .course__info {
+        padding: 12px;
+        flex-direction: column;
+
+        .course__name {
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #1e2c3b;
+        }
+        .course__description {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            color: #1e2c3b;
+        }
+        .price {
+            display: flex;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #f05123;
+            margin-bottom: 16px;
+        }
+        .course__details {
+            gap: 8px;
+            font-size: 1.4rem;
+            span {
+                color: #666;
+            }
+            svg {
+                width: 16px;
+                height: 16px;
+                color: #666;
+            }
+            .hours {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .class__number {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+        }
     }
 }
