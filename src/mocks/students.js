@@ -1,6 +1,6 @@
 export default [
     {
-        id: 1,
+        studentId: 1,
         fullName: "Alice Johnson",
         dateOfBirth: "2000-05-15",
         phone: "555-1234",
@@ -10,7 +10,7 @@ export default [
         status: "Active"
     },
     {
-        id: 2,
+        studentId: 2,
         fullName: "Bob Smith",
         dateOfBirth: "1999-08-22",
         phone: "555-5678",
@@ -20,7 +20,7 @@ export default [
         status: "Inactive"
     },
     {
-        id: 3,
+        studentId: 3,
         fullName: "Charlie Brown",
         dateOfBirth: "2001-12-03",
         phone: "555-8765",

@@ -3,8 +3,7 @@ export default [
         examId: 1,
         classId: 1,
         examName: 'Midterm Exam',
-        examCode: 'regular', // placement, regular, midterm, final
-        examType: 'speaking', // speaking, writing, listening, reading
+        examType: 'Placement', // Placement, Regular, Final
         examDate: '2025-07-15',
         startTime: '10:00',
         endTime: '12:00',
@@ -14,8 +13,7 @@ export default [
         examId: 2,
         classId: 1,
         examName: 'Final Exam',
-        examCode: 'final',
-        examType: 'speaking',
+        examType: 'Placement', // Placement, Regular, Final
         examDate: '2025-12-20',
         startTime: '14:00',
         endTime: '16:00',
@@ -25,8 +23,7 @@ export default [
         examId: 3,
         classId: 2,
         examName: 'Regular Exam 1',
-        examCode: 'regular',
-        examType: 'speaking',
+        examType: 'Placement', // Placement, Regular, Final
         examDate: '2025-08-10',
         startTime: '09:00',
         endTime: '11:00',
@@ -36,8 +33,7 @@ export default [
         examId: 4,
         classId: 2,
         examName: 'Midterm Exam',
-        examCode: 'regular',
-        examType: 'writing',
+        examType: 'Placement', // Placement, Regular, Final
         examDate: '2025-10-05',
         startTime: '13:00',
         endTime: '15:00',
@@ -47,8 +43,7 @@ export default [
         examId: 5,
         classId: 3,
         examName: 'Placement Test',
-        examCode: 'regular',
-        examType: 'speaking',
+        examType: 'Placement', // Placement, Regular, Final
         examDate: '2025-06-20',
         startTime: '11:00',
         endTime: '13:00',

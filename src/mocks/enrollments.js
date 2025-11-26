@@ -4,7 +4,7 @@ export default [
         studentId: 1,
         classId: 1,
         enrollmentDate: '2025-06-01',
-        status: 'Enrolled', // PendingPayment, Enrolled, Completed, Dropped
+        status: 'Enrolled', // PendingPayment, Completed, Dropped
     },
     {
         enrollmentId: 2,

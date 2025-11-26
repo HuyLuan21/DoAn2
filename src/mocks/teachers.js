@@ -2,7 +2,6 @@ export default [
     {
         teacherId: 1,
         fullName: 'Dr. Emily Carter',
-        subject: 'Mathematics',
         dateOfBirth: '1980-03-10',
         phone: '555-4321',
         email: '',
@@ -13,7 +12,6 @@ export default [
     {
         teacherId: 2,
         fullName: 'Mr. John Davis',
-        subject: 'History',
         dateOfBirth: '1975-07-25',
         phone: '555-8765',
         email: '',
@@ -24,7 +22,6 @@ export default [
     {
         teacherId: 3,
         fullName: 'Ms. Sarah Lee',
-        subject: 'Science',
         dateOfBirth: '1985-11-30',
         phone: '555-3456',
         email: '',
