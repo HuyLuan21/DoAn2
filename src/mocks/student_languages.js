@@ -1,5 +1,3 @@
-import languageLevels from './languageLevels'
-
 export default [
     {
         studentId: 1,
