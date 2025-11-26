@@ -1,9 +1,11 @@
-import { mockStudents } from '../mocks/students.js'
+import mockStudents from '../mocks/students.js'
+import { addStudentLanguage } from './student_language.db.js'
+import { getAllLanguages } from './language.db.js'
 
 const STUDENT_KEY = 'students'
 
 function getStudentList() {
-    return JSON.parse(localStorage.getItem(STUDENT_KEY)) || []
+    return JSON.parse(localStorage.getItem(STUDENT_KEY))
 }
 
 function saveStudentList(list) {
@@ -12,10 +14,11 @@ function saveStudentList(list) {
 
 function initStudentDB() {
     const existing = getStudentList()
-    if (!existing || existing.length === 0) {
+    if (!existing) {
         saveStudentList(mockStudents)
     }
 }
+
 initStudentDB()
 
 export function getAllStudents() {
@@ -28,13 +31,23 @@ export function getStudentById(id) {
 }
 
 export function addStudent(student) {
+    // them ban ghi student
+    // add student_language cho student tuong ung voi tung ngon ngu (mac dinh level order la thap nhat ~ minimum order)
     const students = getStudentList()
-
     const newId = students.length > 0 ? Math.max(...students.map(s => s.id)) + 1 : 1
     const newStudent = { id: newId, ...student }
-
     students.push(newStudent)
     saveStudentList(students)
+
+    const languages = getAllLanguages()
+    languages.forEach(lang => {
+        addStudentLanguage({
+            studentId: newId,
+            languageId: lang.id,
+            levelOrder: 1,
+        })
+    })
+
     return newStudent
 }
 
@@ -63,3 +76,13 @@ export function deleteStudent(id) {
     saveStudentList(students)
     return true
 }
+
+const studentDB = {
+    getAllStudents,
+    getStudentById,
+    addStudent,
+    updateStudent,
+    deleteStudent,
+}
+
+export default studentDB
