@@ -1,5 +1,5 @@
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 62.5%;
 }
 * {
@@ -207,7 +207,6 @@ button {
     padding: 12px;
     font-size: 14px;
     font-weight: 500;
-    font-family: Roboto;
 }
 .type:hover {
     cursor: pointer;
@@ -219,9 +218,6 @@ button {
 }
 #action {
     margin-top: 20px;
-    button {
-        font-family: Roboto;
-    }
 }
 #search_zone {
     gap: 12px;
@@ -232,6 +228,69 @@ button {
         width: 16px !important;
         height: 16px !important;
     }
+}
+#filter__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    padding: 15px;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Ẩn mặc định */
+    display: none;
+}
+#filter__dropdown.active {
+    display: block;
+}
+
+/* Style cho các mục lọc bên trong (tùy chọn) */
+.filter__option h4 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.filter__option label {
+    display: block; /* Mỗi tùy chọn trên một dòng */
+    margin-bottom: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.filter__option select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    font-family: inherit;
+}
+.filter__option select:focus {
+    outline: none;
+}
+.filter__option {
+    margin-bottom: 12px;
+}
+.filter__actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.filter__actions button {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #f05123;
+    background-color: #f05123;
+    color: #fff;
+    cursor: pointer;
+}
+.filter__actions #reset_filter {
+    background-color: #fff;
+    color: #f05123;
 }
 .search__box {
     input {
@@ -258,6 +317,14 @@ button {
 #action__button {
     gap: 12px;
 }
+#confirm__remove {
+    background-color: #df3b3b;
+    color: #fff;
+    display: none;
+}
+#confirm__remove.active {
+    display: block;
+}
 #add__course {
     background-color: var(--primary-color);
     color: #fff;
@@ -271,16 +338,37 @@ button {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+/* css cho khóa học */
 .course__list {
     .grid {
         margin-top: 20px;
     }
+}
+.course__item:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 20px 20px 2px #ececec;
 }
 .course__item {
     display: flex;
     flex-direction: column;
     border-radius: 12px;
     background-color: #fff;
+    position: relative;
+
+    .checkbox {
+        display: none;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 20px;
+        height: 20px;
+        z-index: 9999;
+    }
+    .checkbox.active {
+        display: block;
+    }
     .course__image {
         img {
             width: 100%;
@@ -290,6 +378,7 @@ button {
     .course__info {
         padding: 12px;
         flex-direction: column;
+        flex-grow: 1;
 
         .course__name {
             font-weight: 600;
@@ -308,6 +397,7 @@ button {
             font-size: 1.4rem;
             color: #f05123;
             margin-bottom: 16px;
+            margin-top: auto;
         }
         .course__details {
             gap: 8px;
@@ -323,13 +413,158 @@ button {
             .hours {
                 display: flex;
                 gap: 8px;
-                align-items: center;
             }
             .class__number {
                 display: flex;
                 gap: 8px;
-                align-items: center;
             }
         }
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 500px;
+    max-width: 90%;
+    z-index: 10001;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e2c3b;
+}
+
+.close-modal {
+    font-size: 2.4rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #ef4444;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.modal-footer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-cancel {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.btn-cancel:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+#select {
+    gap: 12px;
+    select {
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 1px 2px #e2e8f0;
+    }
+    select:focus {
+        outline: none;
     }
 }

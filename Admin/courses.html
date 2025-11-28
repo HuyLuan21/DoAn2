@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
         <link rel="stylesheet" href="../src/style/courses.css" />
-        <!-- <link
+        <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
-        /> -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        />
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" /> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     </head>
 
@@ -26,7 +26,7 @@
                     <div class="sidebar__devider"></div>
                     <ul class="sidebar__list">
                         <li>
-                            <a class="sidebar_item" href="dashbroad.html">
+                            <a class="sidebar_item" href="dashboard.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -263,7 +263,7 @@
                     <div id="action" class="flex space-between">
                         <div id="search_zone" class="flex align-center">
                             <div class="search__box relative">
-                                <input type="text" placeholder="Tìm kiếm" />
+                                <input id="search__input" type="text" placeholder="Tìm kiếm" />
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
@@ -274,7 +274,7 @@
                                     stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    class="lucide lucide-search"
+                                    class="lucide-search"
                                 >
                                     <circle cx="11" cy="11" r="8" key="4ej97u"></circle>
                                     <path d="m21 21-4.3-4.3" key="1qie3q"></path>
@@ -296,10 +296,45 @@
                                         <path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z" />
                                     </svg>
                                 </button>
+                                <div class="filter__wrapper relative">
+                                    <div id="filter__dropdown">
+                                        <div class="filter__option">
+                                            <h4>Sắp xếp theo</h4>
+                                            <select name="sort" id="">
+                                                <option value="price_asc">Giá tăng dần</option>
+                                                <option value="price_desc">Giá giảm dần</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="filter__option">
+                                            <h4>Thể loại</h4>
+                                            <select name="category" id="">
+                                                <option value="all">Tất cả</option>
+                                                <option value="basic">Cơ bản</option>
+                                                <option value="intermediate">Trung cấp</option>
+                                                <option value="advanced">Nâng cao</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="filter__option">
+                                            <h4>Ngôn ngữ</h4>
+                                            <select name="language" id="">
+                                                <option value="all">Tất cả</option>
+                                                <option value="english">English</option>
+                                                <option value="vietnamese">Tiếng Việt</option>
+                                            </select>
+                                        </div>
+                                        <div class="filter__actions">
+                                            <button id="apply_filter">Áp dụng</button>
+                                            <button id="reset_filter">Đặt lại</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div id="action__button" class="flex">
+                            <button id="confirm__remove">Xác nhận</button>
                             <button id="remove__course">Xóa</button>
                             <button id="add__course">Thêm khóa học</button>
                         </div>
@@ -312,6 +347,7 @@
                                         src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
                                         alt=""
                                     />
+                                    <input class="checkbox" type="checkbox" />
                                 </div>
                                 <div class="course__info flex">
                                     <div class="course__name">
@@ -324,7 +360,7 @@
                                         <span>Miễn phí</span>
                                     </div>
                                     <div class="flex course__details space-between">
-                                        <div class="hours">
+                                        <div class="hours align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="clock"
@@ -338,9 +374,9 @@
                                                     d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
                                                 ></path>
                                             </svg>
-                                            <span>20 giờ</span>
+                                            <span>10 Buổi</span>
                                         </div>
-                                        <div class="class__number">
+                                        <div class="class__number align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="users"
@@ -365,6 +401,7 @@
                                         src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
                                         alt=""
                                     />
+                                    <input class="checkbox" type="checkbox" />
                                 </div>
                                 <div class="course__info flex">
                                     <div class="course__name">
@@ -377,7 +414,7 @@
                                         <span>Miễn phí</span>
                                     </div>
                                     <div class="flex course__details space-between">
-                                        <div class="hours">
+                                        <div class="hours align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="clock"
@@ -391,9 +428,9 @@
                                                     d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
                                                 ></path>
                                             </svg>
-                                            <span>20 giờ</span>
+                                            <span>10 Buổi</span>
                                         </div>
-                                        <div class="class__number">
+                                        <div class="class__number align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="users"
@@ -418,6 +455,7 @@
                                         src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
                                         alt=""
                                     />
+                                    <input class="checkbox" type="checkbox" />
                                 </div>
                                 <div class="course__info flex">
                                     <div class="course__name">
@@ -430,7 +468,7 @@
                                         <span>Miễn phí</span>
                                     </div>
                                     <div class="flex course__details space-between">
-                                        <div class="hours">
+                                        <div class="hours align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="clock"
@@ -444,9 +482,9 @@
                                                     d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
                                                 ></path>
                                             </svg>
-                                            <span>20 giờ</span>
+                                            <span>10 Buổi</span>
                                         </div>
-                                        <div class="class__number">
+                                        <div class="class__number align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="users"
@@ -471,6 +509,7 @@
                                         src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
                                         alt=""
                                     />
+                                    <input class="checkbox" type="checkbox" />
                                 </div>
                                 <div class="course__info flex">
                                     <div class="course__name">
@@ -483,7 +522,7 @@
                                         <span>Miễn phí</span>
                                     </div>
                                     <div class="flex course__details space-between">
-                                        <div class="hours">
+                                        <div class="hours align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="clock"
@@ -497,9 +536,9 @@
                                                     d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
                                                 ></path>
                                             </svg>
-                                            <span>20 giờ</span>
+                                            <span>10 Buổi</span>
                                         </div>
-                                        <div class="class__number">
+                                        <div class="class__number align-center">
                                             <svg
                                                 data-prefix="fas"
                                                 data-icon="users"
@@ -523,5 +562,71 @@
                 </div>
             </div>
         </div>
+        <!-- Add Course Modal -->
+        <div id="add_course_modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Thêm khóa học mới</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="add_course_form">
+                        <div class="form-group">
+                            <label for="course-name">Tên khóa học</label>
+                            <input type="text" id="course-name" name="name" placeholder="Nhập tên khóa học" required />
+                        </div>
+                        <div class="form-group">
+                            <div id="select" class="flex space-between">
+                                <select id="course-type-select" name="course_type">
+                                    <option value="" disabled selected>-- Chọn loại khóa học --</option>
+                                    <option value="basic">Cơ bản</option>
+                                    <option value="advanced">Nâng cao</option>
+                                    <option value="specialized">Chuyên ngành</option>
+                                    <option value="free">Miễn phí</option>
+                                </select>
+                                <select id="course-languages-select" name="course_languages">
+                                    <option value="" disabled selected>-- Chọn ngôn ngữ --</option>
+                                    <option value="basic">English</option>
+                                    <option value="advanced">Tiếng Hàn</option>
+                                    <option value="specialized">Tiếng Nhật</option>
+                                    <option value="free">Tiếng Trung</option>
+                                </select>
+                            </div>
+
+                            <label for="course-desc" style="margin-top: 16px">Mô tả khóa học</label>
+                            <textarea id="course-desc" name="description" placeholder="Nhập mô tả khóa học"></textarea>
+                            <div class="flex space-between">
+                                <input type="file" id="course-image" name="image" />
+                                <input type="text" id="course-image-url" name="image_url" placeholder="image_url" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-price">Giá</label>
+                            <input
+                                type="text"
+                                id="course-price"
+                                name="price"
+                                placeholder="Nhập giá (VD: Miễn phí, 500.000đ)"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="course-hours">Thời lượng (Buổi)</label>
+                            <input type="number" id="course-hours" name="hours" placeholder="Nhập số buổi học" />
+                        </div>
+                        <div class="form-group">
+                            <label for="course-classes">Số lớp</label>
+                            <input type="number" id="course-classes" name="classes" placeholder="Nhập số lớp" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-cancel close-modal-btn">Hủy</button>
+                            <button type="submit" class="btn-submit">Thêm khóa học</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../src/js/courses.js"></script>
+        <script type="module" src="../src/js/classes.js"></script>
     </body>
 </html>
