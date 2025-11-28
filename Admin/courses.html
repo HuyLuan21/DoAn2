@@ -1,81 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="../src/style/courses.css" />
+        <!-- <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        /> -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="../src/style/courses.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <title>Courses</title>
-</head>
+    <body>
+        <div class="layout">
+            <div class="body">
+                <nav class="sidebar">
+                    <a class="sidebar__logo flex align-center relative" href="">
+                        <img
+                            src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
+                            alt=""
+                        />
+                    </a>
+                    <div class="sidebar__devider"></div>
+                    <ul class="sidebar__list">
+                        <li>
+                            <a class="sidebar_item" href="dashbroad.html">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-house"
+                                >
+                                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" key="5wwlr5"></path>
+                                    <path
+                                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                        key="1d0kgt"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-file-text"
+                                >
+                                    <path
+                                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                                        key="1rqfz7"
+                                    ></path>
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4" key="tnqrlb"></path>
+                                    <path d="M10 9H8" key="b1mrlr"></path>
+                                    <path d="M16 13H8" key="t4e002"></path>
+                                    <path d="M16 17H8" key="z1uh3a"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-folder"
+                                >
+                                    <path
+                                        d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+                                        key="1kt360"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-layers"
+                                >
+                                    <path
+                                        d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                                        key="8b97xw"
+                                    ></path>
+                                    <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" key="dd6zsq"></path>
+                                    <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" key="ep9fru"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-users"
+                                >
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" key="1yyitq"></path>
+                                    <circle cx="9" cy="7" r="4" key="nufk8"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" key="kshegd"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" key="1da9ce"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-open"
+                                >
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" key="vv98re"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" key="1cyq3y"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-landmark"
+                                >
+                                    <line x1="3" x2="21" y1="22" y2="22" key="j8o0r"></line>
+                                    <line x1="6" x2="6" y1="18" y2="11" key="10tf0k"></line>
+                                    <line x1="10" x2="10" y1="18" y2="11" key="54lgf6"></line>
+                                    <line x1="14" x2="14" y1="18" y2="11" key="380y"></line>
+                                    <line x1="18" x2="18" y1="18" y2="11" key="1kevvc"></line>
+                                    <polygon points="12 2 20 7 4 7" key="jkujk7"></polygon>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-marked"
+                                >
+                                    <path
+                                        d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"
+                                        key="t4utmx"
+                                    ></path>
+                                    <polyline points="10 2 10 10 13 7 16 10 16 2" key="13o6vz"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header__container">
-            <a href="./#/" class="header__logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="header__logo-text">FLC</span>
-            </a>
-            <div class="header__search">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search..." class="header__search-input">
-            </div>
-            <div class="header__actions">
-                <div class="mycourses__btn">
-                    <button>Khóa học của tôi</button>
-                </div>
-                <button class="header__icon-btn">
-                    <i class="fas fa-bell"></i>
-                </button>
-                <div class="header__user">
-                    <div class="header__user-avatar">
-
+                <div class="content relative">
+                    <div class="top_bar relative flex align-center">
+                        <div class="infomation">
+                            <div class="flex align-center space-between">
+                                <button id="back__button" class="flex">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-chevron-left"
+                                    >
+                                        <path d="m15 18-6-6 6-6" key="1wnfg3"></path>
+                                    </svg>
+                                    <span>Quay lại</span>
+                                </button>
+                                <div class="flex align-center info">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#4f5d70"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-bell"
+                                    >
+                                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" key="1qo2s2"></path>
+                                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" key="qgo35s"></path>
+                                    </svg>
+                                    <div class="account_info flex">
+                                        <div class="ava flex align-center justify-center">
+                                            <h1 property="name">A</h1>
+                                        </div>
+                                        <div class="user-info flex">
+                                            <div class="font-medium">user-name</div>
+                                            <span>role</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="header__user-name">Jane Doe</span>
+                    <div class="flex">
+                        <div id="list__courses" class="type flex align-center active">
+                            <span>Danh sách khóa học</span>
+                        </div>
+                        <div id="my__courses" class="type flex align-center"><span>Khóa học của tôi</span></div>
+                    </div>
+                    <div id="action" class="flex space-between">
+                        <div id="search_zone" class="flex align-center">
+                            <div class="search__box relative">
+                                <input type="text" placeholder="Tìm kiếm" />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-search"
+                                >
+                                    <circle cx="11" cy="11" r="8" key="4ej97u"></circle>
+                                    <path d="m21 21-4.3-4.3" key="1qie3q"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <button id="filter__button">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="action__button" class="flex">
+                            <button id="remove__course">Xóa</button>
+                            <button id="add__course">Thêm khóa học</button>
+                        </div>
+                    </div>
+                    <div class="course__list">
+                        <div class="grid">
+                            <div class="course__item">
+                                <div class="course__image">
+                                    <img
+                                        src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="course__info flex">
+                                    <div class="course__name">
+                                        <span>Tiếng Anh căn bản </span>
+                                    </div>
+                                    <div class="course__description">
+                                        <p>Khóa học này dành cho người mới làm quen với Tiếng Anh</p>
+                                    </div>
+                                    <div class="price">
+                                        <span>Miễn phí</span>
+                                    </div>
+                                    <div class="flex course__details space-between">
+                                        <div class="hours">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="clock"
+                                                class="svg-inline--fa fa-clock"
+                                                role="img"
+                                                viewBox="0 0 512 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+                                                ></path>
+                                            </svg>
+                                            <span>20 giờ</span>
+                                        </div>
+                                        <div class="class__number">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="users"
+                                                class="svg-inline--fa fa-users"
+                                                role="img"
+                                                viewBox="0 0 640 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"
+                                                ></path>
+                                            </svg>
+                                            <span>5 lớp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course__item">
+                                <div class="course__image">
+                                    <img
+                                        src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="course__info flex">
+                                    <div class="course__name">
+                                        <span>Tiếng Anh căn bản </span>
+                                    </div>
+                                    <div class="course__description">
+                                        <p>Khóa học này dành cho người mới làm quen với Tiếng Anh</p>
+                                    </div>
+                                    <div class="price">
+                                        <span>Miễn phí</span>
+                                    </div>
+                                    <div class="flex course__details space-between">
+                                        <div class="hours">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="clock"
+                                                class="svg-inline--fa fa-clock"
+                                                role="img"
+                                                viewBox="0 0 512 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+                                                ></path>
+                                            </svg>
+                                            <span>20 giờ</span>
+                                        </div>
+                                        <div class="class__number">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="users"
+                                                class="svg-inline--fa fa-users"
+                                                role="img"
+                                                viewBox="0 0 640 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"
+                                                ></path>
+                                            </svg>
+                                            <span>5 lớp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course__item">
+                                <div class="course__image">
+                                    <img
+                                        src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="course__info flex">
+                                    <div class="course__name">
+                                        <span>Tiếng Anh căn bản </span>
+                                    </div>
+                                    <div class="course__description">
+                                        <p>Khóa học này dành cho người mới làm quen với Tiếng Anh</p>
+                                    </div>
+                                    <div class="price">
+                                        <span>Miễn phí</span>
+                                    </div>
+                                    <div class="flex course__details space-between">
+                                        <div class="hours">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="clock"
+                                                class="svg-inline--fa fa-clock"
+                                                role="img"
+                                                viewBox="0 0 512 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+                                                ></path>
+                                            </svg>
+                                            <span>20 giờ</span>
+                                        </div>
+                                        <div class="class__number">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="users"
+                                                class="svg-inline--fa fa-users"
+                                                role="img"
+                                                viewBox="0 0 640 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"
+                                                ></path>
+                                            </svg>
+                                            <span>5 lớp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course__item">
+                                <div class="course__image">
+                                    <img
+                                        src="https://storage.googleapis.com/liveazotastoragept032025/avatar/m11_2025/d17/91812313/21ab2b05ccc815556170e018c5b330b6.jpeg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="course__info flex">
+                                    <div class="course__name">
+                                        <span>Tiếng Anh căn bản </span>
+                                    </div>
+                                    <div class="course__description">
+                                        <p>Khóa học này dành cho người mới làm quen với Tiếng Anh</p>
+                                    </div>
+                                    <div class="price">
+                                        <span>Miễn phí</span>
+                                    </div>
+                                    <div class="flex course__details space-between">
+                                        <div class="hours">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="clock"
+                                                class="svg-inline--fa fa-clock"
+                                                role="img"
+                                                viewBox="0 0 512 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+                                                ></path>
+                                            </svg>
+                                            <span>20 giờ</span>
+                                        </div>
+                                        <div class="class__number">
+                                            <svg
+                                                data-prefix="fas"
+                                                data-icon="users"
+                                                class="svg-inline--fa fa-users"
+                                                role="img"
+                                                viewBox="0 0 640 512"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="currentColor"
+                                                    d="M320 16a104 104 0 1 1 0 208 104 104 0 1 1 0-208zM96 88a72 72 0 1 1 0 144 72 72 0 1 1 0-144zM0 416c0-70.7 57.3-128 128-128 12.8 0 25.2 1.9 36.9 5.4-32.9 36.8-52.9 85.4-52.9 138.6l0 16c0 11.4 2.4 22.2 6.7 32L32 480c-17.7 0-32-14.3-32-32l0-32zm521.3 64c4.3-9.8 6.7-20.6 6.7-32l0-16c0-53.2-20-101.8-52.9-138.6 11.7-3.5 24.1-5.4 36.9-5.4 70.7 0 128 57.3 128 128l0 32c0 17.7-14.3 32-32 32l-86.7 0zM472 160a72 72 0 1 1 144 0 72 72 0 1 1 -144 0zM160 432c0-88.4 71.6-160 160-160s160 71.6 160 160l0 16c0 17.7-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32l0-16z"
+                                                ></path>
+                                            </svg>
+                                            <span>5 lớp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- Main Container -->
-    <div class="container">
-        <aside class="sidebar">
-            <nav class="sidebar__nav">
-                <ul>
-                    <li>
-                        <a href="/">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="house"
-                                class="svg-inline--fa fa-house " role="img" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 576 512">
-                                <path fill="currentColor"
-                                    d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z">
-                                </path>
-                            </svg>
-                            <span>Trang chủ</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="road"
-                                class="svg-inline--fa fa-road " role="img" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 576 512">
-                                <path fill="currentColor"
-                                    d="M256 32l-74.8 0c-27.1 0-51.3 17.1-60.3 42.6L3.1 407.2C1.1 413 0 419.2 0 425.4C0 455.5 24.5 480 54.6 480L256 480l0-64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 64 201.4 0c30.2 0 54.6-24.5 54.6-54.6c0-6.2-1.1-12.4-3.1-18.2L455.1 74.6C446 49.1 421.9 32 394.8 32L320 32l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64zm64 192l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32s32 14.3 32 32z">
-                                </path>
-                            </svg>
-                            <span>Lộ Trình</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <main class="main">
-            <div class="view-content" id="view-courses">
-                <h1 class="main__title">Courses</h1>
-                <p>Course management content will be here...</p>
-            </div>
-        </main>
-    </div>
-</body>
+    </body>
+</html>
