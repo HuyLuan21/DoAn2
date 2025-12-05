@@ -156,10 +156,7 @@ button {
     min-width: 0px;
     padding-bottom: 40px;
 }
-.top_bar {
-    min-height: 56px;
-    border-bottom: 1px solid #e2e8f0;
-}
+
 .infomation {
     display: block;
     width: 100%;
@@ -216,9 +213,7 @@ button {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
 }
-#action {
-    margin-top: 20px;
-}
+
 #search_zone {
     gap: 12px;
 }
@@ -339,88 +334,6 @@ button {
     gap: 20px;
 }
 /* css cho khóa học */
-.course__list {
-    .grid {
-        margin-top: 20px;
-    }
-}
-.course__item:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 20px 20px 2px #ececec;
-}
-.course__item {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    background-color: #fff;
-    position: relative;
-
-    .checkbox {
-        display: none;
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        width: 20px;
-        height: 20px;
-        z-index: 9999;
-    }
-    .checkbox.active {
-        display: block;
-    }
-    .course__image {
-        img {
-            width: 100%;
-            border-radius: 12px 12px 0 0;
-        }
-    }
-    .course__info {
-        padding: 12px;
-        flex-direction: column;
-        flex-grow: 1;
-
-        .course__name {
-            font-weight: 600;
-            font-size: 1.4rem;
-            color: #1e2c3b;
-        }
-        .course__description {
-            margin-top: 8px;
-            margin-bottom: 8px;
-            font-size: 1.4rem;
-            color: #1e2c3b;
-        }
-        .price {
-            display: flex;
-            font-weight: 600;
-            font-size: 1.4rem;
-            color: #f05123;
-            margin-bottom: 16px;
-            margin-top: auto;
-        }
-        .course__details {
-            gap: 8px;
-            font-size: 1.4rem;
-            span {
-                color: #666;
-            }
-            svg {
-                width: 16px;
-                height: 16px;
-                color: #666;
-            }
-            .hours {
-                display: flex;
-                gap: 8px;
-            }
-            .class__number {
-                display: flex;
-                gap: 8px;
-            }
-        }
-    }
-}
 
 /* Modal Styles */
 .modal {
@@ -555,8 +468,32 @@ button {
 .btn-submit:hover {
     opacity: 0.9;
 }
+
+.class__list {
+    margin-top: 20px;
+    gap: 20px;
+}
+.class__detail {
+    border-radius: 20px;
+    background-color: #fff;
+    min-width: 400px;
+}
+.class__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .class__header__title {
+        margin: auto;
+    }
+}
+#setting {
+    background-color: #f9fafc;
+    color: #6e7d93;
+    border: 1px solid #e2e8f0;
+}
 #select {
-    gap: 12px;
+    padding: 10px;
+    padding-right: 0px;
     select {
         width: 100%;
         height: 30px;
@@ -566,5 +503,44 @@ button {
     }
     select:focus {
         outline: none;
+    }
+}
+.p-10 {
+    padding: 10px;
+}
+.calender {
+    border-radius: 20px;
+    background-color: #fff;
+    flex: 1;
+}
+.top_bar {
+    min-height: 56px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.top-bar {
+    margin: auto;
+    width: 100%;
+}
+.space-around {
+    justify-content: space-around;
+}
+#today {
+    height: 40px;
+}
+#calender_navigate {
+    gap: 10px;
+}
+#change-day {
+    flex: 1;
+}
+.month {
+    flex-direction: column;
+    align-items: center;
+    h3 {
+        font-size: large;
+        font-weight: 500;
+    }
+    .time {
+        font-size: 14px;
     }
 }
