@@ -1,9 +1,10 @@
 export default [
     {
         examId: 1,
-        classId: 1,
-        examName: 'Midterm Exam',
-        examType: 'Placement', // Placement, Regular, Final
+        examTypeId: 0, // 0: placement, 1: final, 2: midterm, 3: regular
+        courseId: null, // neu la placement thi courseId va classId la null
+        classId: null,
+        examName: 'Placement Test',
         examDate: '2025-07-15',
         startTime: '10:00',
         endTime: '12:00',
@@ -11,42 +12,35 @@ export default [
     },
     {
         examId: 2,
+        examTypeId: 1,
+        courseId: null,
         classId: 1,
         examName: 'Final Exam',
-        examType: 'Placement', // Placement, Regular, Final
-        examDate: '2025-12-20',
-        startTime: '14:00',
-        endTime: '16:00',
+        examDate: '2025-07-15',
+        startTime: '10:00',
+        endTime: '12:00',
         maxScore: 100,
     },
     {
         examId: 3,
-        classId: 2,
-        examName: 'Regular Exam 1',
-        examType: 'Placement', // Placement, Regular, Final
-        examDate: '2025-08-10',
-        startTime: '09:00',
-        endTime: '11:00',
-        maxScore: 50,
+        examTypeId: 2,
+        courseId: null,
+        classId: 1,
+        examName: 'Midterm Exam',
+        examDate: '2025-07-15',
+        startTime: '10:00',
+        endTime: '12:00',
+        maxScore: 100,
     },
     {
         examId: 4,
-        classId: 2,
-        examName: 'Midterm Exam',
-        examType: 'Placement', // Placement, Regular, Final
-        examDate: '2025-10-05',
-        startTime: '13:00',
-        endTime: '15:00',
-        maxScore: 75,
-    },
-    {
-        examId: 5,
-        classId: 3,
-        examName: 'Placement Test',
-        examType: 'Placement', // Placement, Regular, Final
-        examDate: '2025-06-20',
-        startTime: '11:00',
-        endTime: '13:00',
+        examTypeId: 3,
+        courseId: null,
+        classId: 1,
+        examName: 'Regular Exam',
+        examDate: '2025-07-15',
+        startTime: '10:00',
+        endTime: '12:00',
         maxScore: 100,
     },
 ]

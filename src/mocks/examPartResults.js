@@ -1,22 +1,42 @@
 export default [
     {
-        partResultId: 1,
-        resultId: 1,
-        score: 40,
+        examPartResultId: 1,
+        examPartId: 1,
+        score: 90
     },
     {
-        partResultId: 2,
-        resultId: 1,
-        score: 45,
+        examPartResultId: 2,
+        examPartId: 2,
+        score: 85
     },
     {
-        partResultId: 3,
-        resultId: 1,
-        score: 38,
+        examPartResultId: 3,
+        examPartId: 3,
+        score: 80
     },
     {
-        partResultId: 4,
-        resultId: 1,
-        score: 1,
+        examPartResultId: 4,
+        examPartId: 4,
+        score: 75
+    },
+    {
+        examPartResultId: 5,
+        examPartId: 5,
+        score: 70
+    },
+    {
+        examPartResultId: 6,
+        examPartId: 6,
+        score: 65
+    },
+    {
+        examPartResultId: 7,
+        examPartId: 7,
+        score: 60
+    },
+    {
+        examPartResultId: 8,
+        examPartId: 8,
+        score: 55
     },
 ]
