@@ -27,15 +27,15 @@ export function getAllStudents() {
 
 export function getStudentById(id) {
     const students = getStudentList()
-    return students.find(student => student.id === id) || null
+    return students.find(student => student.studentId === id) || null
 }
 
 export function addStudent(student) {
     // them ban ghi student
     // add student_language cho student tuong ung voi tung ngon ngu (mac dinh level order la thap nhat ~ minimum order)
     const students = getStudentList()
-    const newId = students.length > 0 ? Math.max(...students.map(s => s.id)) + 1 : 1
-    const newStudent = { id: newId, ...student }
+    const newId = students.length > 0 ? Math.max(...students.map(s => s.studentId)) + 1 : 1
+    const newStudent = { studentId: newId, ...student }
     students.push(newStudent)
     saveStudentList(students)
 
@@ -54,7 +54,7 @@ export function addStudent(student) {
 export function updateStudent(id, updatedInfo) {
     const students = getStudentList()
 
-    const index = students.findIndex(student => student.id === id)
+    const index = students.findIndex(student => student.studentId === id)
     if (index === -1) {
         return null
     }
@@ -67,7 +67,7 @@ export function updateStudent(id, updatedInfo) {
 export function deleteStudent(id) {
     const students = getStudentList()
 
-    const index = students.findIndex(student => student.id === id)
+    const index = students.findIndex(student => student.studentId === id)
     if (index === -1) {
         return false
     }
@@ -75,6 +75,11 @@ export function deleteStudent(id) {
 
     saveStudentList(students)
     return true
+}
+
+export function getStudentCountByClassId(classId) {
+    const students = getStudentList()
+    return students.filter(student => student.classId === classId).length
 }
 
 const studentDB = {
