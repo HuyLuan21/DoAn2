@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard</title>
-        <link rel="stylesheet" href="./styles/dashboard.css" />
+        <title>Danh sách lớp</title>
+        <link rel="stylesheet" href="./styles/manage-classes.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -31,7 +31,7 @@
                 </button>
             </nav>
             <nav class="sidebar hidden">
-                <a class="sidebar__logo flex align-center relative" href="">
+                <a class="sidebar__logo flex align-center relative" href="dashboard.html">
                     <img
                         src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
                         alt=""
@@ -39,8 +39,8 @@
                 </a>
                 <div class="sidebar__devider"></div>
                 <ul class="sidebar__list">
-                    <li class="active">
-                        <a class="sidebar_item" title="Dashboard" href="">
+                    <li>
+                        <a class="sidebar_item" title="Dashboard" href="./dashboard.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -61,8 +61,8 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
-                        <a class="sidebar_item" title="Lớp" href="manage-classes.html">
+                    <li class="active">
+                        <a class="sidebar_item" title="Lớp" href="">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -84,7 +84,6 @@
                             </svg>
                         </a>
                     </li>
-
                     <li>
                         <a class="sidebar_item" title="Bài tập" href="">
                             <svg
@@ -259,28 +258,26 @@
                     </div>
                 </div>
                 <div class="main-content">
-                    <div class="card-container">
-                        <div class="card-grid">
-                            <a href="" class="feature-card">
-                                <i class="fa-regular fa-file"></i>
-                                <span class="feature-card__title">Bài tập</span>
-                            </a>
-                            <a href="" class="feature-card">
-                                <i class="fa-solid fa-folder-open"></i>
-                                <span class="feature-card__title">Đề thi</span>
-                            </a>
-                            <a href="manage-classes.html" class="feature-card">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span class="feature-card__title">Quản lý lớp</span>
-                            </a>
-                            <a href="" class="feature-card">
-                                <i class="fa-solid fa-book"></i>
-                                <span class="feature-card__title">Khóa học</span>
-                            </a>
+                    <div class="content-container">
+                        <div class="content-header">
+                            <h1 class="content-header__title">Danh sách lớp</h1>
                         </div>
+                        <section class="class-section">
+                            <div class="search-box">
+                                <input type="text" class="search-box__input" placeholder="Tìm kiếm theo tên lớp" />
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div class="class-section__header">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <h2 class="class-section__title">Khác</h2>
+                            </div>
+                            <div class="class-section__classList"></div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="module" src="./js/manage-classes.js"></script>
 </html>

@@ -15,6 +15,7 @@ h4,
 h5,
 h6 {
     font-weight: inherit;
+    font-size: inherit;
 }
 
 a {
@@ -40,6 +41,11 @@ button {
     padding: 8px 12px;
     cursor: pointer;
     align-items: center;
+}
+.button--primary {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.4rem;
 }
 
 :root {
@@ -74,6 +80,8 @@ button {
 .relative {
     position: relative;
 }
+
+
 .hidden {
     display: none;
 }
@@ -175,6 +183,8 @@ button {
     width: 30px;
     height: 100px;
 }
+
+/* =============================================== CONTENT STYLES =============================================== */
 
 .content {
     border-radius: 30px;
@@ -287,45 +297,7 @@ button {
     margin-right: 8px;
 }
 
-.card-grid {
-    margin: 32px auto 0px;
-    display: grid;
-    /* mobile first */
-    max-width: 640px;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 32px;
-}
-.feature-card {
-    width: 100%;
-    height: 150px;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1.6rem;
-}
-.feature-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.feature-card i {
-    font-size: 4.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-
-
 @media (min-width: 640px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 @media (min-width: 768px) {
     .mobile-nav {
@@ -338,20 +310,8 @@ button {
     .sidebar {
         display: block;
     }
-    .card-grid {
-        max-width: 680px;
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 @media (min-width: 1024px) {
-    .card-grid {
-        max-width: 960px;
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 @media (min-width: 1280px) {
-    .card-grid {
-        max-width: 1200px;
-        grid-template-columns: repeat(4, 1fr);
-    }
 }

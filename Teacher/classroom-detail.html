@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard</title>
-        <link rel="stylesheet" href="./styles/dashboard.css" />
+        <title>Danh sách lớp</title>
+        <link rel="stylesheet" href="./styles/default.css" />
+        <link rel="stylesheet" href="./styles/classroom-detail.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -31,7 +32,7 @@
                 </button>
             </nav>
             <nav class="sidebar hidden">
-                <a class="sidebar__logo flex align-center relative" href="">
+                <a class="sidebar__logo flex align-center relative" href="dashboard.html">
                     <img
                         src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
                         alt=""
@@ -39,8 +40,8 @@
                 </a>
                 <div class="sidebar__devider"></div>
                 <ul class="sidebar__list">
-                    <li class="active">
-                        <a class="sidebar_item" title="Dashboard" href="">
+                    <li>
+                        <a class="sidebar_item" title="Dashboard" href="dashboard.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -61,8 +62,8 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
-                        <a class="sidebar_item" title="Lớp" href="manage-classes.html">
+                    <li class="active">
+                        <a class="sidebar_item" title="Lớp" href="./manage-classes.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -226,7 +227,7 @@
                         <span>Quay lại</span>
                     </button>
                     <div class="topbar__left">
-                        <span class="topbar__current-page">Dashboard</span>
+                        <span class="topbar__current-page">Chi tiết lớp học</span>
                     </div>
                     <div class="topbar__right">
                         <div class="topbar__user">
@@ -259,28 +260,53 @@
                     </div>
                 </div>
                 <div class="main-content">
-                    <div class="card-container">
-                        <div class="card-grid">
-                            <a href="" class="feature-card">
-                                <i class="fa-regular fa-file"></i>
-                                <span class="feature-card__title">Bài tập</span>
-                            </a>
-                            <a href="" class="feature-card">
-                                <i class="fa-solid fa-folder-open"></i>
-                                <span class="feature-card__title">Đề thi</span>
-                            </a>
-                            <a href="manage-classes.html" class="feature-card">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span class="feature-card__title">Quản lý lớp</span>
-                            </a>
-                            <a href="" class="feature-card">
-                                <i class="fa-solid fa-book"></i>
-                                <span class="feature-card__title">Khóa học</span>
-                            </a>
+                    <!-- Classroom Detail Sidebar -->
+                    <div class="classroom-sidebar">
+                        <button id="studentList-btn" href="" class="classroom-sidebar__item active">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Danh sách học sinh</span>
+                        </button>
+                        <button id="gradeList-btn" href="" class="classroom-sidebar__item">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>Bảng điểm</span>
+                        </button>
+                    </div>
+                    <div class="classroom-content">
+                        <div id="studentListContent" class="classroom-content__item active">
+                            <div class="studentList__header">
+                                <h2>Danh sách học sinh</h2>
+                                <div class="studentList__search">
+                                    <i class="fa-solid fa-search"></i>
+                                    <input
+                                        type="text"
+                                        id="studentSearchInput"
+                                        placeholder="Tìm kiếm học sinh..."
+                                        class="studentList__search-input"
+                                    />
+                                </div>
+                            </div>
+                            <ul class="studentList__list"></ul>
+                        </div>
+                        <div id="gradeListContent" class="classroom-content__item">
+                            <div class="grade__header">
+                                <h2>Bảng điểm</h2>
+                                <div class="grade__search">
+                                    <i class="fa-solid fa-search"></i>
+                                    <input
+                                        type="text"
+                                        id="gradeSearchInput"
+                                        placeholder="Tìm kiếm học sinh..."
+                                        class="grade__search-input"
+                                    />
+                                </div>
+                            </div>
+                            <ul class="grade__list"></ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="module" src="./js/classroom-detail.js"></script>
 </html>
