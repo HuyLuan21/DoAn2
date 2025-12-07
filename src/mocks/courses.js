@@ -31,7 +31,7 @@ export default [
         duration: '12 weeks',
         languageCode: 'EN',
         inputLevel: 3,
-        outPutLevel: 3,
+        outPutLevel: 4,
         tuitionFee: 2500000,
         status: 'Active',
     },

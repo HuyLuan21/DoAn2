@@ -18,18 +18,18 @@ export function getAllCourses() {
 }
 export function getCourseById(id) {
     const courses = getCourseList()
-    return courses.find(course => course.id === id) || null
+    return courses.find(course => course.courseId === Number(id)) || null
 }
 export function addCourse(course) {
     const courses = getCourseList()
-    const newId = courses.length > 0 ? Math.max(...courses.map(c => c.id)) + 1 : 1
-    const newCourse = { id: newId, ...course }
+    const newId = courses.length > 0 ? Math.max(...courses.map(c => c.courseId)) + 1 : 1
+    const newCourse = { courseId: newId, ...course }
     courses.push(newCourse)
     saveCourseList(courses)
 }
 export function updateCourse(id, updatedInfo) {
     const courses = getCourseList()
-    const index = courses.findIndex(course => course.id === id)
+    const index = courses.findIndex(course => course.courseId === Number(id))
     if (index === -1) {
         return null
     }
@@ -39,7 +39,7 @@ export function updateCourse(id, updatedInfo) {
 }
 export function deleteCourse(id) {
     const courses = getCourseList()
-    const index = courses.findIndex(course => course.id === id)
+    const index = courses.findIndex(course => course.courseId === Number(id))
     if (index === -1) {
         return false
     }
