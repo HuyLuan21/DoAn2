@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lịch trình</title>
+        <link rel="stylesheet" href="./styles/default.css" />
+        <link rel="stylesheet" href="./styles/schedule.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    </head>
+    <body>
+        <div class="layout">
+            <div class="body">
+                <nav class="mobile-nav flex align-center justify-center space-between">
+                    <a class="mobile-nav__logo flex align-center" href="">
+                        <img
+                            src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
+                            alt=""
+                        />
+                    </a>
+                    <button class="mobile-nav__menu-btn">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </nav>
+                <nav class="sidebar hidden">
+                    <a class="sidebar__logo flex align-center relative" href="">
+                        <img
+                            src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
+                            alt=""
+                        />
+                    </a>
+                    <div class="sidebar__devider"></div>
+                    <ul class="sidebar__list">
+                        <li>
+                            <a class="sidebar_item" title="Dashboard" href="./dashboard.html">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-house"
+                                >
+                                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" key="5wwlr5"></path>
+                                    <path
+                                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                        key="1d0kgt"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" title="Lớp" href="manage-classes.html">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-layers"
+                                >
+                                    <path
+                                        d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                                        key="8b97xw"
+                                    ></path>
+                                    <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" key="dd6zsq"></path>
+                                    <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" key="ep9fru"></path>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a class="sidebar_item" title="Lịch trình" href="./schedule.html">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-calendar-check2-icon lucide-calendar-check-2"
+                                >
+                                    <path d="M8 2v4" />
+                                    <path d="M16 2v4" />
+                                    <path d="M21 14V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
+                                    <path d="M3 10h18" />
+                                    <path d="m16 20 2 2 4-4" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" title="Đề thi" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-folder"
+                                >
+                                    <path
+                                        d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+                                        key="1kt360"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-users"
+                                >
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" key="1yyitq"></path>
+                                    <circle cx="9" cy="7" r="4" key="nufk8"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" key="kshegd"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" key="1da9ce"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-open"
+                                >
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" key="vv98re"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" key="1cyq3y"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-landmark"
+                                >
+                                    <line x1="3" x2="21" y1="22" y2="22" key="j8o0r"></line>
+                                    <line x1="6" x2="6" y1="18" y2="11" key="10tf0k"></line>
+                                    <line x1="10" x2="10" y1="18" y2="11" key="54lgf6"></line>
+                                    <line x1="14" x2="14" y1="18" y2="11" key="380y"></line>
+                                    <line x1="18" x2="18" y1="18" y2="11" key="1kevvc"></line>
+                                    <polygon points="12 2 20 7 4 7" key="jkujk7"></polygon>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-marked"
+                                >
+                                    <path
+                                        d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"
+                                        key="t4utmx"
+                                    ></path>
+                                    <polyline points="10 2 10 10 13 7 16 10 16 2" key="13o6vz"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="content relative">
+                    <div class="topbar">
+                        <button class="topbar__previos-btn">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Quay lại</span>
+                        </button>
+                        <div class="topbar__left">
+                            <span class="topbar__current-page">Lịch trình giảng viên</span>
+                        </div>
+                        <div class="topbar__right">
+                            <div class="topbar__user">
+                                <img
+                                    class="topbar__user-avatar"
+                                    src="https://jbagy.me/wp-content/uploads/2025/03/anh-avatar-vo-tri-meo-1.jpg"
+                                    alt=""
+                                />
+                                <div class="topbar__user-info">
+                                    <span class="topbar__user-name">Nguyen Van A</span>
+                                    <span class="topbar__user-role">Teacher</span>
+                                </div>
+                                <div class="topbar__user-dropdown-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-regular fa-user"></i>
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                Logout</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content">
+                        <div class="schedule-container">
+                            <!-- Sidebar Navigation -->
+                            <div class="schedule-sidebar">
+                                <div class="schedule-sidebar__header">
+                                    <h3>Lịch trình</h3>
+                                </div>
+                                <nav class="schedule-sidebar__tabs">
+                                    <button class="schedule-tab active" data-view="today">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <span>Hôm nay</span>
+                                    </button>
+                                    <button class="schedule-tab" data-view="week">
+                                        <i class="fa-solid fa-calendar-week"></i>
+                                        <span>Tuần này</span>
+                                    </button>
+                                    <button class="schedule-tab" data-view="month">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Tháng này</span>
+                                    </button>
+                                </nav>
+                            </div>
+
+                            <!-- Main Schedule Content -->
+                            <div class="schedule-main">
+                                <!-- Header with Date and Filters -->
+                                <div class="schedule-header">
+                                    <div class="schedule-header__date">
+                                        <div class="schedule-header__title-row">
+                                            <h2 id="schedule-date-title">Hôm nay</h2>
+                                            <input
+                                                type="date"
+                                                id="schedule-date-picker"
+                                                class="schedule-date-picker"
+                                                value="2025-12-08"
+                                            />
+                                        </div>
+                                        <p id="schedule-date-subtitle">Thứ Hai, 08/12/2025</p>
+                                    </div>
+                                    <div class="schedule-filters">
+                                        <button class="filter-btn active" data-filter="all">
+                                            <i class="fa-solid fa-grip"></i>
+                                            Tất cả
+                                        </button>
+                                        <button class="filter-btn" data-filter="teaching">
+                                            <i class="fa-solid fa-chalkboard-user"></i>
+                                            Giảng dạy
+                                        </button>
+                                        <button class="filter-btn" data-filter="exam">
+                                            <i class="fa-solid fa-clipboard-list"></i>
+                                            Coi thi
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Schedule Content -->
+                                <div class="schedule-content" id="schedule-content">
+                                    <!-- Schedule items will be rendered here by JavaScript -->
+                                    <div class="schedule-loading">
+                                        <i class="fa-solid fa-spinner fa-spin"></i>
+                                        <p>Đang tải lịch trình...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="./js/schedule.js"></script>
+    </body>
+</html>
