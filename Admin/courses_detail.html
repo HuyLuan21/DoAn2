@@ -226,21 +226,6 @@
                                     <span>Quay lại</span>
                                 </button>
                                 <div class="flex align-center info">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="#4f5d70"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-bell"
-                                    >
-                                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" key="1qo2s2"></path>
-                                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" key="qgo35s"></path>
-                                    </svg>
                                     <div class="account_info flex">
                                         <div class="ava flex align-center justify-center">
                                             <h1 property="name">A</h1>
@@ -298,6 +283,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="course__item"></div>
                             </div>
                         </div>
                         <div class="calender">
@@ -366,6 +352,73 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="update_modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Cập nhật khóa học</h2>
+                    <span class="close-modal">×</span>
+                </div>
+                <div class="modal-body">
+                    <form id="update_course_form">
+                        <div class="form-group">
+                            <label for="course-name">Tên khóa học</label>
+                            <input
+                                type="text"
+                                id="course-name"
+                                name="name"
+                                placeholder="Nhập tên khóa học"
+                                required=""
+                            />
+                        </div>
+                        <div class="form-group">
+                            <div id="select" class="flex space-between">
+                                <!-- implant funcion here -->
+                                <select id="course-languages-select" name="course_languages">
+                                    <option value="" disabled selected>-- Chọn ngôn ngữ --</option>
+                                </select>
+                                <select id="course-type-select" name="course_type">
+                                    <option value="" disabled selected>-- Chọn loại khóa học --</option>
+                                </select>
+                            </div>
+
+                            <label for="course-desc" style="margin-top: 16px">Mô tả khóa học</label>
+                            <textarea id="course-desc" name="description" placeholder="Nhập mô tả khóa học"></textarea>
+                            <div class="flex space-between" style="gap: 5px">
+                                <input type="file" id="course-image" name="image" accept="image/*" />
+                                <input type="text" id="course-image-url" name="image_url" placeholder="image_url" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-price">Giá</label>
+                            <input
+                                type="text"
+                                id="course-price"
+                                name="price"
+                                placeholder="Nhập giá (VD: Miễn phí, 500.000đ)"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="course-hours">Thời lượng (Tuần)</label>
+                            <input type="number" id="course-hours" name="hours" placeholder="Nhập số tuần học" />
+                        </div>
+                        <div class="form-group">
+                            <label>Trạng thái</label>
+                            <select id="course-status" name="status">
+                                <option value="" disabled selected>-- Chọn trạng thái --</option>
+                                <option value="active">Đang hoạt động</option>
+                                <option value="inactive">Không hoạt động</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-delete">Xóa</button>
+                            <button type="button" class="btn-cancel close-modal-btn">Hủy</button>
+                            <button type="submit" class="btn-submit">Lưu</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
