@@ -60,3 +60,13 @@ export function deleteClass(classId) {
     saveClasses(classes)
     return true
 }
+
+export function getClassesByTeacherId(teacherId) {
+    const classes = getClasses()
+    return classes.filter(cls => cls.teacherId === teacherId)
+}
+
+export function getClassesByCourseId(courseId) {
+    const classes = getClasses()
+    return classes.filter(cls => cls.courseId === courseId)
+}

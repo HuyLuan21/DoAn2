@@ -22,3 +22,13 @@ export function getExamsByClassId(classId) {
     const exams = getExamList()
     return exams.filter(exam => exam.classId === classId)
 }
+
+/**
+ * Lấy thông tin một bài thi theo ID
+ * @param {number} examId - ID của bài thi
+ * @returns {Object|null} Thông tin bài thi hoặc null
+ */
+export function getExamById(examId) {
+    const exams = getExamList()
+    return exams.find(exam => exam.examId === examId) || null
+}

@@ -6,13 +6,13 @@ export default [
         className: 'English beginer 01',
         startDate: '2024-09-01',
         endDate: '2024-12-01',
-        status: 'Pending', // 
+        status: 'Pending', //
         maxStudents: 20,
     },
     {
         classId: 2,
         coursesId: 2,
-        teacherId: 2,
+        teacherId: 1,
         className: 'English beginer 02',
         startDate: '2024-10-01',
         endDate: '2025-01-15',
@@ -22,7 +22,7 @@ export default [
     {
         classId: 3,
         coursesId: 3,
-        teacherId: 3,
+        teacherId: 1,
         className: 'English beginer 03',
         startDate: '2024-11-01',
         endDate: '2025-02-28',
@@ -42,7 +42,7 @@ export default [
     {
         classId: 5,
         coursesId: 2,
-        teacherId: 2,
+        teacherId: 1,
         className: 'English beginer 05',
         startDate: '2024-12-01',
         endDate: '2025-03-15',
@@ -52,7 +52,7 @@ export default [
     {
         classId: 6,
         coursesId: 3,
-        teacherId: 3,
+        teacherId: 1,
         className: 'English beginer 06',
         startDate: '2024-12-01',
         endDate: '2025-03-15',
