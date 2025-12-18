@@ -2,7 +2,9 @@ import { getStudentById } from '../../src/database/student.db.js'
 import { getClassById } from '../../src/database/class.db.js'
 import { getStudentListByClassId } from '../../src/database/enrollment.db.js'
 import { getExamsByClassId } from '../../src/database/exam.db.js'
-import { getExamResultByStudentId } from '../../src/database/examResult.db.js'
+import { getExamResultByStudentId, getExamResultByStudentAndExam } from '../../src/database/examResult.db.js'
+import { getExamPartsByExamId } from '../../src/database/examPart.db.js'
+import { getExamPartResultsByResultId } from '../../src/database/examPartResult.db.js'
 
 let currentClassId = parseInt(new URLSearchParams(window.location.search).get('classId'))
 
@@ -112,7 +114,13 @@ const renderExamResultList = () => {
                 totalScore += score
                 examCount++
                 const scoreClass = score >= 50 ? 'score-pass' : 'score-fail'
-                tableHTML += `<td class="col-exam ${scoreClass}">${score}</td>`
+                tableHTML += `<td class="col-exam ${scoreClass} score-clickable" 
+                    data-student-id="${studentId}" 
+                    data-exam-id="${exam.examId}"
+                    data-student-name="${student.fullName}"
+                    data-exam-name="${exam.examName}">
+                    ${score}
+                </td>`
             } else {
                 tableHTML += `<td class="col-exam score-empty">-</td>`
             }
@@ -132,6 +140,123 @@ const renderExamResultList = () => {
     `
 
     DOM.examResultList.innerHTML = tableHTML
+
+    // Setup click listeners cho các ô điểm
+    setupScoreClickListeners()
+}
+
+/**
+ * Hiển thị popup chi tiết điểm thành phần
+ */
+const showScoreDetails = (studentId, examId, studentName, examName, targetElement) => {
+    // Xóa popup cũ nếu có
+    const existingPopup = document.querySelector('.score-popup')
+    if (existingPopup) {
+        existingPopup.remove()
+    }
+
+    // Lấy exam result
+    const examResult = getExamResultByStudentAndExam(studentId, examId)
+    if (!examResult) {
+        return
+    }
+
+    // Lấy exam parts và part results
+    const examParts = getExamPartsByExamId(examId)
+    const partResults = getExamPartResultsByResultId(examResult.resultId)
+
+    // Tạo popup content
+    let popupHTML = `
+        <div class="score-popup">
+            <div class="score-popup__header">
+                <h4>${studentName}</h4>
+                <span class="score-popup__exam">${examName}</span>
+                <button class="score-popup__close">&times;</button>
+            </div>
+            <div class="score-popup__body">
+    `
+
+    if (examParts.length > 0) {
+        popupHTML += `<ul class="score-popup__list">`
+
+        examParts.forEach(part => {
+            const partResult = partResults.find(pr => pr.examPartId === part.partId)
+            const score = partResult ? partResult.score : '-'
+            const weightPercent = Math.round(part.weighttage * 100)
+            const scoreClass = partResult && score >= part.maxScore * 0.5 ? 'popup-score-pass' : 'popup-score-fail'
+
+            popupHTML += `
+                <li class="score-popup__item">
+                    <span class="score-popup__part-name">${part.partName}</span>
+                    <span class="score-popup__part-weight">${weightPercent}%</span>
+                    <span class="score-popup__part-score ${scoreClass}">${score}/${part.maxScore}</span>
+                </li>
+            `
+        })
+
+        popupHTML += `</ul>`
+    } else {
+        popupHTML += `<p class="score-popup__no-parts">Kỳ thi này không có điểm thành phần</p>`
+    }
+
+    popupHTML += `
+            </div>
+        </div>
+    `
+
+    // Thêm popup vào body
+    document.body.insertAdjacentHTML('beforeend', popupHTML)
+
+    // Định vị popup
+    const popup = document.querySelector('.score-popup')
+    const rect = targetElement.getBoundingClientRect()
+
+    popup.style.position = 'fixed'
+    popup.style.top = `${rect.bottom + 8}px`
+    popup.style.left = `${rect.left}px`
+
+    // Điều chỉnh nếu popup vượt ra ngoài viewport
+    const popupRect = popup.getBoundingClientRect()
+    if (popupRect.right > window.innerWidth) {
+        popup.style.left = `${window.innerWidth - popupRect.width - 16}px`
+    }
+    if (popupRect.bottom > window.innerHeight) {
+        popup.style.top = `${rect.top - popupRect.height - 8}px`
+    }
+
+    // Close button
+    popup.querySelector('.score-popup__close').addEventListener('click', () => {
+        popup.remove()
+    })
+
+    // Click outside to close
+    setTimeout(() => {
+        document.addEventListener('click', function closePopup(e) {
+            if (!popup.contains(e.target) && !targetElement.contains(e.target)) {
+                popup.remove()
+                document.removeEventListener('click', closePopup)
+            }
+        })
+    }, 0)
+}
+
+/**
+ * Setup event listeners cho các ô điểm có thể click
+ */
+const setupScoreClickListeners = () => {
+    const scoreElements = document.querySelectorAll('.score-clickable')
+
+    scoreElements.forEach(element => {
+        element.addEventListener('click', e => {
+            e.stopPropagation()
+            const studentId = parseInt(element.dataset.studentId)
+            const examId = parseInt(element.dataset.examId)
+            const studentName = element.dataset.studentName
+            const examName = element.dataset.examName
+
+            showScoreDetails(studentId, examId, studentName, examName, element)
+        })
+    })
 }
 
 const setupEventListeners = () => {
@@ -199,6 +324,14 @@ const init = () => {
     renderStudentList()
 
     setupEventListeners()
+
+    // Grade entry button
+    const gradeEntryBtn = document.getElementById('gradeEntry-btn')
+    if (gradeEntryBtn) {
+        gradeEntryBtn.addEventListener('click', () => {
+            window.location.href = `grade-entry.html?classId=${currentClassId}`
+        })
+    }
 }
 
 document.addEventListener('DOMContentLoaded', init)

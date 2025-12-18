@@ -236,6 +236,38 @@
     margin: 0;
 }
 
+.grade__header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.grade__entry-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.grade__entry-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.grade__entry-btn:active {
+    transform: translateY(0);
+}
+
 /* Grade Search */
 .grade__search {
     position: relative;
@@ -272,32 +304,12 @@
 /* Grade List - Table Container */
 .grade__list {
     width: 100%;
-    max-height: 600px; /* Giới hạn chiều cao để hiển thị tầm 12 học sinh */
+    max-height: 600px;
     overflow-y: auto;
     overflow-x: auto;
     background: white;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-/* Custom Scrollbar for Grade List */
-.grade__list::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.grade__list::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 10px;
-}
-
-.grade__list::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 10px;
-}
-
-.grade__list::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
 }
 
 /* Grade Table */
@@ -309,15 +321,11 @@
 
 /* Table Header */
 .grade-table thead {
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    background: var(--primary-color);
     color: white;
     position: sticky;
     top: 0;
     z-index: 10;
-}
-
-.grade-table thead tr {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grade-table th {
@@ -346,28 +354,17 @@
 }
 
 .grade-table th.col-average {
-    background: rgba(255, 255, 255, 0.1);
     font-weight: 700;
+    border-left: 1px solid #e2e8f0;
 }
 
 /* Table Body */
 .grade-table tbody tr {
     border-bottom: 1px solid #e2e8f0;
-    transition: all 0.2s ease;
-}
-
-.grade-table tbody tr:nth-child(even) {
-    background-color: #f8fafc;
 }
 
 .grade-table tbody tr:hover {
-    background-color: #e0e7ff;
-    transform: scale(1.005);
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
-}
-
-.grade-table tbody tr:last-child {
-    border-bottom: none;
+    background-color: #f2f5ff;
 }
 
 /* Table Cells */
@@ -379,13 +376,11 @@
 .grade-table td.col-stt {
     text-align: center;
     font-weight: 600;
-    color: #64748b;
     font-size: 1.3rem;
 }
 
 .grade-table td.col-name {
     font-weight: 600;
-    color: #1e293b;
     font-size: 1.5rem;
 }
 
@@ -394,11 +389,12 @@
     text-align: center;
     font-weight: 700;
     font-size: 1.6rem;
+    border-right: 1px solid #e2e8f0;
+    border-left: 1px solid #e2e8f0;
 }
 
 .grade-table td.col-average {
-    background-color: #fef3c7;
-    border-left: 2px solid #fbbf24;
+    border-left: 1px solid #e2e8f0;
 }
 
 /* Score Colors */
@@ -414,7 +410,6 @@
 
 .grade-table td.score-empty {
     color: #94a3b8;
-    font-style: italic;
 }
 
 /* Average column special styling */
@@ -477,4 +472,148 @@
     .classroom-content {
         border-left: 1px solid #e2e8f0;
     }
+}
+
+/* Score Clickable */
+.score-clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.score-clickable:hover {
+    transform: scale(1.05);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* Score Popup */
+.score-popup {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    min-width: 280px;
+    max-width: 350px;
+    z-index: 1000;
+    animation: popupFadeIn 0.2s ease;
+    overflow: hidden;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.score-popup__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    position: relative;
+}
+
+.score-popup__header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex: 1;
+}
+
+.score-popup__exam {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    width: 100%;
+}
+
+.score-popup__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.score-popup__close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.score-popup__body {
+    padding: 16px;
+}
+
+.score-popup__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.score-popup__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+}
+
+.score-popup__part-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    flex: 1;
+}
+
+.score-popup__part-weight {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-right: 16px;
+}
+
+.score-popup__part-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.popup-score-pass {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.popup-score-fail {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.score-popup__no-parts {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 1.4rem;
 }
