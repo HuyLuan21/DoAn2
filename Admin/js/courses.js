@@ -428,7 +428,7 @@ function handleDeleteCourseLogic(container) {
     }
 }
 
-async function handleImageUpload() {
+function handleImageUpload() {
     const courseImageInput = document.getElementById('course-image')
     const courseImage_url = document.getElementById('course-image-url')
     if (!courseImageInput) return
