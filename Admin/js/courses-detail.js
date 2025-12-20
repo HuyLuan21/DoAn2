@@ -1,5 +1,6 @@
-import { getAllCourses, updateCourse, deleteCourse } from '/src/database/courses.db.js'
 import { getAllClasses } from '/src/database/classes.db.js'
+import { addSchedule, deleteSchedule, getAllSchedules, updateSchedule } from '/src/database/classSchedules.db.js'
+import { deleteCourse, getAllCourses, updateCourse } from '/src/database/courses.db.js'
 import { getAllLanguages } from '/src/database/language.db.js'
 import { getAllLanguageLevels } from '/src/database/language_level.db.js'
 
@@ -23,14 +24,6 @@ if (!course) {
 // 2. CÁC HÀM HỖ TRỢ (HELPER FUNCTIONS)
 // =======================================================
 
-function GetTimenow() {
-    // Khởi tạo Date() bên trong hàm để lấy thời gian mới nhất khi gọi
-    const now = new Date()
-    const hours = now.getHours()
-    const minutes = String(now.getMinutes()).padStart(2, '0')
-    return `${hours}:${minutes}`
-}
-
 function getClassCountByCourseId(courseId) {
     if (!classes) return 0
     const targetCourseId = parseInt(courseId)
@@ -41,32 +34,43 @@ function getClassCountByCourseId(courseId) {
 // 3. LOGIC XỬ LÝ MODAL (Cập nhật / Chi tiết)
 // =======================================================
 
-const modal = {
-    // Đảm bảo các thuộc tính được thiết lập là null ban đầu
-    overlay: null,
-    form: null,
-    closeButtons: [],
+class Modal {
+    constructor(modalId) {
+        this.form = document.getElementById(modalId)
+        this.overlay = this.form ? this.form.querySelector('.modal-overlay') : null
+        this.closeButtons = this.form ? this.form.querySelectorAll('.close-modal, .close-modal-btn') : []
+        this.initEvents()
+    }
 
-    // Hàm khởi tạo được gọi trong DOMContentLoaded
-    init() {
-        this.form = document.getElementById('update_modal')
-        if (!this.form) {
-            console.error('Modal form #update_modal không tồn tại.')
-            return
+    initEvents() {
+        if (this.closeButtons.length > 0) {
+            this.closeButtons.forEach(btn => btn.addEventListener('click', () => this.close()))
         }
-        this.overlay = this.form.querySelector('.modal-overlay')
-        this.closeButtons = this.form.querySelectorAll('.close-modal, .close-modal-btn')
-    },
+        if (this.overlay) {
+            this.overlay.addEventListener('click', e => {
+                if (e.target === this.overlay) this.close()
+            })
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && this.form && this.form.classList.contains('active')) {
+                this.close()
+            }
+        })
+    }
+
     open() {
         if (this.overlay) this.overlay.classList.add('active')
         if (this.form) this.form.classList.add('active')
-        // OPTIONAL: Tải dữ liệu khóa học vào form khi mở (chưa triển khai ở đây)
-    },
+    }
+
     close() {
         if (this.overlay) this.overlay.classList.remove('active')
         if (this.form) this.form.classList.remove('active')
-    },
+    }
 }
+
+const updateModal = new Modal('update_modal')
+const scheduleModal = new Modal('schedule_modal')
 
 function handleUpdateCourse(event) {
     event.preventDefault() // Ngăn chặn tải lại trang
@@ -89,7 +93,7 @@ function handleUpdateCourse(event) {
         updateCourse(courseId, formData)
         console.log(' cập nhật khóa học thành công')
         const courses = getAllCourses()
-        modal.close()
+        updateModal.close()
         renderCourseContent(courses)
     } catch {
         console.log('không cập nhật được khóa học')
@@ -107,64 +111,218 @@ function handleDeleteCourseLogic() {
     } catch (error) {
         console.error('Không xóa được khóa học:', error)
         alert('Có lỗi xảy ra khi xóa khóa học.')
-        modal.close()
+        updateModal.close()
     }
 }
-function handleModalLogic() {
-    modal.init()
+function handleaddSchedule(event) {
+    event.preventDefault()
+    const datetimeInput = document.getElementById('datetime-local')
+    const durationInput = document.getElementById('Duration')
+    const roomInput = document.getElementById('Room')
 
-    const openModal_btn = document.getElementById('setting')
-    const deleteModal_btn = document.querySelector('.btn-delete')
-    if (openModal_btn) openModal_btn.addEventListener('click', () => modal.open())
+    const datetimeStr = datetimeInput.value // "YYYY-MM-DDTHH:MM"
+    const duration = Number(durationInput.value) // phút
+    const room = roomInput.value
 
-    // Gắn sự kiện đóng modal
-    if (modal.closeButtons.length > 0) {
-        modal.closeButtons.forEach(btn => btn.addEventListener('click', () => modal.close()))
+    const startDate = new Date(datetimeStr)
+    const endDate = new Date(startDate.getTime() + duration * 60000)
+
+    const formData = {
+        classId: Number(document.querySelector('.class_name').value),
+        studyDate: datetimeStr.split('T')[0],
+        startTime: datetimeStr.split('T')[1],
+        endTime: endDate.toTimeString().slice(0, 5),
+        room: room,
     }
-    if (modal.overlay) {
-        modal.overlay.addEventListener('click', e => {
-            if (e.target === modal.overlay) {
-                modal.close()
-            }
+    try {
+        addSchedule(formData)
+        console.log('Thêm lịch học thành công')
+        scheduleModal.close()
+        // Cập nhật lại lịch hiển thị
+        if (window.calendarManager) {
+            window.calendarManager.fetchSchedules()
+            window.calendarManager.render()
+        }
+        handleScheduleAction()
+    } catch {
+        console.log('không thêm được lịch học')
+    }
+}
+function handleScheduleUpdate(event) {
+    event.preventDefault()
+    const datetimeInput = document.getElementById('datetime-local')
+    const durationInput = document.getElementById('Duration')
+    const roomInput = document.getElementById('Room')
+
+    const datetimeStr = datetimeInput.value // "YYYY-MM-DDTHH:MM"
+    const duration = Number(durationInput.value) // phút
+    const room = roomInput.value
+
+    const startDate = new Date(datetimeStr)
+    const endDate = new Date(startDate.getTime() + duration * 60000)
+
+    const formData = {
+        classId: Number(document.querySelector('.class_name').value),
+        studyDate: datetimeStr.split('T')[0],
+        startTime: datetimeStr.split('T')[1],
+        endTime: endDate.toTimeString().slice(0, 5),
+        room: room,
+    }
+
+    const scheduleId = Number(scheduleModal.form.dataset.id)
+
+    try {
+        updateSchedule(scheduleId, formData)
+        console.log('cập nhật lịch học thành công')
+        scheduleModal.close()
+        // Cập nhật lại lịch hiển thị
+        if (window.calendarManager) {
+            window.calendarManager.fetchSchedules()
+            window.calendarManager.render()
+        }
+    } catch (e) {
+        console.log('không cập nhật được lịch học', e)
+    }
+}
+function handleDeleteSchedule(scheduleId) {
+    try {
+        deleteSchedule(scheduleId)
+        scheduleModal.close()
+        // Cập nhật lại lịch hiển thị
+        if (window.calendarManager) {
+            window.calendarManager.fetchSchedules()
+            window.calendarManager.render()
+        }
+        handleScheduleAction()
+    } catch {
+        console.log('không xóa được lịch học')
+    }
+}
+
+function setupEventHandlers() {
+    // Setup Update Modal Triggers
+    const openUpdateBtn = document.getElementById('setting')
+    if (openUpdateBtn) openUpdateBtn.addEventListener('click', () => updateModal.open())
+
+    const deleteCourseBtn = document.querySelector('.btn-delete')
+    if (deleteCourseBtn) {
+        deleteCourseBtn.addEventListener('click', handleDeleteCourseLogic)
+    }
+
+    if (updateModal.form) {
+        updateModal.form.addEventListener('submit', handleUpdateCourse)
+    }
+
+    const openScheduleBtn = document.getElementById('add_schedule')
+    if (openScheduleBtn) {
+        openScheduleBtn.addEventListener('click', () => {
+            const form = scheduleModal.form
+            form.dataset.mode = 'add'
+            delete form.dataset.id
+            form.reset()
+            scheduleModal.open()
         })
     }
+}
+function bindScheduleDelegation() {
+    const list = document.querySelector('.schedule__list')
+    if (!list) return
 
-    // Gắn sự kiện SUBMIT vào FORM của modal
-    if (modal.form) {
-        modal.form.addEventListener('submit', handleUpdateCourse)
-    }
-    if (deleteModal_btn) {
-        deleteModal_btn.addEventListener('click', () => {
-            handleDeleteCourseLogic()
-        })
-    }
+    list.addEventListener('click', e => {
+        if (e.target.closest('#btn-update-schedule')) {
+            const btn = e.target.closest('#btn-update-schedule')
+            const id = Number(btn.dataset.id)
+            if (isNaN(id)) return
 
-    // Sự kiện phím ESC
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && modal.form && modal.form.classList.contains('active')) {
-            modal.close()
+            scheduleModal.form.dataset.mode = 'update'
+            scheduleModal.form.dataset.id = id
+
+            scheduleModal.open()
+            fillScheduleData(id)
+            return
+        }
+
+        if (e.target.closest('#btn-delete-schedule')) {
+            const btn = e.target.closest('#btn-delete-schedule')
+            const id = Number(btn.dataset.id)
+            if (isNaN(id)) return
+
+            handleDeleteSchedule(id)
         }
     })
+}
+bindScheduleDelegation()
+//ham xu li action,hien thi danh sach
+function handleScheduleAction() {
+    const AllSchedules = getAllSchedules()
+    const scheduleList = document.querySelector('.schedule__list')
+    const select = document.querySelector('.class_name')
+
+    const schedules = AllSchedules.filter(s => Number(s.classId) === Number(select.value))
+
+    scheduleList.innerHTML = schedules
+        .map(
+            (item, index) => `
+            <div class="schedule__item" data-id="${item.scheduleId}">
+                <div class="schedule__item_content">
+                    <h3>Buổi ${index + 1}</h3>
+                    <span class="studydate">
+                        <span class="studydate__date">${item.studyDate.split('-').reverse().join('-')}</span>
+                        <span class="studydate__time">
+                            ${item.startTime} - ${item.endTime}
+                        </span>
+                        <span class="studydate__room">Phòng${item.room}</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down toggle-action"></i>
+                </div>
+
+                <div class="schedule__item_action" style="display: none">
+                    <button id="btn-update-schedule" data-id="${item.scheduleId}">Sửa</button>
+                    <button id="btn-delete-schedule" data-id="${item.scheduleId}">Xóa</button>
+                </div>
+            </div>
+        `
+        )
+        .join('')
+    const opencontrol_btn = document.querySelectorAll('.toggle-action')
+    opencontrol_btn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const scheduleItem = btn.closest('.schedule__item')
+            const actionContainer = scheduleItem.querySelector('.schedule__item_action')
+            actionContainer.style.display = actionContainer.style.display === 'none' ? 'block' : 'none'
+        })
+    })
+}
+//ham dien du lieu vao form update
+function fillScheduleData(scheduleId) {
+    const schedule = getAllSchedules().find(s => s.scheduleId === scheduleId)
+    if (!schedule) return
+
+    const start = schedule.studyDate + 'T' + schedule.startTime
+    document.getElementById('datetime-local').value = start
+    document.getElementById('Room').value = schedule.room
+
+    const [sh, sm] = schedule.startTime.split(':')
+    const [eh, em] = schedule.endTime.split(':')
+
+    const duration = eh * 60 + +em - (sh * 60 + +sm)
+    document.getElementById('Duration').value = duration
 }
 
 // =======================================================
 // 4. CÁC HÀM RENDER (Hiển thị DOM)
 // =======================================================
 
-/**
- * Đổ danh sách tên lớp học vào thẻ select.
- */
 function renderclassList() {
     const className = classes.filter(classItem => classItem.coursesId === Number(courseId))
     const select = document.querySelector('.class_name')
 
     if (select) {
-        select.innerHTML = className
-            .map(item => `<option value="${item.className}">${item.className}</option>`)
-            .join('')
+        select.innerHTML = className.map(item => `<option value="${item.classId}">${item.className}</option>`).join('')
     }
 }
-function GenerrateComboBox() {
+
+function GenerateComboBox() {
     const languageCode = getAllLanguages()
     const languageLevels = getAllLanguageLevels()
     const select = document.getElementById('course-languages-select')
@@ -187,7 +345,7 @@ function GenerrateComboBox() {
         }
     })
 }
-GenerrateComboBox()
+GenerateComboBox()
 
 function renderCourseContent(data = courses) {
     const courseToRender = data.find(c => c.courseId === Number(courseId))
@@ -239,21 +397,225 @@ function renderCourseContent(data = courses) {
         `
     }
 }
+class CalendarManager {
+    constructor() {
+        this.monthYearElement = document.getElementById('monthYear')
+        this.datesElement = document.getElementById('dates')
+        this.prevBtnElement = document.getElementById('prev')
+        this.nextBtnElement = document.getElementById('next')
+        this.classSelect = document.querySelector('.class_name')
+
+        this.currentDate = new Date()
+        this.scheduleDate = []
+
+        this.initEvents()
+    }
+
+    initEvents() {
+        if (this.prevBtnElement) {
+            this.prevBtnElement.addEventListener('click', () => {
+                this.currentDate.setMonth(this.currentDate.getMonth() - 1)
+                this.render()
+            })
+        }
+
+        if (this.nextBtnElement) {
+            this.nextBtnElement.addEventListener('click', () => {
+                this.currentDate.setMonth(this.currentDate.getMonth() + 1)
+                this.render()
+            })
+        }
+
+        if (this.classSelect) {
+            this.classSelect.addEventListener('change', () => {
+                this.fetchSchedules()
+                this.render()
+            })
+        }
+    }
+
+    fetchSchedules() {
+        if (!this.classSelect) return
+        const AllSchedules = getAllSchedules()
+        const schedule = AllSchedules.filter(schedule => schedule.classId === Number(this.classSelect.value))
+        this.scheduleDate = schedule.map(schedule => schedule.studyDate)
+    }
+
+    render() {
+        const currentYear = this.currentDate.getFullYear()
+        const currentMonth = this.currentDate.getMonth()
+
+        const FirstDay = new Date(currentYear, currentMonth, 1)
+        const LastDay = new Date(currentYear, currentMonth + 1, 0)
+
+        const totalDaysInMonth = LastDay.getDate()
+        const startDayIndex = FirstDay.getDay() - 1
+        const endDayIndex = LastDay.getDay()
+
+        const monthYearString = this.currentDate.toLocaleString('vi-VN', {
+            month: 'long',
+            year: 'numeric',
+        })
+
+        if (this.monthYearElement) {
+            this.monthYearElement.textContent = monthYearString
+        }
+
+        let datesHTML = ''
+        const today = new Date()
+
+        // ----------- NGÀY THÁNG TRƯỚC (thêm inactive) -----------
+        for (let i = startDayIndex; i > 0; i--) {
+            const prevDay = new Date(currentYear, currentMonth, 0 - i + 1)
+            datesHTML += `<div class="date inactive">${prevDay.getDate()}</div>`
+        }
+
+        // ----------- NGÀY TRONG THÁNG HIỆN TẠI -----------
+        for (let i = 1; i <= totalDaysInMonth; i++) {
+            const date = new Date(currentYear, currentMonth, i)
+
+            const activeClass =
+                date.getDate() === today.getDate() &&
+                date.getMonth() === today.getMonth() &&
+                date.getFullYear() === today.getFullYear()
+                    ? 'active'
+                    : ''
+
+            const scheduleDateString = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${i
+                .toString()
+                .padStart(2, '0')}`
+
+            datesHTML += `<div class="date ${activeClass}" data-day="${i}" data-full-date="${scheduleDateString}">
+                ${i}
+                </div>`
+        }
+
+        const endIndex = endDayIndex === 0 ? 7 : endDayIndex
+        for (let i = 1; i < 7 - endIndex; i++) {
+            const NextDay = new Date(currentYear, currentMonth + 1, i)
+            datesHTML += `<div class="date inactive">${NextDay.getDate()}</div>`
+        }
+
+        if (this.datesElement) {
+            this.datesElement.innerHTML = datesHTML
+            this.highlightSchedule()
+        }
+    }
+
+    highlightSchedule() {
+        const dates = document.querySelectorAll('.date')
+        dates.forEach(date => {
+            const day = date.dataset.fullDate
+            if (this.scheduleDate.includes(day)) {
+                date.classList.add('scheduled-day')
+            }
+        })
+    }
+}
+//hàm xử lí đổi tab bên course detail
+function handleControlButton() {
+    const buttons = document.querySelectorAll('.control__button')
+
+    const classInfo = document.querySelector('.class_info')
+    const classCalendar = document.querySelector('.class_calender')
+
+    const courseItem = document.querySelector('.course__item')
+    const scheduleManagement = document.querySelector('.schedule__Management')
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isInfoActive = classInfo.classList.toggle('active')
+            classCalendar.classList.toggle('active', !isInfoActive)
+
+            courseItem.style.display = isInfoActive ? 'flex' : 'none'
+            scheduleManagement.style.display = isInfoActive ? 'none' : 'block'
+        })
+    })
+}
+//hàm xử lí upload ảnh
+function handleImageUpload() {
+    const courseImageInput = document.getElementById('course-image')
+    const courseImage_url = document.getElementById('course-image-url')
+    if (!courseImageInput) return
+
+    courseImageInput.onchange = async e => {
+        if (e.target.files.length === 0) return
+
+        // Cần đảm bảo rằng các biến VITE_XXX được truy cập đúng cách (ví dụ: thông qua một biến global hoặc bằng cách import)
+        // Nếu file này là ESM, import.meta.env là hợp lệ.
+        const UPLOAD_PRESET = import.meta.env.VITE_UPLOAD
+        const CLOUDINARY_NAME = import.meta.env.VITE_CLOUDINARY_NAME
+
+        const formData = new FormData()
+        formData.append('file', e.target.files[0])
+        formData.append('upload_preset', UPLOAD_PRESET)
+        formData.append('folder', 'DOAN2_UPLOAD/Courses')
+        formData.append('public_id', `${e.target.files[0].name}-${Math.random().toString().substring(2, 15)}`)
+        try {
+            const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_NAME}/image/upload`, {
+                method: 'POST',
+                body: formData,
+            })
+            if (!response.ok) {
+                throw new Error('Upload failed: ' + response.statusText)
+            }
+            const results = await response.json()
+            courseImage_url.value = results.secure_url
+        } catch (error) {
+            console.error('Lỗi khi tải ảnh lên Cloudinary:', error)
+        }
+    }
+}
+function directBtn() {
+    const today_btn = document.getElementById('today')
+    if (!today_btn) return
+
+    today_btn.addEventListener('click', () => {
+        calendarManager.currentDate = new Date() // 👈 QUAN TRỌNG
+        calendarManager.render()
+    })
+    const back_btn = document.getElementById('back__button')
+    if (!back_btn) return
+
+    back_btn.addEventListener('click', () => {
+        window.location.href = '/Admin/courses'
+    })
+}
+directBtn()
 
 // =======================================================
 // 5. DOMCONTENTLOADED (Khởi tạo khi tải trang)
 // =======================================================
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Hiển thị thời gian
-    const timeElement = document.querySelector('.time')
-    if (timeElement) {
-        timeElement.textContent = GetTimenow()
-    }
-
+    document.querySelector('.class_name').addEventListener('change', () => {
+        handleScheduleAction()
+    })
     // 2. Thiết lập logic modal và submit form
-    handleModalLogic()
-
+    handleImageUpload()
     // 3. Hiển thị nội dung khóa học và danh sách lớp
     renderCourseContent()
     renderclassList()
+
+    // Initialize Calendar Manager
+    window.calendarManager = new CalendarManager()
+    window.calendarManager.fetchSchedules() // Load initial schedules
+    window.calendarManager.render()
+
+    handleControlButton()
+    handleScheduleAction()
+
+    setupEventHandlers()
+    if (scheduleModal.form) {
+        scheduleModal.form.onsubmit = e => {
+            e.preventDefault()
+
+            if (scheduleModal.form.dataset.mode === 'update') {
+                handleScheduleUpdate(e)
+                handleScheduleAction()
+            } else {
+                handleaddSchedule(e)
+                handleScheduleAction()
+            }
+        }
+    }
 })
