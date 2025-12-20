@@ -7,7 +7,7 @@ function validateEmail(email) {
 
 // Password toggle function
 function togglePassword() {
-    const passwordInput = document.getElementById('password');
+    const passwordInput = event.target.closest('.input-wrapper').querySelector('input');
     const toggleBtn = event.target;
 
     if (passwordInput.type === 'password') {
@@ -19,10 +19,12 @@ function togglePassword() {
     }
 }
 
-// Real-time email validation
+// Real-time validation
 document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('email');
     const emailError = document.getElementById('emailError');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
     const form = document.querySelector('form');
 
     // Validate email on input
@@ -52,29 +54,40 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
 
+        let isValid = true;
+
+        // Validate email
         if (email === '') {
             emailError.textContent = 'Email is required';
             emailError.style.color = 'red';
             emailError.style.fontSize = '12px';
             emailError.style.marginTop = '5px';
             emailInput.style.borderColor = 'red';
-            emailInput.focus();
-            return false;
-        }
-
-        if (!validateEmail(email)) {
+            isValid = false;
+        } else if (!validateEmail(email)) {
             emailError.textContent = 'Please enter a valid email address';
             emailError.style.color = 'red';
             emailError.style.fontSize = '12px';
             emailError.style.marginTop = '5px';
             emailInput.style.borderColor = 'red';
-            emailInput.focus();
+            isValid = false;
+        }
+
+        // Validate password match
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            isValid = false;
+        }
+
+        if (!isValid) {
             return false;
         }
 
         // If validation passes, you can proceed with form submission
         console.log('Form submitted successfully');
-        // Add your sign-in logic here
+        // Add your sign-up logic here
     });
 });
