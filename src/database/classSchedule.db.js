@@ -1,64 +1,64 @@
-import mockSchedules from '../mocks/classSchedules.js'
+import classSchedules from '../mocks/classSchedules.js'
 
-const SCHEDULE_KEY = 'classSchedules'
+const CLASS_SCHEDULE_KEY = 'classSchedules'
 
-function getScheduleList() {
-    return JSON.parse(localStorage.getItem(SCHEDULE_KEY))
+function getClassSchedules() {
+    return JSON.parse(localStorage.getItem(CLASS_SCHEDULE_KEY))
 }
 
-function saveScheduleList(list) {
-    localStorage.setItem(SCHEDULE_KEY, JSON.stringify(list))
+function saveClassSchedules(schedules) {
+    localStorage.setItem(CLASS_SCHEDULE_KEY, JSON.stringify(schedules))
 }
 
-function initScheduleDB() {
-    const existing = getScheduleList()
+function initClassScheduleDB() {
+    const existing = getClassSchedules()
     if (!existing) {
-        saveScheduleList(mockSchedules)
+        saveClassSchedules(classSchedules)
     }
 }
-initScheduleDB()
+initClassScheduleDB()
 
-export function getAllSchedules() {
-    return getScheduleList()
+export function getAllClassSchedules() {
+    return getClassSchedules()
 }
 
-export function getScheduleById(id) {
-    const schedules = getScheduleList()
-    return schedules.find(schedule => schedule.scheduleId === Number(id)) || null
+export function getScheduleById(scheduleId) {
+    const schedules = getClassSchedules()
+    return schedules.find(s => s.scheduleId === scheduleId)
 }
 
 export function getSchedulesByClassId(classId) {
-    const schedules = getScheduleList() || []
-    return schedules.filter(schedule => schedule.classId === Number(classId))
+    const schedules = getClassSchedules()
+    return schedules.filter(s => s.classId === classId)
 }
 
-export function addSchedule(schedule) {
-    const schedules = getScheduleList()
+export function addSchedule(scheduleInfo) {
+    const schedules = getClassSchedules()
     const newId = schedules.length > 0 ? Math.max(...schedules.map(s => s.scheduleId)) + 1 : 1
-    const newSchedule = { scheduleId: newId, ...schedule }
+    const newSchedule = { scheduleId: newId, ...scheduleInfo }
     schedules.push(newSchedule)
-    saveScheduleList(schedules)
+    saveClassSchedules(schedules)
     return newSchedule
 }
 
-export function updateSchedule(id, updatedInfo) {
-    const schedules = getScheduleList()
-    const index = schedules.findIndex(schedule => schedule.scheduleId === Number(id))
+export function updateSchedule(scheduleId, updatedInfo) {
+    const schedules = getClassSchedules()
+    const index = schedules.findIndex(s => s.scheduleId === scheduleId)
     if (index === -1) {
         return null
     }
     schedules[index] = { ...schedules[index], ...updatedInfo }
-    saveScheduleList(schedules)
+    saveClassSchedules(schedules)
     return schedules[index]
 }
 
-export function deleteSchedule(id) {
-    const schedules = getScheduleList()
-    const index = schedules.findIndex(schedule => schedule.scheduleId === Number(id))
+export function deleteSchedule(scheduleId) {
+    const schedules = getClassSchedules()
+    const index = schedules.findIndex(s => s.scheduleId === scheduleId)
     if (index === -1) {
         return false
     }
     schedules.splice(index, 1)
-    saveScheduleList(schedules)
+    saveClassSchedules(schedules)
     return true
 }
