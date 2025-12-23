@@ -267,6 +267,10 @@
                             <i class="fa-solid fa-chart-simple"></i>
                             <span>Bảng điểm</span>
                         </button>
+                        <button id="scheduleList-btn" href="" class="classroom-sidebar__item">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Lịch trình</span>
+                        </button>
                     </div>
                     <div class="classroom-content">
                         <div id="studentListContent" class="classroom-content__item active">
@@ -304,6 +308,60 @@
                                 </div>
                             </div>
                             <ul class="grade__list"></ul>
+                        </div>
+                        <div id="scheduleContent" class="classroom-content__item">
+                            <!-- Schedule Header: Title + Date Picker -->
+                            <div class="schedule-header">
+                                <h2 id="schedule-date-title">Lịch trình - Hôm nay</h2>
+                                <div class="schedule-header__date">
+                                    <input type="date" id="schedule-date-picker" class="schedule-date-picker" />
+                                    <p id="schedule-date-subtitle">Thứ Hai, 23/12/2025</p>
+                                </div>
+                            </div>
+
+                            <!-- Schedule Navigation Bar: Tabs + Filters -->
+                            <div class="schedule-navbar">
+                                <div class="schedule-navbar__left">
+                                    <button class="schedule-tab active" data-view="today">
+                                        <i class="fa-solid fa-calendar-day"></i>
+                                        <span>Hôm nay</span>
+                                    </button>
+                                    <button class="schedule-tab" data-view="week">
+                                        <i class="fa-solid fa-calendar-week"></i>
+                                        <span>Tuần này</span>
+                                    </button>
+                                    <button class="schedule-tab" data-view="month">
+                                        <i class="fa-solid fa-calendar"></i>
+                                        <span>Tháng này</span>
+                                    </button>
+                                </div>
+                                <div class="schedule-navbar__right">
+                                    <button class="filter-btn active" data-filter="all">
+                                        <i class="fa-solid fa-grip"></i>
+                                        <span>Tất cả</span>
+                                    </button>
+                                    <button class="filter-btn" data-filter="teaching">
+                                        <i class="fa-solid fa-chalkboard-user"></i>
+                                        <span>Lịch học</span>
+                                    </button>
+                                    <button class="filter-btn" data-filter="exam">
+                                        <i class="fa-solid fa-clipboard-list"></i>
+                                        <span>Kiểm tra</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Schedule Content -->
+                            <div class="schedule-content-wrapper">
+                                <div class="schedule-timeline">
+                                    <!-- Schedule items rendered by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Attendance View (hidden by default) -->
+                            <div class="attendance-view" style="display: none">
+                                <!-- Attendance UI will be rendered here by JS -->
+                            </div>
                         </div>
                     </div>
                 </div>
