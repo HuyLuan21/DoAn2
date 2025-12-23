@@ -24,7 +24,7 @@ export function getAllTeachers() {
 
 export function getTeacherById(id) {
     const teachers = getTeacherList()
-    return teachers.find(teacher => teacher.id === id) || null
+    return teachers.find(teacher => teacher.teacherId === id) || null
 }
 
 export function addTeacher(teacher) {
