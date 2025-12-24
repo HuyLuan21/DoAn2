@@ -617,3 +617,575 @@
     color: #64748b;
     font-size: 1.4rem;
 }
+
+/* ================================================= SCHEDULE SECTION ================================================= */
+
+.schedule-header {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.schedule-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+}
+
+.schedule-header__date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.schedule-date-picker {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.schedule-date-picker:hover {
+    border-color: var(--primary-color);
+}
+
+.schedule-date-picker:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.schedule-header__date p {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #64748b;
+}
+
+/* Schedule Navigation Bar - Tabs + Filters in one row - COMPACT */
+.schedule-navbar {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.schedule-navbar__left,
+.schedule-navbar__right {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Schedule Tabs (Hôm nay/Tuần/Tháng) - COMPACT */
+.schedule-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.875rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background: #f8f9fa;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.schedule-tab i {
+    font-size: 1.3rem;
+}
+
+.schedule-tab:hover {
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary-color);
+}
+
+.schedule-tab.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+}
+
+/* Filter Buttons - COMPACT */
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.875rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn i {
+    font-size: 1.3rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.filter-btn.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+}
+
+/* Schedule content wrapper */
+.schedule-content-wrapper {
+    min-height: 400px;
+}
+
+/* Date Group Headers */
+.schedule-date-group {
+    margin-bottom: 1.5rem;
+}
+
+.schedule-date-header {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Week Group (for month view) */
+.schedule-week-group {
+    margin-bottom: 2rem;
+}
+
+.schedule-week-header {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Schedule Timeline */
+.schedule-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Custom Scrollbar for Schedule Timeline */
+.schedule-timeline::-webkit-scrollbar {
+    width: 8px;
+}
+
+.schedule-timeline::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.schedule-timeline::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.schedule-timeline::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Schedule Empty State */
+.schedule-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: #999;
+    text-align: center;
+}
+
+.schedule-empty i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+
+.schedule-empty p {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+/* Schedule Item Cards - Teaching (Blue) - CLICKABLE */
+.schedule-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-left: 4px solid #4a90e2;
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.08), transparent);
+    cursor: pointer;
+}
+
+.schedule-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-item__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+}
+
+.schedule-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.schedule-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+}
+
+.schedule-item__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.schedule-item__type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    background: rgba(74, 144, 226, 0.15);
+    color: #357abd;
+}
+
+.schedule-item__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.schedule-item__detail {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.schedule-item__detail i {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* Schedule Item Cards - Exam (Orange) - NOT CLICKABLE */
+.schedule-item.exam {
+    border-left-color: #f59e0b;
+    background: linear-gradient(to right, rgba(245, 158, 11, 0.08), transparent);
+    cursor: default;
+}
+
+.schedule-item.exam:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.schedule-item.exam .schedule-item__icon {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.schedule-item.exam .schedule-item__type {
+    background: rgba(245, 158, 11, 0.15);
+    color: #d97706;
+}
+
+/* ================================================= ATTENDANCE SECTION ================================================= */
+
+.attendance__header {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.attendance__header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+}
+
+.attendance__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.attendance__info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.attendance__info-item i {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* Attendance List */
+.attendance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom Scrollbar for Attendance List */
+.attendance-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.attendance-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.attendance-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.attendance-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.attendance-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.attendance-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.attendance-item__student {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.attendance-item__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.attendance-item__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attendance-item__name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Status Selector */
+.attendance-status-selector {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.status-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #e0e4e9;
+    border-radius: 6px;
+    background: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.status-btn i {
+    font-size: 1rem;
+}
+
+.status-btn:hover {
+    transform: translateY(-1px);
+}
+
+.status-btn.present {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.status-btn.present.active {
+    background: #10b981;
+    color: white;
+}
+
+.status-btn.absent {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.status-btn.absent.active {
+    background: #ef4444;
+    color: white;
+}
+
+.status-btn.late {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.status-btn.late.active {
+    background: #f59e0b;
+    color: white;
+}
+
+.status-btn.excused {
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.status-btn.excused.active {
+    background: #6366f1;
+    color: white;
+}
+
+/* Actions */
+.attendance-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.attendance-save-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.attendance-save-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.attendance-save-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .schedule-item {
+        padding: 1rem;
+    }
+
+    .schedule-item__details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .attendance-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-status-selector {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .status-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .status-btn span {
+        display: none;
+    }
+}

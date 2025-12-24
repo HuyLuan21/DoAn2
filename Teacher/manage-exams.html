@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chi tiết lớp học</title>
+        <title>Danh sách lớp</title>
         <link rel="stylesheet" href="./styles/default.css" />
-        <link rel="stylesheet" href="./styles/classroom-detail.css" />
+        <link rel="stylesheet" href="./styles/manage-exams.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -41,7 +41,7 @@
                 <div class="sidebar__devider"></div>
                 <ul class="sidebar__list">
                     <li>
-                        <a class="sidebar_item" title="Dashboard" href="dashboard.html">
+                        <a class="sidebar_item" title="Dashboard" href="./dashboard.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -62,7 +62,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a class="sidebar_item" title="Lớp" href="./manage-classes.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,6 @@
                             </svg>
                         </a>
                     </li>
-
                     <li>
                         <a class="sidebar_item" title="Lịch trình" href="./schedule.html">
                             <svg
@@ -108,7 +107,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a class="sidebar_item" title="Đề thi" href="./manage-exams.html">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +223,7 @@
                         <span>Quay lại</span>
                     </button>
                     <div class="topbar__left">
-                        <span class="topbar__current-page">Chi tiết lớp học</span>
+                        <span class="topbar__current-page">Bài kiểm tra</span>
                     </div>
                     <div class="topbar__right">
                         <div class="topbar__user">
@@ -257,110 +256,224 @@
                     </div>
                 </div>
                 <div class="main-content">
-                    <!-- Classroom Detail Sidebar -->
-                    <div class="classroom-sidebar">
-                        <button id="studentList-btn" href="" class="classroom-sidebar__item active">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Danh sách học sinh</span>
-                        </button>
-                        <button id="gradeList-btn" href="" class="classroom-sidebar__item">
-                            <i class="fa-solid fa-chart-simple"></i>
-                            <span>Bảng điểm</span>
-                        </button>
-                        <button id="scheduleList-btn" href="" class="classroom-sidebar__item">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>Lịch trình</span>
+                    <!-- Header -->
+                    <div class="exam-header">
+                        <h1 class="exam-header__title">Danh sách bài kiểm tra</h1>
+                        <button class="btn btn-primary" id="createExamBtn">
+                            <i class="fa-solid fa-plus"></i>
+                            Tạo bài kiểm tra mới
                         </button>
                     </div>
-                    <div class="classroom-content">
-                        <div id="studentListContent" class="classroom-content__item active">
-                            <div class="studentList__header">
-                                <h2>Danh sách học sinh</h2>
-                                <div class="studentList__search">
-                                    <i class="fa-solid fa-search"></i>
-                                    <input
-                                        type="text"
-                                        id="studentSearchInput"
-                                        placeholder="Tìm kiếm học sinh..."
-                                        class="studentList__search-input"
-                                    />
-                                </div>
-                            </div>
-                            <ul class="studentList__list"></ul>
+
+                    <!-- Filters -->
+                    <div class="exam-filters">
+                        <div class="exam-filters__group">
+                            <label for="filterClass">Lọc theo lớp:</label>
+                            <select id="filterClass" class="filter-select">
+                                <option value="">Tất cả lớp</option>
+                            </select>
                         </div>
-                        <div id="gradeListContent" class="classroom-content__item">
-                            <div class="grade__header">
-                                <div class="grade__header-top">
-                                    <h2>Bảng điểm</h2>
-                                    <button id="gradeEntry-btn" class="grade__entry-btn">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        Nhập điểm
-                                    </button>
-                                </div>
-                                <div class="grade__search">
-                                    <i class="fa-solid fa-search"></i>
-                                    <input
-                                        type="text"
-                                        id="gradeSearchInput"
-                                        placeholder="Tìm kiếm học sinh..."
-                                        class="grade__search-input"
-                                    />
-                                </div>
-                            </div>
-                            <ul class="grade__list"></ul>
+                        <div class="exam-filters__group">
+                            <label for="filterType">Loại kỳ thi:</label>
+                            <select id="filterType" class="filter-select">
+                                <option value="">Tất cả</option>
+                            </select>
                         </div>
-                        <div id="scheduleContent" class="classroom-content__item">
-                            <!-- Schedule Header: Title + Date Picker -->
-                            <div class="schedule-header">
-                                <h2 id="schedule-date-title">Lịch trình - Hôm nay</h2>
-                                <div class="schedule-header__date">
-                                    <input type="date" id="schedule-date-picker" class="schedule-date-picker" />
-                                    <p id="schedule-date-subtitle">Thứ Hai, 23/12/2025</p>
+                        <div class="exam-filters__group">
+                            <label for="filterDateFrom">Từ ngày:</label>
+                            <input type="date" id="filterDateFrom" class="filter-input" />
+                        </div>
+                        <div class="exam-filters__group">
+                            <label for="filterDateTo">Đến ngày:</label>
+                            <input type="date" id="filterDateTo" class="filter-input" />
+                        </div>
+                        <div class="exam-filters__actions">
+                            <button class="btn btn-secondary" id="resetFilterBtn">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Đặt lại
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Exam List -->
+                    <div class="exam-list" id="examList">
+                        <!-- Exam cards will be rendered here by JavaScript -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="exam-empty hidden" id="examEmpty">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <p>Không có bài kiểm tra nào</p>
+                    </div>
+
+                    <!-- Modal: Create/Edit Exam -->
+                    <div class="exam-modal hidden" id="examModal">
+                        <div class="exam-modal__overlay"></div>
+                        <div class="exam-modal__content">
+                            <div class="exam-modal__header">
+                                <h2 id="modalTitle">Tạo bài kiểm tra mới</h2>
+                                <button class="exam-modal__close" id="closeModalBtn">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+
+                            <!-- Step Indicator -->
+                            <div class="wizard-steps">
+                                <div class="wizard-step active" data-step="1">
+                                    <div class="wizard-step__number">1</div>
+                                    <div class="wizard-step__label">Thông tin bài thi</div>
+                                </div>
+                                <div class="wizard-step__line"></div>
+                                <div class="wizard-step" data-step="2">
+                                    <div class="wizard-step__number">2</div>
+                                    <div class="wizard-step__label">Các phần thi</div>
                                 </div>
                             </div>
 
-                            <!-- Schedule Navigation Bar: Tabs + Filters -->
-                            <div class="schedule-navbar">
-                                <div class="schedule-navbar__left">
-                                    <button class="schedule-tab active" data-view="today">
-                                        <i class="fa-solid fa-calendar-day"></i>
-                                        <span>Hôm nay</span>
-                                    </button>
-                                    <button class="schedule-tab" data-view="week">
-                                        <i class="fa-solid fa-calendar-week"></i>
-                                        <span>Tuần này</span>
-                                    </button>
-                                    <button class="schedule-tab" data-view="month">
-                                        <i class="fa-solid fa-calendar"></i>
-                                        <span>Tháng này</span>
-                                    </button>
-                                </div>
-                                <div class="schedule-navbar__right">
-                                    <button class="filter-btn active" data-filter="all">
-                                        <i class="fa-solid fa-grip"></i>
-                                        <span>Tất cả</span>
-                                    </button>
-                                    <button class="filter-btn" data-filter="teaching">
-                                        <i class="fa-solid fa-chalkboard-user"></i>
-                                        <span>Lịch học</span>
-                                    </button>
-                                    <button class="filter-btn" data-filter="exam">
-                                        <i class="fa-solid fa-clipboard-list"></i>
-                                        <span>Kiểm tra</span>
-                                    </button>
-                                </div>
-                            </div>
+                            <form class="exam-form" id="examForm">
+                                <input type="hidden" id="examId" />
 
-                            <!-- Schedule Content -->
-                            <div class="schedule-content-wrapper">
-                                <div class="schedule-timeline">
-                                    <!-- Schedule items rendered by JS -->
-                                </div>
-                            </div>
+                                <!-- Step 1: Basic Info -->
+                                <div class="wizard-content" id="step1" data-step="1">
+                                    <div class="exam-form__group">
+                                        <label for="examName">Tên bài kiểm tra <span class="required">*</span></label>
+                                        <input
+                                            type="text"
+                                            id="examName"
+                                            class="exam-form__input"
+                                            placeholder="Nhập tên bài kiểm tra"
+                                        />
+                                    </div>
 
-                            <!-- Attendance View (hidden by default) -->
-                            <div class="attendance-view" style="display: none">
-                                <!-- Attendance UI will be rendered here by JS -->
+                                    <div class="exam-form__group">
+                                        <label for="examType">Loại bài kiểm tra <span class="required">*</span></label>
+                                        <select id="examType" class="exam-form__select">
+                                            <option value="">-- Chọn loại --</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="exam-form__group">
+                                        <label for="examClass">Chọn lớp <span class="required">*</span></label>
+                                        <select id="examClass" class="exam-form__select">
+                                            <option value="">-- Chọn lớp --</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="exam-form__row">
+                                        <div class="exam-form__group">
+                                            <label for="examDate">Ngày thi <span class="required">*</span></label>
+                                            <input type="date" id="examDate" class="exam-form__input" />
+                                        </div>
+                                        <div class="exam-form__group">
+                                            <label for="examRoom">Phòng thi <span class="required">*</span></label>
+                                            <input
+                                                type="text"
+                                                id="examRoom"
+                                                class="exam-form__input"
+                                                placeholder="VD: Phòng A101"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="exam-form__row">
+                                        <div class="exam-form__group">
+                                            <label for="startTime">Giờ bắt đầu <span class="required">*</span></label>
+                                            <input type="time" id="startTime" class="exam-form__input" />
+                                        </div>
+                                        <div class="exam-form__group">
+                                            <label for="endTime">Giờ kết thúc <span class="required">*</span></label>
+                                            <input type="time" id="endTime" class="exam-form__input" />
+                                        </div>
+                                    </div>
+
+                                    <div class="exam-form__group">
+                                        <label for="maxScore">Điểm tối đa</label>
+                                        <input
+                                            type="number"
+                                            id="maxScore"
+                                            class="exam-form__input"
+                                            value="100"
+                                            min="0"
+                                            max="1000"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: Exam Parts -->
+                                <div class="wizard-content hidden" id="step2" data-step="2">
+                                    <div class="exam-parts-header">
+                                        <h3>Các phần thi</h3>
+                                        <button type="button" class="btn btn-primary btn-sm" id="addPartBtn">
+                                            <i class="fa-solid fa-plus"></i>
+                                            Thêm phần thi
+                                        </button>
+                                    </div>
+
+                                    <div class="exam-parts-list" id="examPartsList">
+                                        <!-- Empty state -->
+                                        <div class="exam-parts-empty" id="partsEmptyState">
+                                            <i class="fa-solid fa-list"></i>
+                                            <p>Chưa có phần thi nào. Click "Thêm phần thi" để bắt đầu.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="exam-parts-summary">
+                                        <div class="weightage-total">
+                                            <span>Tổng trọng số:</span>
+                                            <strong id="totalWeightage">0%</strong>
+                                        </div>
+                                        <div class="weightage-warning hidden" id="weightageWarning">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>
+                                            Tổng trọng số phải bằng 100%
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Actions -->
+                                <div class="exam-form__actions">
+                                    <button type="button" class="btn btn-secondary" id="cancelFormBtn">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        Hủy
+                                    </button>
+                                    <button type="button" class="btn btn-secondary hidden" id="backBtn">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Quay lại
+                                    </button>
+                                    <button type="button" class="btn btn-primary" id="nextBtn">
+                                        Tiếp
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-primary hidden" id="submitFormBtn">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span id="submitBtnText">Hoàn tất</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Modal: Delete Confirmation -->
+                    <div class="delete-modal hidden" id="deleteModal">
+                        <div class="delete-modal__overlay"></div>
+                        <div class="delete-modal__content">
+                            <div class="delete-modal__icon">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h2 class="delete-modal__title">Xác nhận xóa</h2>
+                            <p class="delete-modal__message">
+                                Bạn có chắc chắn muốn xóa bài kiểm tra "<span id="deleteExamName"></span>"?
+                                <br />
+                                Hành động này không thể hoàn tác.
+                            </p>
+                            <div class="delete-modal__actions">
+                                <button class="btn btn-secondary" id="cancelDeleteBtn">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    Hủy
+                                </button>
+                                <button class="btn btn-danger" id="confirmDeleteBtn">
+                                    <i class="fa-solid fa-trash"></i>
+                                    Xác nhận xóa
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -369,5 +482,5 @@
         </div>
     </div>
 
-    <script type="module" src="./js/classroom-detail.js"></script>
+    <script type="module" src="./js/manage-exams.js"></script>
 </html>
