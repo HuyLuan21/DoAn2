@@ -216,10 +216,11 @@ function setupEventHandlers() {
     const openScheduleBtn = document.getElementById('add_schedule')
     if (openScheduleBtn) {
         openScheduleBtn.addEventListener('click', () => {
-            const form = scheduleModal.form
-            form.dataset.mode = 'add'
-            delete form.dataset.id
-            form.reset()
+            const modalContainer = scheduleModal.form
+            modalContainer.dataset.mode = 'add'
+            delete modalContainer.dataset.id
+            const realForm = modalContainer.querySelector('form')
+            if (realForm) realForm.reset()
             scheduleModal.open()
         })
     }
@@ -446,6 +447,7 @@ class CalendarManager {
         const currentMonth = this.currentDate.getMonth()
 
         const FirstDay = new Date(currentYear, currentMonth, 1)
+
         const LastDay = new Date(currentYear, currentMonth + 1, 0)
 
         const totalDaysInMonth = LastDay.getDate()
