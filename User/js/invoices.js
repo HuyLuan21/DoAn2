@@ -174,22 +174,26 @@ function handlePayment() {
  * Handle cancel enrollment
  */
 function handleCancel() {
-    const confirm = window.confirm('Bạn có chắc chắn muốn hủy đăng ký không? Hành động này không thể hoàn tác.')
+    const confirm = window.confirm(
+        'Bạn có chắc chắn muốn hủy thanh toán này?\n\nKhóa học sẽ được chuyển về giỏ khóa học để bạn có thể thanh toán sau.'
+    )
 
     if (!confirm) return
 
-    // Delete enrollment
-    deleteEnrollment(currentEnrollment.enrollmentId)
+    // Update enrollment status to pendingPayment (move to cart)
+    updateEnrollment(currentEnrollment.enrollmentId, {
+        status: 'pendingPayment',
+    })
 
     // Update invoice status
     updateInvoice(currentInvoice.invoiceId, {
         status: 'Cancelled',
     })
 
-    alert('Đã hủy đăng ký')
+    alert('Khóa học đã được chuyển vào giỏ khóa học')
 
-    // Redirect to courses page
-    window.location.href = 'courses.html'
+    // Redirect to registered courses page (cart)
+    window.location.href = 'registered-courses.html'
 }
 
 // ==================== DATA LOADING ====================

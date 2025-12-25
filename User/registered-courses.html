@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Khóa học đã đăng ký</title>
     <link rel="stylesheet" href="../src/style/dashbroad.css" />
     <link rel="stylesheet" href="./style/home.css" />
-    <link rel="stylesheet" href="./style/invoices.css">
+    <link rel="stylesheet" href="./style/registered-courses.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
@@ -23,7 +23,7 @@
                 </a>
                 <div class="sidebar__devider"></div>
                 <ul class="sidebar__list">
-                    <li class="active">
+                    <li>
                         <a class="sidebar_item" href="courses.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -47,7 +47,8 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
+
+                    <li class="active">
                         <a class="sidebar_item" href="registered-courses.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -60,6 +61,7 @@
                             </svg>
                         </a>
                     </li>
+
                 </ul>
             </nav>
             <div class="content relative">
@@ -87,71 +89,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="main_content">
-                    <!-- Invoice Payment Page -->
-                    <div class="invoice-page">
-                        <!-- Invoice Header -->
-                        <div class="invoice-header">
-                            <div class="invoice-header__title">
-                                <i class="fas fa-file-invoice"></i>
-                                <h1>Hóa đơn thanh toán</h1>
-                            </div>
-                            <div class="invoice-header__status" id="invoiceStatus">
-                                <!-- Status badge will be inserted here -->
-                            </div>
+                <!-- Registered Courses Page -->
+                <div class="registered-courses-page">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="page-header__title">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h1>Khóa học đã đăng ký</h1>
                         </div>
+                        <p class="page-header__subtitle">Quản lý các khóa học chờ thanh toán</p>
+                    </div>
 
-                        <!-- Invoice Details Card -->
-                        <div class="invoice-card" id="invoiceCard">
-                            <!-- Content will be loaded by JavaScript -->
-                        </div>
+                    <!-- Summary Card -->
+                    <div class="summary-card" id="summaryCard">
+                        <!-- Content will be loaded by JavaScript -->
+                    </div>
 
-                        <!-- Payment Method Section -->
-                        <div class="payment-section" id="paymentSection">
-                            <h2>Phương thức thanh toán</h2>
-                            <div class="payment-methods">
-                                <label class="payment-method">
-                                    <input type="radio" name="paymentMethod" value="Cash" checked>
-                                    <div class="payment-method__content">
-                                        <i class="fas fa-money-bill-wave"></i>
-                                        <span>Tiền mặt</span>
-                                    </div>
-                                </label>
-                                <label class="payment-method">
-                                    <input type="radio" name="paymentMethod" value="Bank Transfer">
-                                    <div class="payment-method__content">
-                                        <i class="fas fa-university"></i>
-                                        <span>Chuyển khoản</span>
-                                    </div>
-                                </label>
-                                <label class="payment-method">
-                                    <input type="radio" name="paymentMethod" value="Credit Card">
-                                    <div class="payment-method__content">
-                                        <i class="fas fa-credit-card"></i>
-                                        <span>Thẻ tín dụng</span>
-                                    </div>
-                                </label>
-                                <label class="payment-method">
-                                    <input type="radio" name="paymentMethod" value="E-Wallet">
-                                    <div class="payment-method__content">
-                                        <i class="fas fa-wallet"></i>
-                                        <span>Ví điện tử</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
+                    <!-- Courses List -->
+                    <div class="enrollments-container" id="enrollmentsContainer">
+                        <!-- Enrollment cards will be loaded by JavaScript -->
+                    </div>
 
-                        <!-- Action Buttons -->
-                        <div class="invoice-actions">
-                            <button class="btn btn-secondary" id="cancelBtn">Hủy đăng ký</button>
-                            <button class="btn btn-primary" id="payBtn">Thanh toán ngay</button>
-                        </div>
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <i class="fas fa-inbox"></i>
+                        <h3>Không có khóa học chờ thanh toán</h3>
+                        <p>Bạn chưa đăng ký khóa học nào hoặc đã thanh toán tất cả. Hãy khám phá các khóa học mới!</p>
+                        <a href="courses.html" class="btn btn-primary">Khám phá khóa học</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="module" src="./js/invoices.js"></script>
+    <script type="module" src="./js/registered-courses.js"></script>
 </body>
 
 </html>

@@ -21,10 +21,7 @@ function togglePassword() {
     }
 }
 
-// Check if already logged in
-if (getCurrentUser()) {
-    window.location.href = 'User/home.html';
-}
+
 
 // Real-time email validation
 document.addEventListener('DOMContentLoaded', function () {
@@ -110,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Redirect to home page
             setTimeout(() => {
-                window.location.href = 'User/home.html';
+                window.location.href = 'User/courses.html';
             }, 500);
         } else {
             // Show error message
