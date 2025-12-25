@@ -14,10 +14,10 @@ import {
 
 let currentClassId = parseInt(new URLSearchParams(window.location.search).get('classId'))
 
-// Schedule state management
+// Trạng thái lịch - sstate
 let scheduleState = {
-    currentView: 'today', // 'today', 'week', 'month'
-    currentFilter: 'all', // 'all', 'teaching', 'exam'
+    currentView: 'today', // today, week, month
+    currentFilter: 'all', // all, teaching, exam
     selectedDate: new Date(), // Current date for filtering
 }
 
@@ -184,7 +184,23 @@ const renderSchedule = () => {
         return
     }
 
-    renderScheduleItems(scheduleItems)
+    // Render dựa theo view
+    let html = ''
+    if (scheduleState.currentView === 'today') {
+        // Today view: flat list of items
+        html = scheduleItems.map(item => createScheduleCard(item)).join('')
+    } else if (scheduleState.currentView === 'week') {
+        // Week view: grouped by date
+        html = renderWeekView(scheduleItems)
+    } else if (scheduleState.currentView === 'month') {
+        // Month view: grouped by week then date
+        html = renderMonthView(scheduleItems)
+    }
+
+    DOM.scheduleTimeline.innerHTML = html
+
+    // Setup click listeners sau khi render
+    setupScheduleClickListeners()
 }
 
 // Get filtered schedule items (teaching sessions + exams)
@@ -246,10 +262,14 @@ const filterByView = (items, view, selectedDate) => {
         return items.filter(item => item.date >= weekRange.start && item.date <= weekRange.end)
     } else if (view === 'month') {
         const monthRange = getMonthRange(selectedDate)
-        // Month view: group by week, then by date
-        DOM.scheduleTimeline.innerHTML = renderMonthView(items)
+        return items.filter(item => item.date >= monthRange.start && item.date <= monthRange.end)
     }
 
+    return items
+}
+
+// Setup click listeners cho schedule items (chỉ teaching sessions)
+const setupScheduleClickListeners = () => {
     // Add click listeners ONLY to teaching cards (not exams)
     document.querySelectorAll('.schedule-item:not(.exam)').forEach(card => {
         card.addEventListener('click', () => {
@@ -482,10 +502,8 @@ const showAttendanceUI = scheduleId => {
     const schedule = getScheduleById(scheduleId)
     if (!schedule) return
 
-    // Hide schedule list, show attendance view
     DOM.scheduleContentWrapper.style.display = 'none'
     DOM.attendanceView.style.display = 'block'
-    // DOM.backToSchedulesBtn.style.display = 'flex' // This button is not defined in DOM object
 
     renderAttendanceUI(scheduleId)
 }
@@ -628,7 +646,6 @@ const saveAttendances = scheduleId => {
 const backToScheduleList = () => {
     DOM.scheduleContentWrapper.style.display = 'block'
     DOM.attendanceView.style.display = 'none'
-    // DOM.backToSchedulesBtn.style.display = 'none' // This button is not defined in DOM object
 }
 
 // ================================================= SCORE DETAILS POPUP =================================================
