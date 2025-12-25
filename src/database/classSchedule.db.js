@@ -52,6 +52,7 @@ export function updateSchedule(scheduleId, updatedInfo) {
     return schedules[index]
 }
 
+
 export function deleteSchedule(scheduleId) {
     const schedules = getClassSchedules()
     const index = schedules.findIndex(s => s.scheduleId === scheduleId)
@@ -62,3 +63,5 @@ export function deleteSchedule(scheduleId) {
     saveClassSchedules(schedules)
     return true
 }
+
+
