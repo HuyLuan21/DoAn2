@@ -18,7 +18,7 @@ export function getAllClasses() {
 }
 export function getClassById(id) {
     const classes = getclassList()
-    return classes.find(cls => cls.id === id) || null
+    return classes.find(cls => cls.classId === id) || null
 }
 export function addClass(cls) {
     const classes = getclassList()

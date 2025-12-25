@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../src/style/dashbroad.css" />
+        <link rel="stylesheet" href="style/account.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -24,7 +24,7 @@
                     </a>
                     <div class="sidebar__devider"></div>
                     <ul class="sidebar__list">
-                        <li class="active">
+                        <li>
                             <a title="Trang chủ" class="sidebar_item" href="dashboard.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@
                                 </svg>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a title="Tài khoản" class="sidebar_item" href="account.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@
                         <div class="infomation">
                             <div class="flex align-center space-between">
                                 <div class="flex title">
-                                    <span>Màn hình chính</span>
+                                    <span>Tài khoản</span>
                                 </div>
                                 <div class="flex align-center info">
                                     <div class="account_info flex">
@@ -177,8 +177,110 @@
                             </div>
                         </div>
                     </div>
+                    <div id="action" class="flex space-between">
+                        <div id="search_zone" class="flex align-center">
+                            <div class="search__box relative">
+                                <input id="search__input" type="text" placeholder="Tìm kiếm" />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-search"
+                                >
+                                    <circle cx="11" cy="11" r="8" key="4ej97u"></circle>
+                                    <path d="m21 21-4.3-4.3" key="1qie3q"></path>
+                                </svg>
+                            </div>
+                            <select id="type">
+                                <option value="all">Tất cả</option>
+                                <option value="student">Học viên</option>
+                                <option value="teacher">Giảng viên</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="account__list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mã tài khoản</th>
+                                    <th>Tên người dùng</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Email</th>
+                                    <th>Vai trò</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody class="account__table_body"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="account_modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Chỉnh sửa tài khoản</h2>
+                    <span class="close-modal">×</span>
+                </div>
+                <div class="modal-body">
+                    <form id="account_form">
+                        <div class="form-group">
+                            <label for="account-id">Mã tài khoản</label>
+                            <input
+                                type="text"
+                                id="account-id"
+                                name="accountId"
+                                readonly
+                                style="background-color: #f0f0f0"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="account-username">Tên người dùng</label>
+                            <input
+                                type="text"
+                                id="account-username"
+                                name="username"
+                                readonly
+                                placeholder="Nhập tên người dùng"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="account-password">Mật khẩu</label>
+                            <input type="text" id="account-password" name="password" placeholder="Nhập mật khẩu" />
+                        </div>
+                        <div class="form-group">
+                            <label for="account-email">Email</label>
+                            <input
+                                type="text"
+                                id="account-email"
+                                name="email"
+                                readonly
+                                style="background-color: #f0f0f0"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="account-role">Vai trò</label>
+                            <select id="account-role" name="role">
+                                <option value="admin">Admin</option>
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-cancel">Hủy</button>
+                            <button type="button" class="btn-submit">Lưu thay đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./js/account.js"></script>
     </body>
 </html>
