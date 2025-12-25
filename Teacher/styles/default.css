@@ -81,7 +81,6 @@ button {
     position: relative;
 }
 
-
 .hidden {
     display: none;
 }
@@ -307,7 +306,7 @@ button {
         margin-top: 0;
         height: calc(100dvh - 24px);
     }
-    .sidebar {
+    .sidebar.hidden {
         display: block;
     }
 }

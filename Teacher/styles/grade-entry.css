@@ -300,7 +300,7 @@
 
 /* Utility */
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 /* Responsive */

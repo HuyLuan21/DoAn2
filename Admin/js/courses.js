@@ -1,10 +1,10 @@
-import { getAllCourses, getCourseById, deleteCourse, addCourse } from '/src/database/courses.db.js'
+import { getAllCourses, deleteCourse, addCourse } from '/src/database/courses.db.js'
 import { getAllClasses } from '/src/database/classes.db.js'
 import { getAllLanguages } from '/src/database/language.db.js'
 import { getAllLanguageLevels } from '/src/database/language_level.db.js'
 
 const classes = getAllClasses()
-
+const courses = getAllCourses()
 // Hàm hỗ trợ: Đảm bảo giá trị là số hợp lệ cho việc sắp xếp
 function cleanAndParseFloat(value) {
     if (typeof value === 'string') {
@@ -428,7 +428,7 @@ function handleDeleteCourseLogic(container) {
     }
 }
 
-async function handleImageUpload() {
+function handleImageUpload() {
     const courseImageInput = document.getElementById('course-image')
     const courseImage_url = document.getElementById('course-image-url')
     if (!courseImageInput) return

@@ -275,6 +275,7 @@ button {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    margin-top: 8px;
     font-size: 1.4rem;
     font-weight: 500;
     color: #475569;
@@ -354,24 +355,40 @@ button {
     max-width: 30%;
 }
 .class__header {
-    display: flex;
+    position: relative;
     align-items: center;
-    gap: 10px;
     .class__header__title {
         margin: auto;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e2c3b;
+    }
+    #setting {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #f9fafc;
+        color: #6e7d93;
+        border: 1px solid #e2e8f0;
     }
 }
-#setting {
-    background-color: #f9fafc;
-    color: #6e7d93;
-    border: 1px solid #e2e8f0;
+
+select {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 1px 2px #e2e8f0;
+}
+#select_class {
+    margin: 10px 0px;
 }
 #select {
-    padding: 10px 0px;
-
-    gap: 12px;
+    gap: 10px;
+}
+.p-10 {
     select {
-        width: 100%;
+        flex: 1;
         height: 30px;
         border-radius: 5px;
         border: none;
@@ -380,7 +397,86 @@ button {
     select:focus {
         outline: none;
     }
+
+    .control__button {
+        margin-left: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 1px 2px #e2e8f0;
+        button {
+            height: 30px;
+            background: transparent;
+            padding: 4px 8px;
+        }
+    }
+    .class_info {
+        color: #738298;
+    }
+    .class_calender {
+        color: #738298;
+    }
+    .class_info.active {
+        background-color: #e2e8f0;
+    }
+    .class_calender.active {
+        background-color: #e2e8f0;
+    }
+    .schedule_action {
+        gap: 8px;
+        button {
+            background-color: #f9fafc;
+            color: #6e7d93;
+            border: 1px solid #e2e8f0;
+            font-size: 1.4rem;
+        }
+        #add_schedule {
+            background-color: green;
+            color: #fff;
+        }
+        #edit_schedule {
+            background-color: blue;
+            color: #fff;
+        }
+
+        #delete_schedule {
+            background-color: red;
+            color: #fff;
+        }
+    }
+    .schedule__Management {
+        display: none;
+    }
+    .schedule__list {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        .schedule__item {
+            background-color: #f1f5f9;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .schedule__item_content {
+            padding: 10px;
+            justify-content: space-between;
+            display: flex;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1.4rem;
+            .studydate__room {
+                font-weight: 600;
+            }
+        }
+        .schedule__item_action {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            button {
+                background-color: #fff;
+            }
+        }
+    }
 }
+
 .p-10 {
     padding: 10px;
 }
@@ -388,6 +484,18 @@ button {
     border-radius: 20px;
     background-color: #fff;
     flex: 1;
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #1e2c3b;
+        text-align: center;
+        position: relative;
+    }
+    #today {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 .top_bar {
     min-height: 56px;
@@ -400,26 +508,7 @@ button {
 .space-around {
     justify-content: space-around;
 }
-#today {
-    height: 40px;
-}
-#calender_navigate {
-    gap: 10px;
-}
-#change-day {
-    flex: 1;
-}
-.month {
-    flex-direction: column;
-    align-items: center;
-    h3 {
-        font-size: large;
-        font-weight: 500;
-    }
-    .time {
-        font-size: 14px;
-    }
-}
+
 .course__item {
     display: flex;
     flex-direction: column;
@@ -475,5 +564,77 @@ button {
                 gap: 8px;
             }
         }
+    }
+}
+#calender {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+    }
+    .monthYear {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e2c3b;
+    }
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e2c3b;
+    }
+    .day {
+        text-align: center;
+        padding: 5px;
+    }
+    .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e2c3b;
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5px;
+        margin: auto;
+        cursor: pointer;
+        font-weight: 500;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        transition: 0.2s;
+        position: relative;
+    }
+    .date:hover,
+    .date.active {
+        background-color: #ff5869;
+        color: #fff;
+    }
+    .date.inactive {
+        color: #d2d2d2;
+    }
+    .scheduled-day {
+        border: 2px solid #ff5869;
     }
 }

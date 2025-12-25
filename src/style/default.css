@@ -89,7 +89,6 @@ li {
     background-color: #fff;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
-    /* visibility delay 0.3s để ẩn sau khi animation xong */
 }
 
 /* Hover mượt */
@@ -653,7 +652,6 @@ li {
     border-radius: 12px;
     padding: 12px;
     box-shadow: 0 4px 6px -1px rgba(71, 85, 105, 0.1);
-    transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
 }
 .carousel__item img {

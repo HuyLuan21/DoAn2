@@ -80,7 +80,9 @@ function renderInvoiceCard() {
             </div>
             <div class="invoice-card__row">
                 <span class="invoice-card__label">Thời gian:</span>
-                <span class="invoice-card__value">${formatDate(currentClass.startDate)} - ${formatDate(currentClass.endDate)}</span>
+                <span class="invoice-card__value">${formatDate(currentClass.startDate)} - ${formatDate(
+        currentClass.endDate
+    )}</span>
             </div>
         </div>
 
@@ -238,7 +240,6 @@ function loadInvoiceData() {
     const finalAmount = parseInt(params.amount) || currentCourse.tuitionFee
 
     currentInvoice = {
-        invoiceId: Date.now(), // Temporary ID
         enrollmentId: currentEnrollment.enrollmentId,
         discountAmount: 0,
         finalAmount: finalAmount,
