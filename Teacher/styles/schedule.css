@@ -241,22 +241,22 @@
 /* Teaching Session - Blue */
 .schedule-item.teaching {
     border-left-color: #4a90e2;
-    background: linear-gradient(to right, rgba(74, 144, 226, 0.08), transparent);
+    background: rgba(74, 144, 226, 0.08);
 }
 
 .schedule-item.teaching .schedule-item__icon {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    background: #4a90e2;
     color: white;
 }
 
 /* Exam Proctoring - Orange */
 .schedule-item.exam {
     border-left-color: #f5a623;
-    background: linear-gradient(to right, rgba(245, 166, 35, 0.08), transparent);
+    background: rgba(245, 166, 35, 0.08);
 }
 
 .schedule-item.exam .schedule-item__icon {
-    background: linear-gradient(135deg, #f5a623 0%, #e09718 100%);
+    background: #f5a623;
     color: white;
 }
 
