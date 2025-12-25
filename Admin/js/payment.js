@@ -1,27 +1,31 @@
 import { getAllInvoices, getInvoiceById, deleteInvoice } from '/src/database/invoice.db.js'
-import { getAllStudents } from '/src/database/student.db.js'
-import { getAllEnrollments } from '/src/database/enrollment.db.js'
-
-
-let students = getAllStudents()
-let enrollments = getAllEnrollments()
-
+import { getStudentById } from '/src/database/student.db.js'
+import { getEnrollmentById } from '/src/database/enrollment.db.js'
+import { getClassById } from '/src/database/classes.db.js'
+import { getCourseById } from '/src/database/courses.db.js'
 
 function GetStudentNameById(enrollmentId) {
-    const enrollment = enrollments.find(e => e.enrollmentId === enrollmentId)
+    const enrollment = getEnrollmentById(enrollmentId)
     if (!enrollment) return 'Không xác định'
 
-    const student = students.find(s => s.studentId === enrollment.studentId)
+    const student = getStudentById(enrollment.studentId)
     return student ? student.fullName : 'Không xác định'
 }
 
 // =======================================================
 // 3. RENDER TABLE
 // =======================================================
-function renderInvoicesTable() {
-    const invoices = getAllInvoices() 
+// =======================================================
+// 3. RENDER TABLE
+// =======================================================
+function renderInvoicesTable(invoices = getAllInvoices()) {
     const tableBody = document.querySelector('.invoice__table_body')
     tableBody.innerHTML = ''
+
+    if (invoices.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center;">Không tìm thấy kết quả</td></tr>'
+        return
+    }
 
     invoices.forEach(invoice => {
         const formatted = invoice.finalAmount.toLocaleString('vi-VN', {
@@ -31,12 +35,14 @@ function renderInvoicesTable() {
 
         tableBody.innerHTML += `
             <tr>
-                <td>${invoice.invoiceId}</td>
-                <td>${GetStudentNameById(invoice.enrollmentId)}</td>
-                <td>${formatted}</td>
-                <td>${invoice.paymentDate ? invoice.paymentDate.split('-').reverse().join('-') : 'null'}</td>
-                <td>${invoice.status}</td>
-                <td>
+                <td data-label="Mã Hóa đơn">${invoice.invoiceId}</td>
+                <td data-label="Tên Học Viên">${GetStudentNameById(invoice.enrollmentId)}</td>
+                <td data-label="Thành tiền">${formatted}</td>
+                <td data-label="Ngày thanh toán">${
+                    invoice.paymentDate ? invoice.paymentDate.split('-').reverse().join('-') : 'null'
+                }</td>
+                <td data-label="Trạng thái">${invoice.status}</td>
+                <td data-label="Thao tác">
                     <button class="view-payment" data-id="${invoice.invoiceId}">
                         <i class="fas fa-eye"></i>
                     </button>
@@ -46,6 +52,57 @@ function renderInvoicesTable() {
                 </td>
             </tr>
         `
+    })
+}
+
+// =======================================================
+// 8. SEARCH AND FILTER
+// =======================================================
+function setupSearchAndFilter() {
+    const searchInput = document.getElementById('search__input')
+    const typeSelect = document.getElementById('type')
+    const dateInput = document.getElementById('date')
+    const clearBtn = document.getElementById('clear')
+
+    function filterData() {
+        const searchTerm = searchInput.value.toLowerCase().trim()
+        const statusFilter = typeSelect.value
+        const dateFilter = dateInput.value
+
+        let filtered = getAllInvoices()
+
+        // Filter by Search Term (Invoice ID or Student Name)
+        if (searchTerm) {
+            filtered = filtered.filter(invoice => {
+                const studentName = GetStudentNameById(invoice.enrollmentId).toLowerCase()
+                const invoiceId = invoice.invoiceId.toString()
+                return studentName.includes(searchTerm) || invoiceId.includes(searchTerm)
+            })
+        }
+
+        // Filter by Status
+        if (statusFilter !== 'all') {
+            const mappedStatus = statusFilter === 'paid' ? 'Paid' : 'Unpaid'
+            filtered = filtered.filter(invoice => invoice.status === mappedStatus)
+        }
+
+        // Filter by Date
+        if (dateFilter) {
+            filtered = filtered.filter(invoice => invoice.paymentDate === dateFilter)
+        }
+
+        renderInvoicesTable(filtered)
+    }
+
+    searchInput.addEventListener('input', filterData)
+    typeSelect.addEventListener('change', filterData)
+    dateInput.addEventListener('change', filterData)
+
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = ''
+        typeSelect.value = 'all'
+        dateInput.value = ''
+        renderInvoicesTable(getAllInvoices())
     })
 }
 
@@ -90,13 +147,36 @@ const modal = {
 // =======================================================
 function HandleViewInvoice(invoiceId) {
     const invoice = getInvoiceById(invoiceId)
+    const enrollment = getEnrollmentById(invoice.enrollmentId)
+    const student = getStudentById(enrollment.studentId)
+    const classes = getClassById(enrollment.classId)
+    const course = getCourseById(classes.coursesId)
+    const courseName = course.courseName
+
     if (!invoice) return
 
-    const studentName = GetStudentNameById(invoice.enrollmentId)
+    const studentName = document.querySelector('.form-group .student__Name')
+    const studentEmail = document.querySelector('.form-group .student__email')
+    const studentContact = document.querySelector('.form-group .student__contact')
+    studentName.innerHTML = `<b>Tên học viên:</b> ${student.fullName}`
+    studentEmail.innerHTML = `<b>Email:</b> ${student.email}`
+    studentContact.innerHTML = `<b>Số điện thoại:</b> ${student.phone}`
 
-    console.log('Hóa đơn:', invoice)
-    console.log('Học viên:', studentName)
-
+    const paymentId = document.querySelector('.form-group .payment__id')
+    const paymentDetail = document.querySelector('.form-group .payment__detail')
+    const paymentAmount = document.querySelector('.form-group .payment__amount')
+    const paymentDate = document.querySelector('.form-group .payment__date')
+    const paymentStatus = document.querySelector('.form-group .payment__status')
+    paymentId.innerHTML = `<b>Mã hóa đơn:</b> ${invoice.invoiceId}`
+    paymentDetail.innerHTML = `<b>Khóa học:</b> ${courseName}`
+    paymentAmount.innerHTML = `<b>Thành tiền:</b> ${invoice.finalAmount.toLocaleString('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    })}`
+    paymentDate.innerHTML = `<b>Ngày thanh toán:</b> ${
+        invoice.paymentDate ? invoice.paymentDate.split('-').reverse().join('-') : 'null'
+    }`
+    paymentStatus.innerHTML = `<b>Trạng thái:</b> ${invoice.status}`
     modal.open()
 }
 
@@ -110,7 +190,13 @@ function HandleDeleteInvoice(invoiceId) {
     }
 
     deleteInvoice(invoiceId)
-    renderInvoicesTable() 
+    // Re-run filter to update table correctly with current filters
+    const searchInput = document.getElementById('search__input')
+    if (searchInput.value || document.getElementById('type').value !== 'all' || document.getElementById('date').value) {
+        searchInput.dispatchEvent(new Event('input')) // Trigger filter update
+    } else {
+        renderInvoicesTable()
+    }
 }
 
 // =======================================================
@@ -138,6 +224,7 @@ function setupInvoiceEvents() {
 // =======================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderInvoicesTable()
+    setupSearchAndFilter()
     modal.init()
     setupInvoiceEvents()
 })
