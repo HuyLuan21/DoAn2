@@ -1,120 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="../src/style/dashbroad.css" />
+        <link rel="stylesheet" href="./style/home.css" />
+        <link rel="stylesheet" href="./style/my-courses.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../src/style/dashbroad.css" />
-    <link rel="stylesheet" href="./style/home.css" />
-    <link rel="stylesheet" href="./style/my-courses.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-</head>
-
-<body>
-    <div class="layout">
-        <div class="body">
-            <nav class="sidebar">
-                <a class="sidebar__logo flex align-center relative" href="">
-                    <img src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
-                        alt="" />
-                </a>
-                <div class="sidebar__devider"></div>
-                <ul class="sidebar__list">
-                    <li>
-                        <a class="sidebar_item" href="courses.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-house">
-                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" key="5wwlr5"></path>
-                                <path
-                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                                    key="1d0kgt"></path>
-                            </svg>
-                        </a>
-                    </li>
-
-                    <li class="active">
-                        <a class="sidebar_item" href="my-courses.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-book-marked">
-                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" key="t4utmx">
-                                </path>
-                                <polyline points="10 2 10 10 13 7 16 10 16 2" key="13o6vz"></polyline>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="sidebar_item" href="registered-courses.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
-                                <circle cx="8" cy="21" r="1"></circle>
-                                <circle cx="19" cy="21" r="1"></circle>
-                                <path
-                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="content relative">
-                <div class="top_bar relative flex align-center">
-                    <div class="infomation">
-                        <div class="flex align-center space-between">
-                            <div class="flex title ">
-                                <span>Màn hình chính</span>
-                            </div>
-                            <div class="flex align-center info">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="#4f5d70" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-bell">
-                                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" key="1qo2s2"></path>
-                                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" key="qgo35s"></path>
+    <body>
+        <div class="layout">
+            <div class="body">
+                <nav class="sidebar">
+                    <a class="sidebar__logo flex align-center relative" href="">
+                        <img
+                            src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
+                            alt=""
+                        />
+                    </a>
+                    <div class="sidebar__devider"></div>
+                    <ul class="sidebar__list">
+                        <li class="active">
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-house"
+                                >
+                                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" key="5wwlr5"></path>
+                                    <path
+                                        d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                        key="1d0kgt"
+                                    ></path>
                                 </svg>
-                                <div class="account_info flex">
-                                    <div class="ava"></div>
-                                    <div class="user-info flex">
-                                        <div class="font-medium">user-name</div>
-                                        <span>role</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-file-text"
+                                >
+                                    <path
+                                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                                        key="1rqfz7"
+                                    ></path>
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4" key="tnqrlb"></path>
+                                    <path d="M10 9H8" key="b1mrlr"></path>
+                                    <path d="M16 13H8" key="t4e002"></path>
+                                    <path d="M16 17H8" key="z1uh3a"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-folder"
+                                >
+                                    <path
+                                        d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+                                        key="1kt360"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-layers"
+                                >
+                                    <path
+                                        d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                                        key="8b97xw"
+                                    ></path>
+                                    <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" key="dd6zsq"></path>
+                                    <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" key="ep9fru"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-users"
+                                >
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" key="1yyitq"></path>
+                                    <circle cx="9" cy="7" r="4" key="nufk8"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" key="kshegd"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" key="1da9ce"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-open"
+                                >
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" key="vv98re"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" key="1cyq3y"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-landmark"
+                                >
+                                    <line x1="3" x2="21" y1="22" y2="22" key="j8o0r"></line>
+                                    <line x1="6" x2="6" y1="18" y2="11" key="10tf0k"></line>
+                                    <line x1="10" x2="10" y1="18" y2="11" key="54lgf6"></line>
+                                    <line x1="14" x2="14" y1="18" y2="11" key="380y"></line>
+                                    <line x1="18" x2="18" y1="18" y2="11" key="1kevvc"></line>
+                                    <polygon points="12 2 20 7 4 7" key="jkujk7"></polygon>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="sidebar_item" href="courses.html">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-book-marked"
+                                >
+                                    <path
+                                        d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"
+                                        key="t4utmx"
+                                    ></path>
+                                    <polyline points="10 2 10 10 13 7 16 10 16 2" key="13o6vz"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="content relative">
+                    <div class="top_bar relative flex align-center">
+                        <div class="infomation">
+                            <div class="flex align-center space-between">
+                                <div class="flex title">
+                                    <span>Màn hình chính</span>
+                                </div>
+                                <div class="flex align-center info">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#4f5d70"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-bell"
+                                    >
+                                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" key="1qo2s2"></path>
+                                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" key="qgo35s"></path>
+                                    </svg>
+                                    <div class="account_info flex">
+                                        <div class="ava"></div>
+                                        <div class="user-info flex">
+                                            <div class="font-medium">user-name</div>
+                                            <span>role</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- My Courses Page -->
-                <div class="my-courses-page">
-                    <!-- Page Header -->
-                    <div class="page-header">
-                        <div class="page-header__title">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h1>Khóa học của tôi</h1>
+                    <!-- My Courses Page -->
+                    <div class="my-courses-page">
+                        <!-- Page Header -->
+                        <div class="page-header">
+                            <div class="page-header__title">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h1>Khóa học của tôi</h1>
+                            </div>
+                            <p class="page-header__subtitle">Quản lý các khóa học bạn đã đăng ký</p>
                         </div>
-                        <p class="page-header__subtitle">Quản lý các khóa học bạn đã đăng ký</p>
-                    </div>
 
-                    <!-- Courses List -->
-                    <div class="courses-container" id="coursesContainer">
-                        <!-- Courses will be loaded by JavaScript -->
-                    </div>
+                        <!-- Courses List -->
+                        <div class="courses-container" id="coursesContainer">
+                            <!-- Courses will be loaded by JavaScript -->
+                        </div>
 
-                    <!-- Empty State -->
-                    <div class="empty-state" id="emptyState" style="display: none;">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Chưa có khóa học nào</h3>
-                        <p>Bạn chưa đăng ký khóa học nào. Hãy khám phá các khóa học của chúng tôi!</p>
-                        <a href="courses.html" class="btn btn-primary">Khám phá khóa học</a>
+                        <!-- Empty State -->
+                        <div class="empty-state" id="emptyState" style="display: none">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Chưa có khóa học nào</h3>
+                            <p>Bạn chưa đăng ký khóa học nào. Hãy khám phá các khóa học của chúng tôi!</p>
+                            <a href="courses.html" class="btn btn-primary">Khám phá khóa học</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="module" src="./js/my-courses.js"></script>
-</body>
-
+        <script type="module" src="./js/my-courses.js"></script>
+    </body>
 </html>

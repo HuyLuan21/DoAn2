@@ -1,8 +1,8 @@
-import { getAllInvoices, getInvoiceById, deleteInvoice } from '/src/database/invoice.db.js'
-import { getStudentById } from '/src/database/student.db.js'
-import { getEnrollmentById } from '/src/database/enrollment.db.js'
-import { getClassById } from '/src/database/classes.db.js'
-import { getCourseById } from '/src/database/courses.db.js'
+import { getAllInvoices, getInvoiceById, deleteInvoice } from '../../src/database/invoice.db.js'
+import { getStudentById } from '../../src/database/student.db.js'
+import { getEnrollmentById } from '../../src/database/enrollment.db.js'
+import { getClassById } from '../../src/database/classes.db.js'
+import { getCourseById } from '../../src/database/courses.db.js'
 
 function GetStudentNameById(enrollmentId) {
     const enrollment = getEnrollmentById(enrollmentId)

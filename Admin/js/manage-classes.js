@@ -1,5 +1,5 @@
-import { getAllClasses, addClass } from '/src/database/classes.db.js'
-import { getEnrollmentCountByClassId } from '/src/database/enrollment.db.js'
+import { getAllClasses, addClass, updateClass, deleteClass, getClassById } from '../../src/database/classes.db.js'
+import { getEnrollmentCountByClassId } from '../../src/database/enrollment.db.js'
 const urlParams = new URLSearchParams(window.location.search)
 const courseId = urlParams.get('id')
 // ============= HELPER FUNCTIONS =============
@@ -46,9 +46,19 @@ const createClassCard = classData => {
                     <h3 class="class-card__title">${className}</h3>
                     <span class="class-card__status ${statusClass}">${statusText}</span>
                 </div>
-                <button class="class-card__menu-btn" aria-label="Menu">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </button>
+                <div class="class-card__menu">
+                    <button class="class-card__menu-btn" aria-label="Menu">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <div class="class-card__menu-dropdown">
+                        <button class="class-card__menu-item edit-btn">
+                            <i class="fa-solid fa-pen"></i> Sửa lớp
+                        </button>
+                        <button class="class-card__menu-item delete-btn">
+                            <i class="fa-solid fa-trash"></i> Xóa lớp
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="class-card__body">
                 <div class="class-card__info-row">
@@ -121,15 +131,42 @@ const setupSearch = () => {
 const modal = {
     overlay: null,
     form: null,
+    mode: 'add', // 'add' or 'edit'
+    currentClassId: null,
 
     init() {
         this.overlay = document.getElementById('add-class-modal')
         this.form = document.getElementById('add-class-form')
     },
 
-    open() {
+    open(mode = 'add', classData = null) {
+        this.mode = mode
         if (this.overlay) {
             this.overlay.style.display = 'flex'
+
+            // Update UI based on mode
+            const titleEl = this.overlay.querySelector('.modal-title')
+            const submitBtn = this.overlay.querySelector('button[type="submit"]')
+
+            if (mode === 'edit' && classData) {
+                this.currentClassId = classData.classId
+                if (titleEl) titleEl.textContent = 'Cập nhật thông tin lớp học'
+                if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Lưu thay đổi'
+
+                // Fill form data
+                document.getElementById('className').value = classData.className
+                document.getElementById('coursesId').value = classData.coursesId
+                document.getElementById('teacherId').value = classData.teacherId
+                document.getElementById('startDate').value = classData.startDate
+                document.getElementById('endDate').value = classData.endDate
+                document.getElementById('status').value = classData.status
+                document.getElementById('maxStudents').value = classData.maxStudents
+            } else {
+                this.currentClassId = null
+                if (titleEl) titleEl.textContent = 'Thêm lớp học mới'
+                if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Lưu'
+                this.form?.reset()
+            }
         }
     },
 
@@ -137,15 +174,15 @@ const modal = {
         if (this.overlay) {
             this.overlay.style.display = 'none'
             this.form?.reset()
+            this.mode = 'add'
+            this.currentClassId = null
         }
     },
 }
 
-// Form validation
 const validateForm = formData => {
     const errors = []
 
-    // Check required fields
     if (!formData.className.trim()) errors.push('Tên lớp không được để trống')
     if (!formData.coursesId || formData.coursesId < 1) errors.push('Khóa học ID phải lớn hơn 0')
     if (!formData.teacherId || formData.teacherId < 1) errors.push('Giáo viên ID phải lớn hơn 0')
@@ -154,12 +191,9 @@ const validateForm = formData => {
     if (!formData.status) errors.push('Trạng thái không được để trống')
     if (!formData.maxStudents || formData.maxStudents < 1) errors.push('Sĩ số tối đa phải lớn hơn 0')
 
-    // Check date logic
     if (formData.startDate && formData.endDate) {
         const start = new Date(formData.startDate)
-        console.log(start)
         const end = new Date(formData.endDate)
-        console.log(end)
         if (start >= end) {
             errors.push('Ngày kết thúc phải sau ngày bắt đầu')
         }
@@ -168,7 +202,6 @@ const validateForm = formData => {
     return errors
 }
 
-// Show success message
 const showSuccessMessage = message => {
     const successDiv = document.createElement('div')
     successDiv.className = 'success-message'
@@ -180,8 +213,7 @@ const showSuccessMessage = message => {
     }, 3000)
 }
 
-// Handle form submission
-const handleAddClass = event => {
+const handleSaveClass = event => {
     event.preventDefault()
 
     const formData = {
@@ -201,47 +233,50 @@ const handleAddClass = event => {
         return
     }
 
-    // Add class to database
     try {
-        const newClass = addClass(formData)
-        console.log('Đã thêm lớp học:', newClass)
+        if (modal.mode === 'edit' && modal.currentClassId) {
+            const updatedClass = updateClass(modal.currentClassId, formData)
+            if (updatedClass) {
+                console.log('Đã cập nhật lớp học:', updatedClass)
+                showSuccessMessage(`Đã cập nhật lớp "${formData.className}" thành công!`)
+            } else {
+                throw new Error('Không thể cập nhật lớp học')
+            }
+        } else {
+            const newClass = addClass(formData)
+            console.log('Đã thêm lớp học:', newClass)
+            showSuccessMessage(`Đã thêm lớp "${formData.className}" thành công!`)
+        }
 
-        // Close modal and refresh list
         modal.close()
         renderClasses()
-        showSuccessMessage(`Đã thêm lớp "${formData.className}" thành công!`)
     } catch (error) {
-        console.error('Lỗi khi thêm lớp:', error)
-        alert('Có lỗi xảy ra khi thêm lớp học. Vui lòng thử lại.')
+        console.error('Lỗi khi lưu lớp học:', error)
+        alert('Có lỗi xảy ra. Vui lòng thử lại.')
     }
 }
 
-// Setup add class functionality
 const setupAddClass = () => {
     modal.init()
 
-    // Open modal button
     const addBtn = document.getElementById('add-class-btn')
     if (addBtn) {
-        addBtn.addEventListener('click', () => modal.open())
+        addBtn.addEventListener('click', () => modal.open('add'))
     }
 
-    // Close modal buttons
     const closeBtn = document.getElementById('modal-close-btn')
     const cancelBtn = document.getElementById('cancel-btn')
 
     if (closeBtn) closeBtn.addEventListener('click', () => modal.close())
     if (cancelBtn) cancelBtn.addEventListener('click', () => modal.close())
 
-    // Close on overlay click
     modal.overlay?.addEventListener('click', e => {
         if (e.target === modal.overlay) modal.close()
     })
 
-    // Form submit
-    modal.form?.addEventListener('submit', handleAddClass)
+    modal.form?.addEventListener('submit', handleSaveClass)
 
-    console.log('Add class functionality đã được thiết lập')
+    console.log('Add/Edit class functionality đã được thiết lập')
 }
 
 // ============= CLICK HANDLER =============
@@ -250,32 +285,86 @@ const setupAddClass = () => {
  * Thiết lập sự kiện click cho các class card
  * Khi click vào card, chuyển hướng tới trang classroom-detail.html với classId tương ứng
  */
-const setupClassCardClick = () => {
+const setupClassCardInteractions = () => {
     const classList = document.querySelector('.class-section__classList')
     if (!classList) return console.error('Không tìm thấy container .class-section__classList')
 
-    // Sử dụng event delegation để handle click cho các card được render động
-    classList.addEventListener('click', e => {
-        // Tìm class card gần nhất từ element được click
-        const card = e.target.closest('.class-card')
-
-        // Nếu không click vào card hoặc click vào menu button thì bỏ qua
-        if (!card || e.target.closest('.class-card__menu-btn')) {
-            return
-        }
-
-        // Lấy classId từ data attribute
-        const classId = card.getAttribute('data-class-id')
-
-        if (classId) {
-            // Chuyển hướng tới trang classroom-detail với classId query parameter
-            window.location.href = `classroom-detail.html?classId=${classId}`
-        } else {
-            console.error('Không tìm thấy classId trên card')
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.class-card__menu')) {
+            document.querySelectorAll('.class-card__menu-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('show')
+            })
         }
     })
 
-    console.log('Class card click handler đã được thiết lập')
+    classList.addEventListener('click', e => {
+        // 1. Handle Menu Button Click
+        const menuBtn = e.target.closest('.class-card__menu-btn')
+        if (menuBtn) {
+            e.stopPropagation()
+            const dropdown = menuBtn.nextElementSibling
+
+            // Close other dropdowns
+            document.querySelectorAll('.class-card__menu-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('show')
+            })
+
+            dropdown.classList.toggle('show')
+            return
+        }
+
+        // 2. Handle Edit Button Click
+        const editBtn = e.target.closest('.edit-btn')
+        if (editBtn) {
+            e.stopPropagation()
+            const card = editBtn.closest('.class-card')
+            const classId = Number(card.getAttribute('data-class-id'))
+
+            const classData = getClassById(classId)
+            if (classData) {
+                modal.open('edit', classData)
+                // Close dropdown
+                editBtn.closest('.class-card__menu-dropdown').classList.remove('show')
+            } else {
+                alert('Không tìm thấy thông tin lớp học')
+            }
+            return
+        }
+
+        // 3. Handle Delete Button Click
+        const deleteBtn = e.target.closest('.delete-btn')
+        if (deleteBtn) {
+            e.stopPropagation()
+            const card = deleteBtn.closest('.class-card')
+            const classId = Number(card.getAttribute('data-class-id'))
+            const className = card.querySelector('.class-card__title').textContent
+
+            if (confirm(`Bạn có chắc chắn muốn xóa lớp "${className}" không?`)) {
+                const result = deleteClass(classId)
+                if (result) {
+                    showSuccessMessage('Đã xóa lớp học thành công')
+                    renderClasses()
+                } else {
+                    alert('Xóa lớp học thất bại')
+                }
+            }
+            // Close dropdown
+            return
+        }
+
+        // 4. Handle Card Click (Navigation)
+        const card = e.target.closest('.class-card')
+        // Only navigate if we're not clicking inside the menu
+        if (card && !e.target.closest('.class-card__menu')) {
+            const classId = card.getAttribute('data-class-id')
+            if (classId) {
+                window.location.href = `classroom-detail.html?classId=${classId}`
+            }
+        }
+    })
+
+    console.log('Class card interactions đã được thiết lập')
 }
 
 // ============= INITIALIZATION =============
@@ -283,6 +372,6 @@ const setupClassCardClick = () => {
 document.addEventListener('DOMContentLoaded', () => {
     renderClasses()
     setupSearch()
-    setupClassCardClick()
+    setupClassCardInteractions()
     setupAddClass()
 })

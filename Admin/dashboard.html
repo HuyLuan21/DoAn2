@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../src/style/dashbroad.css" />
+        <link rel="stylesheet" href="style/dashboard.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -15,7 +15,18 @@
     <body>
         <div class="layout">
             <div class="body">
-                <nav class="sidebar">
+                <nav class="mobile-nav flex align-center justify-center space-between">
+                    <a class="mobile-nav__logo flex align-center" href="">
+                        <img
+                            src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
+                            alt=""
+                        />
+                    </a>
+                    <button class="mobile-nav__menu-btn">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                </nav>
+                <nav class="sidebar hidden">
                     <a class="sidebar__logo flex align-center relative" href="">
                         <img
                             src="https://res.cloudinary.com/dkeeelvpa/image/upload/v1763564599/white_transparent_pruzhq.png"
@@ -25,7 +36,7 @@
                     <div class="sidebar__devider"></div>
                     <ul class="sidebar__list">
                         <li class="active">
-                            <a title="Trang chủ" class="sidebar_item" href="dashboard.html">
+                            <a class="sidebar_item" title="Dashboard" href="dashboard.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -47,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a title="Khóa học" class="sidebar_item" href="courses.html">
+                            <a class="sidebar_item" title="Khóa học" href="courses.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -69,7 +80,7 @@
                             </a>
                         </li>
                         <li>
-                            <a title="Lớp học" class="sidebar_item" href="manage-classes.html">
+                            <a class="sidebar_item" title="Lớp học" href="manage-classes.html">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -91,6 +102,7 @@
                                 </svg>
                             </a>
                         </li>
+
                         <li>
                             <a title="Lịch học" class="sidebar_item" href="courses_detail.html">
                                 <svg
@@ -159,21 +171,67 @@
                     </ul>
                 </nav>
                 <div class="content relative">
-                    <div class="top_bar relative flex align-center">
-                        <div class="infomation">
-                            <div class="flex align-center space-between">
-                                <div class="flex title">
-                                    <span>Màn hình chính</span>
+                    <div class="topbar">
+                        <button class="topbar__previos-btn">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Quay lại</span>
+                        </button>
+                        <div class="topbar__left">
+                            <span class="topbar__current-page">Dashboard</span>
+                        </div>
+                        <div class="topbar__right">
+                            <div class="topbar__user">
+                                <img
+                                    class="topbar__user-avatar"
+                                    src="https://jbagy.me/wp-content/uploads/2025/03/anh-avatar-vo-tri-meo-1.jpg"
+                                    alt=""
+                                />
+                                <div class="topbar__user-info">
+                                    <span class="topbar__user-name">Nguyen Van A</span>
+                                    <span class="topbar__user-role">Admin</span>
                                 </div>
-                                <div class="flex align-center info">
-                                    <div class="account_info flex">
-                                        <div class="ava"></div>
-                                        <div class="user-info flex">
-                                            <div class="font-medium">user-name</div>
-                                            <span>role</span>
-                                        </div>
-                                    </div>
+                                <div class="topbar__user-dropdown-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="account.html">
+                                                <i class="fa-regular fa-user"></i>
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../sign-in.html">
+                                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                Logout</a
+                                            >
+                                        </li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content">
+                        <div class="card-container">
+                            <div class="card-grid">
+                                <a href="courses.html" class="feature-card">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    <span class="feature-card__title">Quản lý khóa học</span>
+                                </a>
+                                <a href="manage-classes.html" class="feature-card">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <span class="feature-card__title">Quản lý lớp</span>
+                                </a>
+                                <a href="courses_detail.html" class="feature-card">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span class="feature-card__title">Lịch trình</span>
+                                </a>
+                                <a href="payment.html" class="feature-card">
+                                    <i class="fa-solid fa-receipt"></i>
+                                    <span class="feature-card__title">Quản lý hóa đơn</span>
+                                </a>
+                                <a href="account.html" class="feature-card">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span class="feature-card__title">Tài khoản</span>
+                                </a>
                             </div>
                         </div>
                     </div>
