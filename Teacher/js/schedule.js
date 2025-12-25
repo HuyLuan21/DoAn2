@@ -1,8 +1,8 @@
-// Import mock data
-import classes from '../../src/mocks/classes.js'
-import classSchedules from '../../src/mocks/classSchedules.js'
-import exams from '../../src/mocks/exams.js'
-import teachers from '../../src/mocks/teachers.js'
+// Import database methods
+import { getAllClasses } from '../../src/database/classes.db.js'
+import { getAllSchedules } from '../../src/database/classSchedules.db.js'
+import { getAllExams } from '../../src/database/exam.db.js'
+import { getAllTeachers } from '../../src/database/teacher.db.js'
 
 // State management
 let currentView = 'today' // 'today', 'week', 'month'
@@ -139,6 +139,11 @@ function updateHeader() {
 function getFilteredScheduleItems() {
     // Combine teaching sessions and exams
     let items = []
+
+    // Get data from database
+    const classes = getAllClasses()
+    const classSchedules = getAllSchedules()
+    const exams = getAllExams()
 
     // Add teaching sessions
     const teachingSessions = classSchedules
