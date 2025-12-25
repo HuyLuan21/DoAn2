@@ -1,7 +1,7 @@
-import { getAllCourses, deleteCourse, addCourse } from '/src/database/courses.db.js'
-import { getAllClasses } from '/src/database/classes.db.js'
-import { getAllLanguages } from '/src/database/language.db.js'
-import { getAllLanguageLevels } from '/src/database/language_level.db.js'
+import { getAllCourses, deleteCourse, addCourse } from '../../src/database/courses.db.js'
+import { getAllClasses } from '../../src/database/classes.db.js'
+import { getAllLanguages } from '../../src/database/language.db.js'
+import { getAllLanguageLevels } from '../../src/database/language_level.db.js'
 
 const classes = getAllClasses()
 const courses = getAllCourses()
@@ -353,12 +353,12 @@ function handleCourseItemClick(container) {
         } else if (e.target.closest('#view-classes')) {
             const courseId = item.dataset.courseId
             if (courseId) {
-                window.location.href = `/Admin/manage-classes?id=${courseId}`
+                window.location.href = `manage-classes.html?id=${courseId}`
             }
         } else {
             const courseId = item.dataset.courseId
             if (courseId) {
-                window.location.href = `/Admin/courses_detail?id=${courseId}`
+                window.location.href = `courses_detail.html?id=${courseId}`
             }
         }
     })

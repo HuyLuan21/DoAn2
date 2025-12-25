@@ -1,8 +1,8 @@
-import { getAllClasses } from '/src/database/classes.db.js'
-import { addSchedule, deleteSchedule, getAllSchedules, updateSchedule } from '/src/database/classSchedules.db.js'
-import { deleteCourse, getAllCourses, updateCourse } from '/src/database/courses.db.js'
-import { getAllLanguages } from '/src/database/language.db.js'
-import { getAllLanguageLevels } from '/src/database/language_level.db.js'
+import { getAllClasses } from '../../src/database/classes.db.js'
+import { addSchedule, deleteSchedule, getAllSchedules, updateSchedule } from '../../src/database/classSchedules.db.js'
+import { deleteCourse, getAllCourses, updateCourse } from '../../src/database/courses.db.js'
+import { getAllLanguages } from '../../src/database/language.db.js'
+import { getAllLanguageLevels } from '../../src/database/language_level.db.js'
 
 // =======================================================
 // 1. KHỞI TẠO BIẾN TOÀN CỤC & DỮ LIỆU
@@ -107,7 +107,7 @@ function handleDeleteCourseLogic() {
     try {
         deleteCourse(Number(courseId))
         console.log('Xóa khóa học thành công.')
-        window.location.href = '/Admin/courses'
+        window.location.href = 'courses.html'
     } catch (error) {
         console.error('Không xóa được khóa học:', error)
         alert('Có lỗi xảy ra khi xóa khóa học.')
@@ -580,7 +580,7 @@ function directBtn() {
     if (!back_btn) return
 
     back_btn.addEventListener('click', () => {
-        window.location.href = '/Admin/courses'
+        window.location.href = 'courses.html'
     })
 }
 directBtn()

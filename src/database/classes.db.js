@@ -22,14 +22,15 @@ export function getClassById(id) {
 }
 export function addClass(cls) {
     const classes = getclassList()
-    const newId = classes.length > 0 ? Math.max(...classes.map(c => c.id)) + 1 : 1
-    const newClass = { id: newId, ...cls }
+    const newId = classes.length > 0 ? Math.max(...classes.map(c => c.classId)) + 1 : 1
+    const newClass = { classId: newId, ...cls }
     classes.push(newClass)
     saveclassList(classes)
+    return newClass
 }
 export function updateClass(id, updatedInfo) {
     const classes = getclassList()
-    const index = classes.findIndex(cls => cls.id === id)
+    const index = classes.findIndex(cls => cls.classId === id)
     if (index === -1) {
         return null
     }
@@ -39,7 +40,7 @@ export function updateClass(id, updatedInfo) {
 }
 export function deleteClass(id) {
     const classes = getclassList()
-    const index = classes.findIndex(cls => cls.id === id)
+    const index = classes.findIndex(cls => cls.classId === id)
     if (index === -1) {
         return false
     }

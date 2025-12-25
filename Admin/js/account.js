@@ -1,6 +1,6 @@
-import { getAllAccounts, getAccountById, updateAccount, deleteAccount } from '/src/database/account.db.js'
-import { getAllTeachers } from '/src/database/teacher.db.js'
-import { getAllStudents } from '/src/database/student.db.js'
+import { getAllAccounts, getAccountById, updateAccount, deleteAccount } from '../../src/database/account.db.js'
+import { getAllTeachers } from '../../src/database/teacher.db.js'
+import { getAllStudents } from '../../src/database/student.db.js'
 //lay ra email dua tren ma tai khoan
 function GetAccountEmail(accountId) {
     const account = getAccountById(accountId)
@@ -23,7 +23,6 @@ function setupSearchAndFilter() {
     const searchInput = document.getElementById('search__input')
     const roleFilter = document.getElementById('type')
     const clearBtn = document.getElementById('clear')
-
 
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
@@ -48,10 +47,8 @@ function renderTable(searchTerm = '', selectedRole = 'all') {
     const tableBody = document.querySelector('.account__table_body')
     tableBody.innerHTML = ''
 
-
     const filteredAccounts = accounts.filter(account => {
         const matchesRole = selectedRole === 'all' || account.role === selectedRole
-
 
         const matchesSearch =
             account.username.toLowerCase().includes(searchTerm) || account.accountId.toString().includes(searchTerm)
