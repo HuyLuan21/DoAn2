@@ -1,6 +1,7 @@
 // Import database methods
 import { getAllExams, addExam, updateExam, deleteExam } from '../../src/database/exam.db.js'
 import { getAllClasses } from '../../src/database/class.db.js'
+import { getExamResultsByExamId } from '../../src/database/examResult.db.js'
 import examTypes from '../../src/mocks/examTypes.js'
 
 // DOM Elements
@@ -40,6 +41,13 @@ let currentExamId = null
 let deleteExamId = null
 let currentStep = 1
 let examParts = []
+
+// Helper function to check if exam has results (scores entered)
+function hasExamResults(examId) {
+    const results = getExamResultsByExamId(examId)
+    // Check if any student has a score (totalScore is not null)
+    return results.some(result => result.totalScore !== null && result.totalScore !== undefined)
+}
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -178,6 +186,11 @@ function createExamCard(exam) {
     // Format date
     const formattedDate = formatDate(exam.examDate)
 
+    // Check if exam has results
+    const hasResults = hasExamResults(exam.examId)
+    const disabledClass = hasResults ? 'exam-card__btn--disabled' : ''
+    const tooltipText = hasResults ? 'Không thể cập nhật/xóa - Đã có điểm' : ''
+
     card.innerHTML = `
         <div class="exam-card__header">
             <div>
@@ -204,11 +217,19 @@ function createExamCard(exam) {
             </div>
         </div>
         <div class="exam-card__actions">
-            <button class="exam-card__btn exam-card__btn--edit" data-exam-id="${exam.examId}">
+            <button 
+                class="exam-card__btn exam-card__btn--edit ${disabledClass}" 
+                data-exam-id="${exam.examId}"
+                title="${tooltipText}"
+            >
                 <i class="fa-solid fa-pen"></i>
                 Sửa
             </button>
-            <button class="exam-card__btn exam-card__btn--delete" data-exam-id="${exam.examId}">
+            <button 
+                class="exam-card__btn exam-card__btn--delete ${disabledClass}" 
+                data-exam-id="${exam.examId}"
+                title="${tooltipText}"
+            >
                 <i class="fa-solid fa-trash"></i>
                 Xóa
             </button>
@@ -221,12 +242,20 @@ function createExamCard(exam) {
 
     editBtn.addEventListener('click', e => {
         e.stopPropagation()
-        openEditModal(exam.examId)
+        if (hasResults) {
+            alert('Không thể cập nhật bài kiểm tra này vì đã có học sinh được nhập điểm.')
+        } else {
+            openEditModal(exam.examId)
+        }
     })
 
     deleteBtn.addEventListener('click', e => {
         e.stopPropagation()
-        openDeleteModal(exam.examId)
+        if (hasResults) {
+            alert('Không thể xóa bài kiểm tra này vì đã có học sinh được nhập điểm.')
+        } else {
+            openDeleteModal(exam.examId)
+        }
     })
 
     return card
@@ -258,6 +287,12 @@ function openCreateModal() {
 
 // Open edit modal
 function openEditModal(examId) {
+    // Check if exam has results (validation)
+    if (hasExamResults(examId)) {
+        alert('Không thể sửa bài kiểm tra này vì đã có học sinh được nhập điểm.')
+        return
+    }
+
     currentExamId = examId
     const exam = getAllExams().find(e => e.examId === examId)
 
@@ -603,6 +638,12 @@ function closeExamModal() {
 
 // Open delete modal
 function openDeleteModal(examId) {
+    // Check if exam has results (validation)
+    if (hasExamResults(examId)) {
+        alert('Không thể xóa bài kiểm tra này vì đã có học sinh được nhập điểm.')
+        return
+    }
+
     deleteExamId = examId
     const exam = getAllExams().find(e => e.examId === examId)
 
