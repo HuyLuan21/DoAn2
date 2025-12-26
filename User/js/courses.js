@@ -1,6 +1,6 @@
-import { getAllCourses, getCourseById } from '/src/database/courses.db.js'
-import { getAllLanguages } from '/src/database/language.db.js'
-import { getAllLanguageLevels } from '/src/database/language_level.db.js'
+import { getAllCourses, getCourseById } from '../../src/database/courses.db.js'
+import { getAllLanguages } from '../../src/database/language.db.js'
+import { getAllLanguageLevels } from '../../src/database/language_level.db.js'
 
 // ==================== STATE MANAGEMENT ====================
 let allCourses = []
@@ -243,9 +243,7 @@ function populateFilterOptions() {
     const levels = getAllLanguageLevels() || []
 
     // Get unique levels by levelOrder
-    const uniqueLevels = Array.from(
-        new Map(levels.map(l => [l.levelOrder, l])).values()
-    )
+    const uniqueLevels = Array.from(new Map(levels.map(l => [l.levelOrder, l])).values())
 
     uniqueLevels.sort((a, b) => a.levelOrder - b.levelOrder)
     uniqueLevels.forEach(level => {
