@@ -9,12 +9,12 @@ submitBtn.addEventListener('click', () => {
     )
     if (account.role === 'admin') {
         alert('Login successful')
-        window.location.href = '../Admin/dashboard.html'
+        window.location.href = './Admin/dashboard.html'
     } else if (account.role === 'teacher') {
         alert('Login successful')
-        window.location.href = '../Teacher/dashboard.html'
+        window.location.href = './Teacher/dashboard.html'
     } else if (account.role === 'student') {
         alert('Login successful')
-        window.location.href = '../User/home.html'
+        window.location.href = './User/home.html'
     }
 })
