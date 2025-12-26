@@ -163,7 +163,7 @@ export default [
     },
     {
         accountId: 18,
-        username: 'aiwa.okina',
+        username: 'student',
         password: '123',
         role: 'student',
         status: 'Active',
@@ -208,7 +208,7 @@ export default [
     },
     {
         accountId: 23,
-        username: 'sarah.lee',
+        username: 'teacher',
         password: '123',
         role: 'teacher',
         status: 'Active',
