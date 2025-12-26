@@ -20,7 +20,6 @@ body {
 .section h1 {
     margin-bottom: 5px;
     text-align: center;
-
 }
 
 .section p {
@@ -37,11 +36,10 @@ body {
 .label {
     margin-bottom: 6px;
     display: block;
-
 }
 
-input[type=email],
-input[type=password] {
+input[type='input'],
+input[type='password'] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -78,14 +76,13 @@ input[type=password] {
 
 .btn-primary:hover {
     background-color: rgb(21, 138, 193);
-    color: black
+    color: black;
 }
 
 .btn-sign-in {
     display: flex;
     justify-content: center;
 }
-
 .btn-social {
     width: 50px;
     height: 50px;
@@ -129,18 +126,16 @@ input[type=password] {
 
 .or-text::before,
 .or-text::after {
-    content: "";
+    content: '';
     flex: 1;
     border-bottom: 1px solid #ccc;
     margin: 0 10px;
 }
-
 .forgot-password a,
 .Register a {
     color: #069fe8;
     text-decoration: none;
 }
-
 .forgot-password a:hover,
 .Register a:hover {
     text-decoration: underline;
