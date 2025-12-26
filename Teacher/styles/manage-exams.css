@@ -235,6 +235,18 @@
     background-color: #fee2e2;
 }
 
+/* Disabled button state */
+.exam-card__btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.exam-card__btn--disabled:hover {
+    opacity: 0.5;
+    /* Prevent hover effects on disabled buttons */
+    background-color: inherit;
+}
+
 /* Empty State */
 .exam-empty {
     text-align: center;
