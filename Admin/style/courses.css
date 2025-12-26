@@ -587,3 +587,131 @@ button {
         outline: none;
     }
 }
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .layout {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Sidebar as bottom navigation for mobile */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        order: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-color);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .sidebar__logo,
+    .sidebar__devider {
+        display: none;
+    }
+
+    .sidebar__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sidebar_item {
+        padding: 10px;
+        height: auto;
+        justify-content: center;
+    }
+
+    .sidebar__list li.active::before,
+    .sidebar__list li.active::after,
+    .sidebar__list .active .sidebar_item::before {
+        display: none;
+    }
+
+    .sidebar__list li.active a.sidebar_item {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: white;
+    }
+
+    /* Content Area */
+    .content {
+        border-radius: 0;
+        padding: 10px 10px 120px 10px;
+        order: 1;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+        margin-top: 0;
+    }
+
+    /* Layout Adjustments */
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #action {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    #search_zone {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .search__box {
+        width: 100%;
+    }
+
+    .search__box input {
+        width: 100%;
+    }
+
+    #filter__button {
+        width: 100%;
+    }
+
+    #action__button {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    #action__button button {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    .content_course_item {
+        width: 100%;
+    }
+}

@@ -638,3 +638,90 @@ select {
         border: 2px solid #ff5869;
     }
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .layout {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Sidebar as bottom navigation for mobile */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        order: 2; /* Move to bottom */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-color);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .sidebar__logo,
+    .sidebar__devider {
+        display: none;
+    }
+
+    .sidebar__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .sidebar_item {
+        padding: 10px;
+        height: auto;
+        justify-content: center;
+    }
+
+    .sidebar__list li.active::before,
+    .sidebar__list li.active::after,
+    .sidebar__list .active .sidebar_item::before {
+        display: none;
+    }
+
+    .sidebar__list li.active a.sidebar_item {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: white;
+    }
+
+    /* Content Area */
+    .content {
+        border-radius: 0;
+        padding: 10px 10px 120px 10px; /* Added bottom padding for nav */
+        order: 1;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: visible; /* Changed from scroll to visible for full page scroll */
+        margin-top: 0;
+    }
+
+    /* Layout adjustments */
+    .class__list {
+        flex-direction: column;
+    }
+
+    .class__detail {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .calender {
+        width: 100%;
+    }
+}
