@@ -201,7 +201,7 @@
                                     <path d="m21 21-4.3-4.3" key="1qie3q"></path>
                                 </svg>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <button id="filter__button">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -229,11 +229,11 @@
 
                                         <div class="filter__option">
                                             <h4>Thể loại</h4>
-                                            <select name="category" id="category">
-                                                <option value="all">Tất cả</option>
-                                                <option value="1">Cơ bản</option>
-                                                <option value="2">Trung cấp</option>
-                                                <option value="3">Nâng cao</option>
+                                            <select id="category">
+                                                <option value="all">Tất cả trình độ</option>
+                                                <option value="beginner">Beginner</option>
+                                                <option value="intermediate">Intermediate</option>
+                                                <option value="advanced">Advanced</option>
                                             </select>
                                         </div>
 
@@ -241,8 +241,11 @@
                                             <h4>Ngôn ngữ</h4>
                                             <select name="language" id="language">
                                                 <option value="all">Tất cả</option>
-                                                <option value="EN">English</option>
-                                                <option value="VN">Tiếng Việt</option>
+                                                <option value="EN">Tiếng Anh</option>
+                                                <option value="JP">Tiếng Nhật</option>
+                                                <option value="KR">Tiếng Hàn</option>
+                                                <option value="FR">Tiếng Pháp</option>
+                                                <option value="DE">Tiếng Đức</option>
                                             </select>
                                         </div>
                                         <div class="filter__actions">
@@ -251,7 +254,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div id="action__button" class="flex">
@@ -340,42 +343,53 @@
                     <form id="add_course_form">
                         <div class="form-group">
                             <label for="course-name">Tên khóa học</label>
-                            <input type="text" id="course-name" name="name" placeholder="Nhập tên khóa học" required />
+                            <input
+                                type="text"
+                                id="course-name"
+                                name="course_name"
+                                placeholder="Nhập tên khóa học"
+                                required
+                            />
                         </div>
                         <div class="form-group">
                             <div id="select" class="flex space-between">
-                                <!-- implant funcion here -->
                                 <select id="course-languages-select" name="course_languages">
                                     <option value="" disabled selected>-- Chọn ngôn ngữ --</option>
+                                    <option value="DE">German</option>
+                                    <option value="EN">English</option>
+                                    <option value="FR">French</option>
+                                    <option value="JP">Japanese</option>
+                                    <option value="KR">Korean</option>
                                 </select>
                                 <select id="course-type-select" name="course_type">
-                                    <option value="" disabled selected>-- Chọn loại khóa học --</option>
+                                    <option value="" disabled selected>-- Chọn trình độ --</option>
                                 </select>
                             </div>
 
                             <label for="course-desc" style="margin-top: 16px">Mô tả khóa học</label>
                             <textarea id="course-desc" name="description" placeholder="Nhập mô tả khóa học"></textarea>
+
                             <div class="flex space-between" style="gap: 5px">
                                 <input type="file" id="course-image" name="image" accept="image/*" />
-                                <input type="text" id="course-image-url" name="image_url" placeholder="image_url" />
+                                <input type="text" id="course-image-url" name="thumbnail_url" placeholder="image_url" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="course-price">Giá</label>
+                            <input type="text" id="course-price" name="fee" placeholder="Nhập giá (VD: 500000)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="course-hours">Thời lượng (Giờ)</label>
                             <input
-                                type="text"
-                                id="course-price"
-                                name="price"
-                                placeholder="Nhập giá (VD: Miễn phí, 500.000đ)"
+                                type="number"
+                                id="course-hours"
+                                name="duration_hours"
+                                placeholder="Nhập số giờ học"
                             />
                         </div>
                         <div class="form-group">
-                            <label for="course-hours">Thời lượng (Tuần)</label>
-                            <input type="number" id="course-hours" name="hours" placeholder="Nhập số tuần học" />
-                        </div>
-                        <div class="form-group">
                             <label>Trạng thái</label>
-                            <select required id="course-status" name="status">
+                            <select required id="course-status" name="course_status">
                                 <option value="" disabled selected>-- Chọn trạng thái --</option>
                                 <option value="active">Đang hoạt động</option>
                                 <option value="inactive">Không hoạt động</option>
@@ -389,6 +403,7 @@
                 </div>
             </div>
         </div>
-        <script type="module" src="js/courses.js"></script>
+        <!-- <script type="module" src="js/courses.js"></script> -->
+        <script type="module" src="js/API/course-api.js"></script>
     </body>
 </html>
